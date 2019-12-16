@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/platformtest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Basic_test_Student_Fiskars.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Bissell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Fiskars.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Student_Fiskars.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Trainer_Fiskars.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Object_repo_Bissell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Object_repo_Fiskars.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/proba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Object_repo_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Object_repo_Fiskars.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="platformtest" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="platformtest" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/andrasragany/moovs-automation.git" />
+      </set>
+    </option>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Rendszergazda\IdeaProjects\platformtest" />
+        <option value="C:\Users\Rendszergazda\IdeaProjects\platformtest\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TvgeQLtY7C7rtEgpCFUSVPuVHZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowAnt.ShowToolbar" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.3539055" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Basic_test_Student_Fiskars (1)">
+    <configuration name="Basic_test_Admin" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Admin" />
+      <module name="platformtest.main" />
+      <option name="VM_PARAMETERS" value="c:\chromedriver\chromedriver.exe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Basic_test_Admin_Bissell" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Admin_Bissell" />
+      <module name="platformtest.main" />
+      <option name="VM_PARAMETERS" value="c:\chromedriver\chromedriver.exe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Basic_test_Admin_Fiskars" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Admin_Fiskars" />
+      <module name="platformtest.main" />
+      <option name="VM_PARAMETERS" value="c:\chromedriver\chromedriver.exe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Basic_test_Admin_Fiskars" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <module name="platformtest.main" />
+      <option name="VM_PARAMETERS" value="c:\chromedriver\chromedriver.exe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Basic_test_Student_Fiskars (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-13.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Student_Fiskars" />
+      <module name="platformtest.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Basic_test_Trainer_Fiskars" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Trainer_Fiskars" />
+      <module name="platformtest.main" />
+      <option name="VM_PARAMETERS" value="c:\chromedriver\chromedriver.exe" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/randr/IdeaProjects/platformtest/build.gradle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/build.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Basic_test_Admin" />
+      <item itemvalue="Application.Basic_test_Student_Fiskars" />
+      <item itemvalue="Application.Basic_test_Admin_Bissell" />
+      <item itemvalue="Application.Basic_test_Admin_Fiskars" />
+      <item itemvalue="Application.Basic_test_Trainer_Fiskars" />
+      <item itemvalue="Application.Basic_test_Student_Fiskars (1)" />
+      <item itemvalue="Gradle.C:/Users/randr/IdeaProjects/platformtest/build.gradle" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Basic_test_Admin_Fiskars" />
+        <item itemvalue="Application.Basic_test_Student_Fiskars (1)" />
+        <item itemvalue="Gradle.C:/Users/randr/IdeaProjects/platformtest/build.gradle" />
+        <item itemvalue="Application.Basic_test_Trainer_Fiskars" />
+        <item itemvalue="Application.Basic_test_Admin_Bissell" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="" />
+      <created>1574346077292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574346077292</updated>
+    </task>
+    <task id="LOCAL-00001" summary="elso">
+      <created>1576422399505</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576422399505</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="elso" />
+    <option name="LAST_COMMIT_MESSAGE" value="elso" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="825" y="282" key="#Basic_test_Student_Fiskars" timestamp="1576444814599">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="825" y="282" key="#Basic_test_Student_Fiskars/0.0.2560.1400@0.0.2560.1400" timestamp="1576444814599" />
+    <state x="816" y="284" key="#Basic_test_Student_Fiskars_(1)" timestamp="1576447859600">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="816" y="284" key="#Basic_test_Student_Fiskars_(1)/0.0.2560.1400@0.0.2560.1400" timestamp="1576447859600" />
+    <state x="736" y="240" key="#Notifications" timestamp="1576445565646">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1576416843476" />
+    <state x="736" y="240" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1576445565646" />
+    <state x="736" y="240" key="#Project_Structure" timestamp="1576448010744">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1576424919841" />
+    <state x="736" y="240" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1576448010744" />
+    <state x="552" y="272" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576449435622">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="552" y="272" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576449435622" />
+    <state x="709" y="356" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1576425683030">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="709" y="356" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576425683030" />
+    <state x="877" y="322" width="1135" height="590" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1576449043841">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="877" y="322" width="1135" height="590" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576449043841" />
+    <state x="827" y="403" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1576449423438">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="827" y="403" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576449423438" />
+    <state x="826" y="306" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1576445360889">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="826" y="306" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576445360889" />
+    <state x="855" y="272" key="#xdebugger.XInspectDialog" timestamp="1576139826653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="855" y="272" key="#xdebugger.XInspectDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576139826653" />
+    <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576449890367">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400@0.0.2560.1400" timestamp="1576449890367" />
+    <state x="565" y="114" key="CommitChangelistDialog2" timestamp="1576422398858">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576422398858" />
+    <state x="898" y="297" key="DetectedRootsChooserDialog" timestamp="1576447992436">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="898" y="297" key="DetectedRootsChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576447992436" />
+    <state x="832" y="379" key="EnvironmentVariablesDialog" timestamp="1576448989654">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="832" y="379" key="EnvironmentVariablesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576448989654" />
+    <state x="987" y="351" key="FileChooserDialogImpl" timestamp="1576447989965">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576426621844" />
+    <state x="987" y="351" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1576447989965" />
+    <state x="794" y="435" width="356" height="169" key="Github.CreateGistDialog" timestamp="1576416476690">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="435" width="356" height="169" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576416476690" />
+    <state x="832" y="413" width="260" height="214" key="Github.ShareDialog" timestamp="1576417035890">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="832" y="413" width="260" height="214" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576417035890" />
+    <state x="675" y="225" key="Github.UntrackedFilesDialog" timestamp="1576416800785">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="675" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576416800785" />
+    <state width="2251" height="379" key="GridCell.Tab.0.bottom" timestamp="1576515927317">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576422038713" />
+    <state width="2251" height="379" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1576515927317" />
+    <state width="2251" height="379" key="GridCell.Tab.0.center" timestamp="1576515927317">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576422038713" />
+    <state width="2251" height="379" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1576515927317" />
+    <state width="2251" height="379" key="GridCell.Tab.0.left" timestamp="1576515927317">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576422038713" />
+    <state width="2251" height="379" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1576515927317" />
+    <state width="2251" height="379" key="GridCell.Tab.0.right" timestamp="1576515927317">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576422038713" />
+    <state width="2251" height="379" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576515927317" />
+    <state width="911" height="489" key="GridCell.Tab.1.bottom" timestamp="1576515459922">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576230618514" />
+    <state width="911" height="489" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1576515459922" />
+    <state width="911" height="489" key="GridCell.Tab.1.center" timestamp="1576515459922">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576230618513" />
+    <state width="911" height="489" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1576515459922" />
+    <state width="911" height="489" key="GridCell.Tab.1.left" timestamp="1576515459922">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576230618513" />
+    <state width="911" height="489" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1576515459922" />
+    <state width="911" height="489" key="GridCell.Tab.1.right" timestamp="1576515459922">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576230618514" />
+    <state width="911" height="489" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576515459922" />
+    <state x="587" y="127" key="SettingsEditor" timestamp="1576449148818">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1576424820038" />
+    <state x="587" y="127" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1576449148818" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1576426888241">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576426888241" />
+    <state x="805" y="441" key="com.intellij.ide.util.TipDialog" timestamp="1576444597458">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="805" y="441" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576444597458" />
+    <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576447459882">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576447459882" />
+    <state x="754" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1576449465122">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="754" y="271" width="670" height="676" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1576449465122" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/platformtest$C__Users_randr_IdeaProjects_platformtest_build_gradle.ic" NAME="$PROJECT_DIR$/build.gradle Coverage Results" MODIFIED="1576447376741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
