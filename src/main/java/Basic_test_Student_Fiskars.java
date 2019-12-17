@@ -24,11 +24,11 @@ public class Basic_test_Student_Fiskars{
         return localDate.format(formatter);
     }
 
-    private static void faszaklikk(WebDriver webDriver, Logger logger, String webElement, WebDriverWait wait) throws InterruptedException {
+    private static boolean faszaklikk(WebDriver webDriver, Logger logger, String webElement, WebDriverWait wait) throws InterruptedException, TimeoutException {
         boolean bul = true;
         int  counter = 0;
 
-        while ((bul) && (counter < 10)) {
+        while ((bul) && (counter < 5)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
@@ -36,15 +36,16 @@ public class Basic_test_Student_Fiskars{
             } catch (Exception e) {
                 logger.info(e.toString());
                 Thread.sleep(1000);
+                counter++;
+                return false;
             }
-
-            logger.info("faszaklikk faszán fasza");
         }
+        logger.info("faszaklikk faszán fasza");
+        return true;
     }
 
     public static void main(String[] argv) throws Exception
     {
-        FileHandler fh;
 
         // This block configure the logger with handler and formatter
 
@@ -55,18 +56,19 @@ public class Basic_test_Student_Fiskars{
 
         //Creating actual file
         File file = new File(pathname, filename);
-        file.createNewFile();
+        file. createNewFile();
 
         //Setting up logger, handler etc
-        fh = new FileHandler(abspath);
+        FileHandler fh = new FileHandler(abspath);
         Logger logger = Logger.getLogger(abspath);
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
+        System.setProperty("webdriver.chrome.driver","c:\\chromedriver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        String UserJsonPath = "C:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
@@ -142,11 +144,14 @@ public class Basic_test_Student_Fiskars{
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_Player_rewatch_training_button))).click();
         Thread.sleep(1100);
         Boolean temp = true;
+        int count = 0;
         while (temp) {
             try {
                 //First training
                 Thread.sleep(2000);
-                faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait);
+                //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait);
+                if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait)) temp = true;
+                else temp = false;
                 logger.info("Clicked training's Explore button in Player OK");
                 Thread.sleep(2000);
                 //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -165,11 +170,21 @@ public class Basic_test_Student_Fiskars{
                 faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_next_training_button, wait);
                 logger.info("Clicked on Next training in PLayer window");
                 Thread.sleep(1100);
-            } catch (TimeoutException e) {
+            } catch (org.openqa.selenium.TimeoutException e) {
+                temp = false;
+                logger.info("Test gone through modules, reached exam.");
+            }
+            catch (org.openqa.selenium.NoSuchElementException e) {
+                temp = false;
+                logger.info("Test gone through modules, reached exam.");
+            }
+            catch (org.openqa.selenium.ElementNotInteractableException e) {
                 temp = false;
                 logger.info("Test gone through modules, reached exam.");
             }
         }
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_true, wait);
+        logger.info("True in exam pressed!");
 
 
 

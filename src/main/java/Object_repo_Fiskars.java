@@ -1,4 +1,5 @@
 
+
 public class Object_repo_Fiskars {
 
     //input user email
@@ -277,5 +278,7 @@ public class Object_repo_Fiskars {
     static String selector_Player_training_explore_button = "//*[text()='Explore']";
     //static String selector_player_next_training_button = "//*[@id=\"app\"]/div/main/div[9]/div[1]/div/button";
     static String selector_player_next_training_button = "//*[text()='Next']";
+    static String selector_player_exam_true = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div/button[1]";
+    static String selector_player_exam_false = "\"//*[text()='False']\"";
 
 }

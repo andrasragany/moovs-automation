@@ -66,7 +66,7 @@ public class Basic_test_Admin_Fiskars {
         logger.info("Navigated to user groups page OK");
     }
 
-     static String createstudentusergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
+    static String createstudentusergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
         Thread.sleep(100);
         wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_create_user_group_btn))).click();
         Thread.sleep(100);
@@ -139,23 +139,23 @@ public class Basic_test_Admin_Fiskars {
         Thread.sleep(100);
         wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_result_list_sort_descending_date))).click();
         Thread.sleep(200);
-            for (int j=1; j<6; j++){
-                String tempxpath = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[2]/div[" + j + "]/div/div[2]/div/div/button";
-                try {
-                    WebElement tempelement = webDriver.findElement(By.xpath(tempxpath));
-                    if (tempelement.isDisplayed()) {
-                        tempelement.click();
-                        Thread.sleep(200);
-                        wait.until(elementToBeClickable(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[2]/div[" + j + "]/div/div[2]/div/div/div/button"))).click();
-                        Thread.sleep(200);
-                        wait.until(elementToBeClickable(By.xpath("/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]"))).click();
-                        Thread.sleep(3000);
-                    }
+        for (int j=1; j<6; j++){
+            String tempxpath = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[2]/div[" + j + "]/div/div[2]/div/div/button";
+            try {
+                WebElement tempelement = webDriver.findElement(By.xpath(tempxpath));
+                if (tempelement.isDisplayed()) {
+                    tempelement.click();
+                    Thread.sleep(200);
+                    wait.until(elementToBeClickable(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[2]/div[" + j + "]/div/div[2]/div/div/div/button"))).click();
+                    Thread.sleep(200);
+                    wait.until(elementToBeClickable(By.xpath("/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]"))).click();
+                    Thread.sleep(3000);
                 }
-                catch (NoSuchElementException E){}
-
             }
-    logger.info("Deleted communication OK");
+            catch (NoSuchElementException E){}
+
+        }
+        logger.info("Deleted communication OK");
     }
 
     private static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
@@ -282,7 +282,7 @@ public class Basic_test_Admin_Fiskars {
 
         //Init webdriver
         WebDriver webDriver = new ChromeDriver();
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
         //open testfiskars
         gotourl(logger, webDriver, wait, "https://test.fiskarsacademy.com/login");
