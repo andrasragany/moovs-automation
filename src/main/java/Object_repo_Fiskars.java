@@ -281,5 +281,8 @@ public class Object_repo_Fiskars {
     static String selector_player_exam_true = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div/button[1]";
     static String selector_player_exam_false = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div/button[2]";
     static String selector_player_exam_next_question = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[2]/button";
+    static String selector_player_exam_counter = "//*[@id=\"app\"]/div/div/div/div[1]/h4/span";
+    static String selector_player_exam_type = "//*[@id=\"app\"]/div/div/div/div[1]/h3/span/strong";
+    static String selector_player_exam_check_answer_button = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[2]/button";
 
 }

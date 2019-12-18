@@ -44,42 +44,95 @@ public class Basic_test_Student_Fiskars{
         return true;
     }
 
-    private static boolean exam(WebDriver webDriver, Logger logger, String webElement, WebDriverWait wait) throws InterruptedException, TimeoutException {
-        boolean counter = true;
-        WebElement Examcounter = webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/h4/span"));
-        WebElement Examtype = webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/h3/span/strong"));
+    private static boolean exam(WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
+        try {
+            while ((webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_counter))).isDisplayed()) {
+                logger.info((webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_type))).getText());
+                switch (webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_type)).getText()) {
+                    case "Match":
+                        // Select dropdowns
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
+                        break;
 
-        while ((Examcounter.isDisplayed())) {
+                    case "Select":
+                        // checkboxes
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
+                        break;
 
-            switch (Examtype.getText()) {
-                case "Match" :
-                    // Select dropdowns
-                    // click check answer button
-                    // Click Next question button
-                    break;
+                    case "Fill":
+                        // Select checkboxes
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
+                        break;
 
-                case "Select" :
-                    // Click True/false button
-                    // Click Next question
-                    break;
+                    case "Is it true":
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_false, wait);
+                        logger.info("True in exam pressed!");
+                        Thread.sleep(500);
+                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
+                        break;
 
-                case "Fill" :
-                    // Select checkboxes
-                    // Click check answer
-                    // Click Next question
-                    break;
+                    default:
 
-                case "Is it true" :
-                    // checkboxes
-                    // check answer
-                    // Next question
-                    break;
-
-                default:
-                    // code block
+                }
             }
         }
-        logger.info("faszaklikk faszán fasza");
+        catch(org.openqa.selenium.NoSuchElementException E) {
+            logger.info("Test finished OK");
+            webDriver.quit();
+        }
+        logger.info("exam fuggveny lefutott");
+        return true;
+    }
+
+    public static boolean player (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
+        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_player_open_contents, wait);
+        logger.info("Opened Player window contents tab OK");
+        //select first training from contents
+        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_player_contents_first_item, wait);
+        logger.info("Clicked first training from contents OK");
+        Thread.sleep(1100);
+        Boolean temp = true;
+        while (temp) {
+            try {
+                //First training
+                Thread.sleep(2000);
+                //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait);
+                if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait)) temp = true;
+                else temp = false;
+                logger.info("Clicked training's Explore button in Player OK");
+                Thread.sleep(2000);
+                //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+                Actions actions = new Actions(webDriver);
+                actions.sendKeys(Keys.END).perform();
+                logger.info("Scrolled down to the bottom of training in Player window OK");
+                Thread.sleep(2000);
+                //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+                //List<WebElement> buttons = webDriver.findElements(By.tagName("button"));
+                //WebElement lastElement = buttons.get(buttons.size() - 1);
+                //Thread.sleep(2000);
+                //Actions actions = new Actions(webDriver);
+                //actions.moveToElement(lastElement);
+                //Thread.sleep(2000);
+                //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+                faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_next_training_button, wait);
+                logger.info("Clicked on Next training in PLayer window");
+                Thread.sleep(1100);
+            } catch (org.openqa.selenium.TimeoutException e) {
+                temp = false;
+                logger.info("Test gone through modules, reached exam.");
+            }
+            catch (org.openqa.selenium.NoSuchElementException e) {
+                temp = false;
+                logger.info("Test gone through modules, reached exam.");
+            }
+            catch (org.openqa.selenium.ElementNotInteractableException e) {
+                temp = false;
+                logger.info("Test gone through modules, reached exam.");
+            }
+        }
         return true;
     }
 
@@ -164,98 +217,19 @@ public class Basic_test_Student_Fiskars{
                 webDriver.switchTo().window(handle);
             }
         }
+
         //save player tab handle for later use
         String playerWindow = webDriver.getWindowHandle();
+
         logger.info("Opened and switched to Player window OK");
-        //If retry exam was clicked, open player contents
         Thread.sleep(2000);
-        //WebElement mapObject = webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_open_contents));
-        //((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", mapObject);
 
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_player_open_contents, wait);
-        logger.info("Opened Player window contents tab OK");
-        //select first training from contents
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_player_contents_first_item, wait);
-        //wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_player_contents_first_item))).click();
-        logger.info("Clicked first training from contents OK");
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_Player_select_true))).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_Player_next_question))).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_Player_rewatch_training_button))).click();
-        Thread.sleep(1100);
-        Boolean temp = true;
-        int count = 0;
-        while (temp) {
-            try {
-                //First training
-                Thread.sleep(2000);
-                //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait);
-                if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait)) temp = true;
-                else temp = false;
-                logger.info("Clicked training's Explore button in Player OK");
-                Thread.sleep(2000);
-                //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-                Actions actions = new Actions(webDriver);
-                actions.sendKeys(Keys.END).perform();
-                logger.info("Scrolled down to the bottom of training in Player window OK");
-                Thread.sleep(2000);
-                //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-                //List<WebElement> buttons = webDriver.findElements(By.tagName("button"));
-                //WebElement lastElement = buttons.get(buttons.size() - 1);
-                //Thread.sleep(2000);
-                //Actions actions = new Actions(webDriver);
-                //actions.moveToElement(lastElement);
-                //Thread.sleep(2000);
-                //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-                faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_next_training_button, wait);
-                logger.info("Clicked on Next training in PLayer window");
-                Thread.sleep(1100);
-            } catch (org.openqa.selenium.TimeoutException e) {
-                temp = false;
-                logger.info("Test gone through modules, reached exam.");
-            }
-            catch (org.openqa.selenium.NoSuchElementException e) {
-                temp = false;
-                logger.info("Test gone through modules, reached exam.");
-            }
-            catch (org.openqa.selenium.ElementNotInteractableException e) {
-                temp = false;
-                logger.info("Test gone through modules, reached exam.");
-            }
-        }
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_false, wait);
-        logger.info("True in exam pressed!");
-        Thread.sleep(500);
+        player(webDriver, logger, wait);
 
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
-        logger.info("Next question in exam pressed!");
-        Thread.sleep(500);
-
-
-
-
-
-        //WebElement mapObject2 = webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_Player_training_next1_button));
-        //((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", mapObject2);
-        //Thread.sleep(500);
-        //Second training
-        //WebElement mapObject3 = webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_Player_training_next2_button));
-        //((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", mapObject3);
-        //Thread.sleep(500);
-        //Third training
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_Player_training_explore_button))).click();
-        //Thread.sleep(500);
-        //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        //Thread.sleep(500);
-        //WebElement mapObject4 = webDriver.findElement(By.xpath(Object_repo_Fiskars.Selector_Player_training_next3_button));
-        //((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", mapObject4);
-        //Thread.sleep(500);
-        //Exam 1 true
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_Player_select_true))).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_Player_next_question))).click();
+        exam(webDriver, logger, wait);
 
         Thread.sleep(5000);
         logger.info("Test finished OK");
         webDriver.quit();
-
     }
 }
