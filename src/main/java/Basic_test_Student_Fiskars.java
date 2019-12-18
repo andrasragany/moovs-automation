@@ -40,7 +40,7 @@ public class Basic_test_Student_Fiskars{
                 return false;
             }
         }
-        logger.info("faszaklikk faszán fasza");
+        logger.info(webElement + "faszaklikkelt lett");
         return true;
     }
 
@@ -172,30 +172,32 @@ public class Basic_test_Student_Fiskars{
 
         Thread.sleep(1100);
 
-        //String mainWindow = webDriver.getWindowHandle();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_user_dropdown))).click();
-        //Thread.sleep(300);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_user_profile))).click();
+        String mainWindow = webDriver.getWindowHandle();
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_dropdown, wait);
+        Thread.sleep(300);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_profile, wait);
+        Actions actions = new Actions(webDriver);
+        actions.sendKeys(Keys.END).perform();
 
         //Edit profile, change preferred device to tablet, Save, Check
-        //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_edit_profile_btn))).click();
-        //Thread.sleep(250);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown))).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_pref_dev_smarttotablet))).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_edit_profile_save_btn))).click();
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
+        Thread.sleep(250);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_smarttotablet, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_save_btn, wait);
+        actions.sendKeys(Keys.END).perform();
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
         //Change tablet to smartphone
-        //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_edit_profile_btn))).click();
-        //Thread.sleep(250);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown))).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_pref_dev_tablettosmart))).click();
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_trainer_profile_edit_Save))).click();
-        //Thread.sleep(250);
+        Thread.sleep(250);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_tablettosmart, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_profile_edit_Save, wait);
+        Thread.sleep(250);
 
         //go to dashboard
-        //wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_dashboard))).click();
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
         Thread.sleep(1100);
+
         //start training from dashboard, if not, start training from training library
 
         faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_training_lib_, wait);
@@ -228,7 +230,7 @@ public class Basic_test_Student_Fiskars{
 
         exam(webDriver, logger, wait);
 
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         logger.info("Test finished OK");
         webDriver.quit();
     }
