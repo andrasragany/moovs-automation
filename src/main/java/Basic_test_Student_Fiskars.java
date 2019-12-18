@@ -44,6 +44,45 @@ public class Basic_test_Student_Fiskars{
         return true;
     }
 
+    private static boolean exam(WebDriver webDriver, Logger logger, String webElement, WebDriverWait wait) throws InterruptedException, TimeoutException {
+        boolean counter = true;
+        WebElement Examcounter = webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/h4/span"));
+        WebElement Examtype = webDriver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/h3/span/strong"));
+
+        while ((Examcounter.isDisplayed())) {
+
+            switch (Examtype.getText()) {
+                case "Match" :
+                    // Select dropdowns
+                    // click check answer button
+                    // Click Next question button
+                    break;
+
+                case "Select" :
+                    // Click True/false button
+                    // Click Next question
+                    break;
+
+                case "Fill" :
+                    // Select checkboxes
+                    // Click check answer
+                    // Click Next question
+                    break;
+
+                case "Is it true" :
+                    // checkboxes
+                    // check answer
+                    // Next question
+                    break;
+
+                default:
+                    // code block
+            }
+        }
+        logger.info("faszaklikk faszán fasza");
+        return true;
+    }
+
     public static void main(String[] argv) throws Exception
     {
 
@@ -64,11 +103,11 @@ public class Basic_test_Student_Fiskars{
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
-        System.setProperty("webdriver.chrome.driver","c:\\chromedriver\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver","c:\\chromedriver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "C:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
@@ -183,8 +222,14 @@ public class Basic_test_Student_Fiskars{
                 logger.info("Test gone through modules, reached exam.");
             }
         }
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_true, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_false, wait);
         logger.info("True in exam pressed!");
+        Thread.sleep(500);
+
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
+        logger.info("Next question in exam pressed!");
+        Thread.sleep(500);
+
 
 
 

@@ -1,10 +1,10 @@
 {
     "admin" : "pohc-admin@quince.hu",
-    "adminpassword" : "3-4pNV-9zJfhGmSs",
+    "adminpassword" : "FisAdmHU19!",
     "manager" : "pohc-manager@quince.hu",
-    "managerpassword" : "wV9DyeRKP*PNq^c#",
+    "managerpassword" : "FisManHU19!",
     "trainer" : "pohc-trainer@quince.hu",
-    "trainerpassword" : "6LCKXr8&%ps-7B&V",
+    "trainerpassword" : "FisTraHU19!",
     "student" : "pohc-student@quince.hu",
-    "studentpassword" : "nNSMAM282fXf#P*_"
+    "studentpassword" : "FisStuHU19!"
 }
