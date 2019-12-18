@@ -44,25 +44,70 @@ public class Basic_test_Student_Fiskars{
         return true;
     }
 
+    private static void editprofile (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_dropdown, wait);
+        Thread.sleep(300);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_profile, wait);
+        Actions actions = new Actions(webDriver);
+        actions.sendKeys(Keys.END).perform();
+
+        //Edit profile, change preferred device to tablet, Save, Check
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
+        Thread.sleep(250);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_smarttotablet, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_save_btn, wait);
+        actions.sendKeys(Keys.END).perform();
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
+        //Change tablet to smartphone
+        Thread.sleep(250);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_tablettosmart, wait);
+        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_profile_edit_Save, wait);
+        Thread.sleep(250);
+    }
+
+    private static void opentraining (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
+        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_training_lib_, wait);
+        logger.info("Opened student training lib OK");
+        Thread.sleep(1100);
+        webDriver.navigate().refresh();
+        Thread.sleep(1100);
+        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_traininglib_completed, wait);
+        logger.info("Opened student completed trainings tab OK");
+        Thread.sleep(1100);
+        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_traininglib_completed_retryexam, wait);
+        logger.info("Student opened a finished training in player via retry exam button OK");
+        Thread.sleep(1100);
+        //switch selenium handle to player tab
+        Set<String> handles = webDriver.getWindowHandles();
+        String currentWindowHandle = webDriver.getWindowHandle();
+        for (String handle : handles) {
+            if (!currentWindowHandle.equals(handle)) {
+                webDriver.switchTo().window(handle);
+            }
+        }
+
+        //save player tab handle for later use
+        String playerWindow = webDriver.getWindowHandle();
+
+        logger.info("Opened and switched to Player window OK");
+        Thread.sleep(2000);
+    }
+
     private static boolean exam(WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
         try {
             while ((webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_counter))).isDisplayed()) {
                 logger.info((webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_type))).getText());
                 switch (webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_type)).getText()) {
                     case "Match":
-                        // Select dropdowns
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
-                        break;
 
                     case "Select":
-                        // checkboxes
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
-                        break;
 
                     case "Fill":
                         // Select checkboxes
+                        // checkboxes
+                        // Select dropdowns
                         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
                         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
                         break;
@@ -173,58 +218,15 @@ public class Basic_test_Student_Fiskars{
         Thread.sleep(1100);
 
         String mainWindow = webDriver.getWindowHandle();
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_dropdown, wait);
-        Thread.sleep(300);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_profile, wait);
-        Actions actions = new Actions(webDriver);
-        actions.sendKeys(Keys.END).perform();
 
-        //Edit profile, change preferred device to tablet, Save, Check
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
-        Thread.sleep(250);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_smarttotablet, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_save_btn, wait);
-        actions.sendKeys(Keys.END).perform();
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
-        //Change tablet to smartphone
-        Thread.sleep(250);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_tablettosmart, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_profile_edit_Save, wait);
-        Thread.sleep(250);
+       editprofile(webDriver, logger, wait);
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
         Thread.sleep(1100);
 
         //start training from dashboard, if not, start training from training library
-
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_training_lib_, wait);
-        logger.info("Opened student training lib OK");
-        Thread.sleep(1100);
-        webDriver.navigate().refresh();
-        Thread.sleep(1100);
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_traininglib_completed, wait);
-        logger.info("Opened student completed trainings tab OK");
-        Thread.sleep(1100);
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_traininglib_completed_retryexam, wait);
-        logger.info("Student opened a finished training in player via retry exam button OK");
-        Thread.sleep(1100);
-        //switch selenium handle to player tab
-        Set<String> handles = webDriver.getWindowHandles();
-        String currentWindowHandle = webDriver.getWindowHandle();
-        for (String handle : handles) {
-            if (!currentWindowHandle.equals(handle)) {
-                webDriver.switchTo().window(handle);
-            }
-        }
-
-        //save player tab handle for later use
-        String playerWindow = webDriver.getWindowHandle();
-
-        logger.info("Opened and switched to Player window OK");
-        Thread.sleep(2000);
+        opentraining(webDriver, logger, wait);
 
         player(webDriver, logger, wait);
 
