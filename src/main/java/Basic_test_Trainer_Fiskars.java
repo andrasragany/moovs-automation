@@ -60,7 +60,7 @@ public class Basic_test_Trainer_Fiskars{
         //Open page
         Basic_test_Admin_Fiskars.gotourl(logger,webDriver,wait,"https://test.fiskarsacademy.com/login");
         //Login
-        Basic_test_Admin_Fiskars.login(logger, webDriver, wait, "trainer", "trainerpassword");
+        Basic_test_Admin_Fiskars.login(logger, webDriver, wait, "fiskarstrainer", "fiskarstrainerpassword");
 
         //Create user group for communication
         webDriver.navigate().refresh();
