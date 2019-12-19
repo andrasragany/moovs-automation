@@ -68,31 +68,59 @@ public class Basic_test_Student_Fiskars{
     }
 
     private static void opentraining (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_training_lib_, wait);
-        logger.info("Opened student training lib OK");
-        Thread.sleep(1100);
-        webDriver.navigate().refresh();
-        Thread.sleep(1100);
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_traininglib_completed, wait);
-        logger.info("Opened student completed trainings tab OK");
-        Thread.sleep(1100);
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_student_traininglib_completed_retryexam, wait);
-        logger.info("Student opened a finished training in player via retry exam button OK");
-        Thread.sleep(1100);
-        //switch selenium handle to player tab
-        Set<String> handles = webDriver.getWindowHandles();
-        String currentWindowHandle = webDriver.getWindowHandle();
-        for (String handle : handles) {
-            if (!currentWindowHandle.equals(handle)) {
-                webDriver.switchTo().window(handle);
+        //todo check dashboard if there is a card to start/continue training
+        //todo card xpath: "//*[@id="root"]/div/div/div[2]/div[2]/div[1]/div[2]"
+        // todo-> click it if YES -> Player Opens DONE
+        //todo -> click training lib menu if NO
+        //todo -> If there were no card at dashboard, means, that there is no new and in progress training -> go to completed and select one already finished
+        //todo retry exam opens player- DONE
+        //Boolean iscardpresent = false;
+        Thread.sleep(1000);
+        if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard_training_card_start, wait)) {
+            //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard_training_card_start, wait);
+            logger.info("Opened training card from dashboard OK");
+            Thread.sleep(1100);
+            //switch selenium handle to player tab
+            Set<String> handles = webDriver.getWindowHandles();
+            String currentWindowHandle = webDriver.getWindowHandle();
+            for (String handle : handles) {
+                if (!currentWindowHandle.equals(handle)) {
+                    webDriver.switchTo().window(handle);
+                }
             }
+
+            //save player tab handle for later use
+            String playerWindow = webDriver.getWindowHandle();
+
+            logger.info("Opened and switched to Player window OK");
+            Thread.sleep(2000);
+        } else {
+            faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_training_lib_, wait);
+            logger.info("Opened student training lib OK");
+            Thread.sleep(1100);
+            webDriver.navigate().refresh();
+            Thread.sleep(1100);
+            faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_traininglib_completed, wait);
+            logger.info("Opened student completed trainings tab OK");
+            Thread.sleep(1100);
+            faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_traininglib_completed_retryexam, wait);
+            logger.info("Student opened a finished training in player via retry exam button OK");
+            Thread.sleep(1100);
+            //switch selenium handle to player tab
+            Set<String> handles = webDriver.getWindowHandles();
+            String currentWindowHandle = webDriver.getWindowHandle();
+            for (String handle : handles) {
+                if (!currentWindowHandle.equals(handle)) {
+                    webDriver.switchTo().window(handle);
+                }
+            }
+
+            //save player tab handle for later use
+            String playerWindow = webDriver.getWindowHandle();
+
+            logger.info("Opened and switched to Player window OK");
+            Thread.sleep(2000);
         }
-
-        //save player tab handle for later use
-        String playerWindow = webDriver.getWindowHandle();
-
-        logger.info("Opened and switched to Player window OK");
-        Thread.sleep(2000);
     }
 
     private static boolean exam(WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
@@ -219,7 +247,7 @@ public class Basic_test_Student_Fiskars{
 
         String mainWindow = webDriver.getWindowHandle();
 
-       editprofile(webDriver, logger, wait);
+       //editprofile(webDriver, logger, wait);
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);

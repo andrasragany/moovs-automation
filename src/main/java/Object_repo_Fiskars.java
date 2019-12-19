@@ -257,7 +257,9 @@ public class Object_repo_Fiskars {
     //student dashboard
     static String selector_student_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
     //student dashboard training card "continue/start course"
+    //static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/a";
     static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/a";
+    static  String selector_student_dashboard_card = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]";
     //student training library
     static String selector_student_training_lib_ = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
     static String selector_student_traininglib_completed = "//*[@id=\"react-tabs-4\"]";
