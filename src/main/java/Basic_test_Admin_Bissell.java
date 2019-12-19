@@ -36,7 +36,7 @@ public class Basic_test_Admin_Bissell {
             logger.info("Logged in to test.bissell website OK");
         }
 
-        private static void gotourl(Logger logger, WebDriver webDriver, WebDriverWait wait, String url) throws MalformedURLException, InterruptedException {
+        static void gotourl(Logger logger, WebDriver webDriver, WebDriverWait wait, String url) throws MalformedURLException, InterruptedException {
             webDriver.manage().window().maximize();
             webDriver.navigate().to(new URL(url));
             Thread.sleep(100);
@@ -270,7 +270,7 @@ public class Basic_test_Admin_Bissell {
             gotourl(logger, webDriver, wait, "https://test.bissellexpert.com/login");
 
             //Login
-            login(logger, webDriver, wait, "admin", "adminpassword");
+            login(logger, webDriver, wait, "bisselladmin", "bisselladminpassword");
 
 
             navigatetoprofile(logger, webDriver, wait);

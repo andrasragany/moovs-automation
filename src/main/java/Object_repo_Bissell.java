@@ -272,8 +272,15 @@ public class Object_repo_Bissell {
         static String selector_Player_rewatch_training_button = "//*[@id=\"app\"]/div/div/div/div[2]/div/div[3]/div[2]/div[1]/button";
         static String selector_Player_select_true = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div/button[1]";
         static String selector_Player_next_question = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[2]/button";
-        static String selector_Player_training_explore_button = "//*[@id=\"scene_0\"]/div[2]/div/button";
-        static String selector_Player_training_next1_button = "//*[@id=\"app\"]/div/main/div[9]/div[1]/div/button";
-        static String selector_Player_training_next2_button = "//*[@id=\"app\"]/div/main/div[8]/div[1]/div/button";
-        static String Selector_Player_training_next3_button = "//*[@id=\"app\"]/div/main/div[21]/div[1]/div/button";
+        //static String selector_Player_training_explore_button = "//*[@id=\"scene_0\"]/div[2]/div/button";
+        static String selector_Player_training_explore_button = "//*[text()='Explore']";
+        //static String selector_player_next_training_button = "//*[@id=\"app\"]/div/main/div[9]/div[1]/div/button";
+        static String selector_player_next_training_button = "//*[text()='Next']";
+        static String selector_player_exam_true = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div/button[1]";
+        static String selector_player_exam_false = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div/button[2]";
+        static String selector_player_exam_next_question = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[2]/button";
+        static String selector_player_exam_counter = "//*[@id=\"app\"]/div/div/div/div[1]/h4/span";
+        static String selector_player_exam_type = "//*[@id=\"app\"]/div/div/div/div[1]/h3/span/strong";
+        static String selector_player_exam_check_answer_button = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[2]/button";
+
 }
