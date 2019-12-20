@@ -16,7 +16,7 @@ import java.util.logging.SimpleFormatter;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
-public class Basic_test_Student_Fiskars{
+public class Basic_test_Student_Bissell{
 
     private static String parseDate(LocalDateTime localDate) throws ParseException
     {
@@ -45,25 +45,25 @@ public class Basic_test_Student_Fiskars{
     }
 
     private static void editprofile (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_user_dropdown, wait);
         Thread.sleep(300);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_user_profile, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_user_profile, wait);
         Actions actions = new Actions(webDriver);
         actions.sendKeys(Keys.END).perform();
 
         //Edit profile, change preferred device to tablet, Save, Check
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_edit_profile_btn, wait);
         Thread.sleep(250);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_smarttotablet, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_save_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_profile_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_pref_dev_smarttotablet, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_edit_profile_save_btn, wait);
         actions.sendKeys(Keys.END).perform();
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_edit_profile_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_edit_profile_btn, wait);
         //Change tablet to smartphone
         Thread.sleep(250);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_profile_preferred_device_dropdown, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_pref_dev_tablettosmart, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_profile_edit_Save, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_profile_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_pref_dev_tablettosmart, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_profile_edit_Save, wait);
         Thread.sleep(250);
     }
 
@@ -76,8 +76,8 @@ public class Basic_test_Student_Fiskars{
         //todo retry exam opens player- DONE
         //Boolean iscardpresent = false;
         Thread.sleep(1000);
-        if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard_training_card_start, wait)) {
-            //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard_training_card_start, wait);
+        if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_dashboard_training_card_start, wait)) {
+            //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_dashboard_training_card_start, wait);
             logger.info("Opened training card from dashboard OK");
             Thread.sleep(1100);
             //switch selenium handle to player tab
@@ -95,15 +95,15 @@ public class Basic_test_Student_Fiskars{
             logger.info("Opened and switched to Player window OK");
             Thread.sleep(2000);
         } else {
-            faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_training_lib_, wait);
+            faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_training_lib_, wait);
             logger.info("Opened student training lib OK");
             Thread.sleep(1100);
             webDriver.navigate().refresh();
             Thread.sleep(1100);
-            faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_traininglib_completed, wait);
+            faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_traininglib_completed, wait);
             logger.info("Opened student completed trainings tab OK");
             Thread.sleep(1100);
-            faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_traininglib_completed_retryexam, wait);
+            faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_traininglib_completed_retryexam, wait);
             logger.info("Student opened a finished training in player via retry exam button OK");
             Thread.sleep(1100);
             //switch selenium handle to player tab
@@ -125,9 +125,9 @@ public class Basic_test_Student_Fiskars{
 
     private static boolean exam(WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
         try {
-            while ((webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_counter))).isDisplayed()) {
-                logger.info((webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_type))).getText());
-                switch (webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_player_exam_type)).getText()) {
+            while ((webDriver.findElement(By.xpath(Object_repo_Bissell.selector_player_exam_counter))).isDisplayed()) {
+                logger.info((webDriver.findElement(By.xpath(Object_repo_Bissell.selector_player_exam_type))).getText());
+                switch (webDriver.findElement(By.xpath(Object_repo_Bissell.selector_player_exam_type)).getText()) {
                     case "Match":
 
                     case "Select":
@@ -136,15 +136,15 @@ public class Basic_test_Student_Fiskars{
                         // Select checkboxes
                         // checkboxes
                         // Select dropdowns
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
+                        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_player_exam_check_answer_button, wait);
+                        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_player_exam_next_question, wait);
                         break;
 
                     case "Is it true":
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_false, wait);
+                        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_player_exam_false, wait);
                         logger.info("True in exam pressed!");
                         Thread.sleep(500);
-                        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
+                        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_player_exam_next_question, wait);
                         break;
 
                     default:
@@ -161,10 +161,10 @@ public class Basic_test_Student_Fiskars{
     }
 
     public static boolean player (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_player_open_contents, wait);
+        faszaklikk(webDriver, logger,Object_repo_Bissell.selector_player_open_contents, wait);
         logger.info("Opened Player window contents tab OK");
         //select first training from contents
-        faszaklikk(webDriver, logger,Object_repo_Fiskars.selector_player_contents_first_item, wait);
+        faszaklikk(webDriver, logger,Object_repo_Bissell.selector_player_contents_first_item, wait);
         logger.info("Clicked first training from contents OK");
         Thread.sleep(1100);
         Boolean temp = true;
@@ -172,8 +172,8 @@ public class Basic_test_Student_Fiskars{
             try {
                 //First training
                 Thread.sleep(2000);
-                //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait);
-                if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait)) temp = true;
+                //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_Player_training_explore_button, wait);
+                if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_Player_training_explore_button, wait)) temp = true;
                 else temp = false;
                 logger.info("Clicked training's Explore button in Player OK");
                 Thread.sleep(2000);
@@ -190,7 +190,7 @@ public class Basic_test_Student_Fiskars{
                 //actions.moveToElement(lastElement);
                 //Thread.sleep(2000);
                 //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-                faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_next_training_button, wait);
+                faszaklikk(webDriver, logger, Object_repo_Bissell.selector_player_next_training_button, wait);
                 logger.info("Clicked on Next training in PLayer window");
                 Thread.sleep(1100);
             } catch (org.openqa.selenium.TimeoutException e) {
@@ -239,18 +239,18 @@ public class Basic_test_Student_Fiskars{
 
         webDriver.manage().window().maximize();
         //Open page
-        Basic_test_Admin_Fiskars.gotourl(logger,webDriver,wait,"https://test.fiskarsacademy.com/login");
+        Basic_test_Admin_Bissell.gotourl(logger,webDriver,wait,"https://test.bissellexpert.com/login");
         //Login
-        Basic_test_Admin_Fiskars.login(logger, webDriver, wait, "fiskarsstudent", "fiskarsstudentpassword");
+        Basic_test_Admin_Bissell.login(logger, webDriver, wait, "bissellstudent", "bissellstudentpassword");
 
         Thread.sleep(1100);
 
         String mainWindow = webDriver.getWindowHandle();
 
-       //editprofile(webDriver, logger, wait);
+        //editprofile(webDriver, logger, wait);
 
         //go to dashboard
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_dashboard, wait);
         Thread.sleep(1100);
 
         //start training from dashboard, if not, start training from training library
