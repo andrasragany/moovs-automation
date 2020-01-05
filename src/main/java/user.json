@@ -8,11 +8,19 @@
     "fiskarsstudent" : "pohc-student@quince.hu",
     "fiskarsstudentpassword" : "FisStuHU19!",
     "bisselladmin" : "pohc-admin@quince.hu",
-    "bisselladminpassword" : "BisAdmHU19!",
+    "_bisselladminpassword" : "BisAdmHU19!",
     "bissellmanager" : "pohc-manager@quince.hu",
-    "bissellmanagerpassword" : "BisManHU19!",
+    "_bissellmanagerpassword" : "BisManHU19!",
     "bisselltrainer" : "pohc-trainer@quince.hu",
-    "bisselltrainerpassword" : "BisTraHU19!",
+    "_bisselltrainerpassword" : "BisTraHU19!",
     "bissellstudent" : "pohc-student@quince.hu",
-    "bissellstudentpassword" : "BisStuHU19!"
+    "_bissellstudentpassword" : "BisStuHU19!",
+    "admin" : "pohc-admin@quince.hu",
+    "bisselladminpassword" : "3-4pNV-9zJfhGmSs",
+    "manager" : "pohc-manager@quince.hu",
+    "bissellmanagerpassword" : "wV9DyeRKP*PNq^c#",
+    "trainer" : "pohc-trainer@quince.hu",
+    "bisselltrainerpassword" : "6LCKXr8&%ps-7B&V",
+    "student" : "pohc-student@quince.hu",
+    "bissellstudentpassword" : "nNSMAM282fXf#P*_"
 }

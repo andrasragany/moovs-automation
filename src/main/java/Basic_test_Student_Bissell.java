@@ -26,23 +26,32 @@ public class Basic_test_Student_Bissell{
 
     private static boolean faszaklikk(WebDriver webDriver, Logger logger, String webElement, WebDriverWait wait) throws InterruptedException, TimeoutException {
         boolean bul = true;
-        int  counter = 0;
+        int counter = 0;
 
         while ((bul) && (counter < 5)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
-                counter++;
-            } catch (Exception e) {
-                logger.info(e.toString());
-                Thread.sleep(1000);
-                counter++;
+            } catch (Exception f) {
+                try {
+                    wait.until(elementToBeClickable(By.id(String.valueOf(webElement)))).click();
+                    bul = false;
+                } catch (Exception e) {
+                    logger.info("Faszaklikk exception NOT OK");
+                    Thread.sleep(1000);
+                    counter++;
+                }
+            }
+        }
+            if (!bul) {
+                logger.info(webElement + "faszaklikkelt lett");
+                return true;
+            } else {
+                logger.info(webElement + "NOT OK");
                 return false;
             }
         }
-        logger.info(webElement + "faszaklikkelt lett");
-        return true;
-    }
+
 
     private static void editprofile (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_user_dropdown, wait);
@@ -173,9 +182,11 @@ public class Basic_test_Student_Bissell{
                 //First training
                 Thread.sleep(2000);
                 //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_Player_training_explore_button, wait);
-                if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_Player_training_explore_button, wait)) temp = true;
+                if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_Player_training_explore_button, wait)) {
+                    temp = true;
+                    logger.info("Clicked training's Explore button in Player OK");
+                }
                 else temp = false;
-                logger.info("Clicked training's Explore button in Player OK");
                 Thread.sleep(2000);
                 //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
                 Actions actions = new Actions(webDriver);
@@ -233,7 +244,7 @@ public class Basic_test_Student_Bissell{
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        String UserJsonPath = "C:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
@@ -250,12 +261,45 @@ public class Basic_test_Student_Bissell{
         //editprofile(webDriver, logger, wait);
 
         //go to dashboard
-        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_dashboard, wait);
-        Thread.sleep(1100);
+        //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_dashboard, wait);
+        //Thread.sleep(1100);
 
         //start training from dashboard, if not, start training from training library
-        opentraining(webDriver, logger, wait);
+        //opentraining(webDriver, logger, wait);
+        if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_training_lib_, wait))
+            logger.info("Opened student training lib OK");
+        else {
+            logger.info("Student training lib NOT OK");
+            webDriver.quit();
+        }
+        Thread.sleep(1100);
+        webDriver.navigate().refresh();
+        Thread.sleep(1100);
+        if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_traininglib_completed, wait))
+             logger.info("Opened student completed trainings tab OK");
+            else {
+                logger.info("Completed trainings tab NOT OK");
+                webDriver.quit();
+         }
+        //webDriver.findElement(By.id("react-tabs-4")).click();
+        Thread.sleep(1100);
+        faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_traininglib_completed_retryexam, wait);
+        logger.info("Student opened a finished training in player via retry exam button OK");
+        Thread.sleep(1100);
+        //switch selenium handle to player tab
+        Set<String> handles = webDriver.getWindowHandles();
+        String currentWindowHandle = webDriver.getWindowHandle();
+        for (String handle : handles) {
+            if (!currentWindowHandle.equals(handle)) {
+                webDriver.switchTo().window(handle);
+            }
+        }
 
+        //save player tab handle for later use
+        String playerWindow = webDriver.getWindowHandle();
+
+        logger.info("Opened and switched to Player window OK");
+        Thread.sleep(2000);
         player(webDriver, logger, wait);
 
         exam(webDriver, logger, wait);

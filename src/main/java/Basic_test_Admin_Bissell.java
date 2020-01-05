@@ -20,19 +20,49 @@ import java.util.logging.SimpleFormatter;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class Basic_test_Admin_Bissell {
-        private static String parseDate(LocalDateTime localDate) throws ParseException {
+
+    private static boolean faszaklikk(WebDriver webDriver, Logger logger, String webElement, WebDriverWait wait) throws InterruptedException, TimeoutException {
+        boolean bul = true;
+        int counter = 0;
+
+        while ((bul) && (counter < 5)) {
+            try {
+                wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
+                bul = false;
+            } catch (Exception f) {
+                try {
+                    wait.until(elementToBeClickable(By.id(String.valueOf(webElement)))).click();
+                    bul = false;
+                } catch (Exception e) {
+                    logger.info("Faszaklikk exception NOT OK");
+                    Thread.sleep(1000);
+                    counter++;
+                }
+            }
+        }
+        if (!bul) {
+            logger.info(webElement + "faszaklikkelt lett");
+            return true;
+        } else {
+            logger.info(webElement + "NOT OK");
+            return false;
+        }
+    }
+
+    private static String parseDate(LocalDateTime localDate) throws ParseException {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd__HH_mm_ss");
             return localDate.format(formatter);
         }
 
         public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-            String UserJsonPath = "C:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+            String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
             Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
             JSONObject jo = (JSONObject) obj;
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Bissell.selector_user_email))).sendKeys((String) jo.get(user));
             webDriver.findElement(By.xpath(Object_repo_Bissell.selector_user_password)).sendKeys((String) jo.get(userpasswd));
+            Thread.sleep(1000);
             wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_login_button))).click();
-            Thread.sleep(100);
+            Thread.sleep(1000);
             logger.info("Logged in to test.bissell website OK");
         }
 
@@ -52,7 +82,7 @@ public class Basic_test_Admin_Bissell {
             logger.info("Navigated to user profile page OK");
         }
 
-        private static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
+        static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
             Thread.sleep(100);
             wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_admin_users))).click();
             webDriver.navigate().refresh();
@@ -62,14 +92,14 @@ public class Basic_test_Admin_Bissell {
             logger.info("Navigated to user groups page OK");
         }
 
-        static String createstudentusergroup(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException, ParseException {
+        static String createstudentusergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
             Thread.sleep(100);
             wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_create_user_group_btn))).click();
             Thread.sleep(100);
-            String sendkey_testgroup = ("Aut QS test group " + parseDate(LocalDateTime.now()));
+            String sendkey_testgroup = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
             wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_name))).sendKeys(sendkey_testgroup);
             wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_description))).sendKeys(sendkey_testgroup);
-            wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_user_search))).sendKeys("Quince Student");
+            wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_user_search))).sendKeys(user);
             Thread.sleep(100);
             wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_user_select_first))).click();
             Thread.sleep(100);
@@ -154,7 +184,7 @@ public class Basic_test_Admin_Bissell {
             logger.info("Deleted communication OK");
         }
 
-        private static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
+        static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
             Thread.sleep(100);
             wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_create_communication_button))).click();
             Thread.sleep(100);
@@ -303,7 +333,7 @@ public class Basic_test_Admin_Bissell {
             navigatetousergroups(logger, webDriver, wait);
             Thread.sleep(200);
 
-            String userGroupName = createstudentusergroup(logger, webDriver, wait);
+            String userGroupName = createstudentusergroup(logger, webDriver, wait, "Quince Student");
 
             navigatetocommunication(logger, webDriver, wait);
             Thread.sleep(200);

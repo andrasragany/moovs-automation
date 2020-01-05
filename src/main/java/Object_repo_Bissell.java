@@ -53,7 +53,7 @@ public class Object_repo_Bissell {
         //save translate
         static String selector_admin_translate_changed_save = "//*[@id=\"react-tabs-5\"]/form/div[2]/div[1]/button[1]";
         //admin communication
-        static String selector_admin_communication = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[7]/a";
+        static String selector_admin_communication = "//*[text()='Communication']";
         //create communication
         static String selector_create_communication_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
         //communication add title and description, news type checkbox, publish now radiobtn, save btn
@@ -74,7 +74,7 @@ public class Object_repo_Bissell {
         static String selector_comm_action_delete_confirm = "/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]";
         static String selector_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
         //admin users
-        static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[8]/a";
+        static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[6]/a";
         // #root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(8) > a
         static String selector_admin_user_groups = "//*[@id=\"react-tabs-2\"]";
         static String selector_create_user_group_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
@@ -148,7 +148,8 @@ public class Object_repo_Bissell {
         //trainer goals
         static String selector_trainer_goals = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
         //trainer learning path
-        static String selector_trainer_learning_path = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
+        //static String selector_trainer_learning_path = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[2]/a";
+        static String selector_trainer_learning_path = "//*[text()='Learning paths']";
         //trainer create learning path button
         static String selector_trainer_create_learning_path_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/a";
         //add LP name
@@ -177,7 +178,8 @@ public class Object_repo_Bissell {
         static String selector_trainer_LP_save_LP_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div/button[1]";
 
         //trainer training library trainer view
-        static String selector_trainer_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]/a";
+        //static String selector_trainer_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[3]/a";
+        static String selector_trainer_training_lib_trainer = "//*[text()='Training library']";
         //create training button
         static String selector_trainer_create_training_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
         //add name for training
@@ -218,8 +220,8 @@ public class Object_repo_Bissell {
         static String selector_trainer_comm_action_delete_confirm = "/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]";
         static String selector_trainer_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
         //trainer users
-        static String selector_trainer_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]/a";
-        static String selector_trainer_user_groups = "//*[@id=\"react-tabs-2\"]";
+        static String selector_trainer_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[6]/a";
+        static String selector_trainer_user_groups = "//*[text()='User groups']";
         static String selector_trainer_user_create_usergroup_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
         static String selector_trainer_usergroup_add_name = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div/input";
         static String selector_trainer_usergroup_add_description = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[3]/div[2]/div/textarea";
@@ -237,9 +239,9 @@ public class Object_repo_Bissell {
         //student menu system
 
         //student user dropdown
-        static String selector_student_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/button";
+        static String selector_student_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/button";
         //student profile
-        static String selector_student_user_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[1]";
+        static String selector_student_user_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/div/a[1]";
         //student logout
         static String selector_student_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[2]";
         //student edit profile button
@@ -255,10 +257,10 @@ public class Object_repo_Bissell {
         //student dashboard
         static String selector_student_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
         //student dashboard training card "continue/start course"
-        static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/a";
+        static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[2]/a";
         //student training library
-        static String selector_student_training_lib_ = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
-        static String selector_student_traininglib_completed = "//*[@id=\"react-tabs-4\"]";
+        static String selector_student_training_lib_ = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[2]/a";
+        static String selector_student_traininglib_completed = "react-tabs-4";
         static String selector_student_traininglib_completed_retryexam = "//*[@id=\"react-tabs-5\"]/div/div[1]/div/div[2]/div/a/span";
 
         //student glossary
