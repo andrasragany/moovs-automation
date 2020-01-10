@@ -21,7 +21,7 @@ import java.util.logging.SimpleFormatter;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 
-public class Basic_test_Admin_Fiskars {
+public class Basic_test_Admin_Philips {
 
     private static String parseDate(LocalDateTime localDate) throws ParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd__HH_mm_ss");
@@ -29,57 +29,57 @@ public class Basic_test_Admin_Fiskars {
     }
 
     public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_user_email))).sendKeys((String) jo.get(user));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_email))).sendKeys((String) jo.get(user));
         Thread.sleep(100);
-        webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_user_password)).sendKeys((String) jo.get(userpasswd));
+        webDriver.findElement(By.xpath(Object_repo_Philips.selector_user_password)).sendKeys((String) jo.get(userpasswd));
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_login_button))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_login_button))).click();
         Thread.sleep(100);
-        logger.info("Logged in to test.fiskars website OK");
+        logger.info("Logged in to test.Philips website OK");
     }
 
     static void gotourl(Logger logger, WebDriver webDriver, WebDriverWait wait, String url) throws MalformedURLException, InterruptedException {
         webDriver.manage().window().maximize();
-        webDriver.navigate().to(new URL("https://test.fiskarsacademy.com/login"));
+        webDriver.navigate().to(new URL("https://test.philipsohcacademy.com/login"));
         Thread.sleep(100);
-        logger.info("Opened test.fiskars website OK");
+        logger.info("Opened test.Philips website OK");
     }
 
     private static void navigatetoprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_user_dropdown))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_user_dropdown))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_profile))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_profile))).click();
         Thread.sleep(100);
         logger.info("Navigated to user profile page OK");
     }
 
     private static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_users))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_users))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_user_groups))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_user_groups))).click();
         Thread.sleep(100);
         logger.info("Navigated to user groups page OK");
     }
 
     static String createstudentusergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_create_user_group_btn))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_create_user_group_btn))).click();
         Thread.sleep(100);
         String sendkey_testgroup = ("Aut QS test group " + parseDate(LocalDateTime.now()));
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_name))).sendKeys(sendkey_testgroup);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_description))).sendKeys(sendkey_testgroup);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_user_search))).sendKeys(user);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_name))).sendKeys(sendkey_testgroup);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_description))).sendKeys(sendkey_testgroup);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_user_search))).sendKeys(user);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_user_select_first))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_user_select_first))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_user))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_user))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_save))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_save))).click();
         Thread.sleep(100);
         webDriver.navigate().refresh();
         Thread.sleep(100);
@@ -91,39 +91,39 @@ public class Basic_test_Admin_Fiskars {
     private static void editprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_profile_edit_button))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_profile_edit_button))).click();
         Thread.sleep(100);
         logger.info("Opened user profile page for editing OK");
     }
 
     private static void changepreferreddevicetotablet(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_preferred_device_dropdown))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_preferred_device_dropdown))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_preferred_device_totablet))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_preferred_device_totablet))).click();
         Thread.sleep(100);
         logger.info("Changed user's preferred device to tablet OK");
     }
 
     private static void changepreferreddevicetosmartphone(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_preferred_device_dropdown))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_preferred_device_dropdown))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_preferred_device_tosmatphone))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_preferred_device_tosmatphone))).click();
         Thread.sleep(100);
         logger.info("Changed user's preferred device to smartphone OK");
     }
 
     private static void saveprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_profile_edit_Save))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_profile_edit_Save))).click();
         Thread.sleep(100);
         logger.info("Saved user profile OK");
     }
 
     static void navigatetocommunication(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_communication))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_communication))).click();
         Thread.sleep(100);
         logger.info("Navigated to communication page OK");
     }
@@ -131,13 +131,13 @@ public class Basic_test_Admin_Fiskars {
     private static void deletecommunication(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         navigatetocommunication(logger, webDriver, wait);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_input))).sendKeys("Aut QS test group");
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_input))).sendKeys("Aut QS test group");
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_input_searchbtn))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_input_searchbtn))).click();
         Thread.sleep(200);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_result_sort_dropdown))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_result_sort_dropdown))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_result_list_sort_descending_date))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_result_list_sort_descending_date))).click();
         Thread.sleep(200);
         for (int j=1; j<6; j++){
             String tempxpath = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[2]/div[" + j + "]/div/div[2]/div/div/button";
@@ -160,24 +160,24 @@ public class Basic_test_Admin_Fiskars {
 
     private static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_create_communication_button))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_create_communication_button))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_add_title))).sendKeys(groupname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_add_title))).sendKeys(groupname);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_add_description))).sendKeys(groupname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_add_description))).sendKeys(groupname);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_check_news))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_check_news))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_group))).sendKeys(groupname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_group))).sendKeys(groupname);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_select_first_group))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_select_first_group))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_add_group_btn))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_add_group_btn))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_check_now))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_check_now))).click();
         Thread.sleep(100);
         ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_save))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_save))).click();
         //click comm on dashboard
         webDriver.navigate().refresh();
         Thread.sleep(100);
@@ -188,44 +188,44 @@ public class Basic_test_Admin_Fiskars {
         wait.until(elementToBeClickable(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[1]/div/span"))).click();
         Thread.sleep(1000);
         if (webDriver.findElement((By.xpath("/html/body/div[2]/div/div/div/div[1]/h1"))).getText().contains(communicationname)) {
-            wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.Selector_admin_dashboard_closecomm_modal))).click();
+            wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.Selector_admin_dashboard_closecomm_modal))).click();
             logger.info("Communication was published OK");
             return true;
         }
         else{
-            wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.Selector_admin_dashboard_closecomm_modal))).click();
+            wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.Selector_admin_dashboard_closecomm_modal))).click();
             logger.info("Communication was not published NOT OK");
             return false;
         }
     }
 
     private static void navigatetomodules(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_modules))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_modules))).click();
         Thread.sleep(200);
         logger.info("Navigated to modules page OK");
     }
 
     private static void navigate_to_translate (Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_modules_first_action_dropdown))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_modules_first_action_dropdown))).click();
         Thread.sleep(200);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_modules_first_dropdown_translate))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_modules_first_dropdown_translate))).click();
         Thread.sleep(200);
         logger.info("Navigated to module translation page OK");
     }
 
     private static void navigatetomoduledetails (Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         webDriver.navigate().refresh();
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_module_translate_module_details))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_module_translate_module_details))).click();
         Thread.sleep(200);
         logger.info("In module translation page, navigated to module details tab OK");
     }
 
     private static void change_first_translation_and_save (Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_translate_moduledetails_first_input ))).sendKeys("Auto_translate_test");
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_translate_moduledetails_first_input ))).sendKeys("Auto_translate_test");
         Thread.sleep(200);
         ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_translate_changed_save ))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_translate_changed_save ))).click();
         Thread.sleep(200);
         logger.info("Changed first item translation OK");
     }
@@ -233,28 +233,28 @@ public class Basic_test_Admin_Fiskars {
     private static void deletecreatedcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String communicationname) throws  InterruptedException {
         navigatetocommunication(logger, webDriver, wait);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_input))).sendKeys(communicationname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_input))).sendKeys(communicationname);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_input_searchbtn))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_input_searchbtn))).click();
         Thread.sleep(200);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_trainer_comm_found_list_first_action_dropdown))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_trainer_comm_found_list_first_action_dropdown))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_found_list_first_action_deletebtn))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_found_list_first_action_deletebtn))).click();
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_action_delete_confirm))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_action_delete_confirm))).click();
         logger.info("Deleted created communication OK");
     }
 
     private static void navigatetocontacts(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_contact))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_contact))).click();
         Thread.sleep(100);
         logger.info("Navigated to contacts OK");
     }
 
     private static void navigatetodashboard(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_dashboard))).click();
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_dashboard))).click();
         Thread.sleep(100);
         logger.info("Navigated to dashboard OK");
     }
