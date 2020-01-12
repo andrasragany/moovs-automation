@@ -14,7 +14,8 @@ public class Object_repo_Fiskars {
 
     //admin dashboard
     static String selector_admin_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
-    static String Selector_admin_dashboard_opencomm_modal = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div/span";
+    static String Selector_admin_dashboard_comm_list_first_item ="//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[1]/div/span";
+    static String Selector_admin_dashboard_comm_list_first_item_title ="/html/body/div[2]/div/div/div/div[1]/h1";
     static String Selector_admin_dashboard_closecomm_modal = "/html/body/div[2]/div/div/div/div[1]/button/img";
     //admin_user_dropdown
     static String selector_admin_user_dropdown = "//button[@class='Button__button___3oG9T Button__dropdown___3EdAW Button__menuDropdown___2A-kk']";
@@ -77,7 +78,6 @@ public class Object_repo_Fiskars {
     static String selector_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
     //admin users
     static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[8]/a";
-    // #root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(8) > a
     static String selector_admin_user_groups = "//*[@id=\"react-tabs-2\"]";
     static String selector_create_user_group_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
     static String selector_usergroup_add_name = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div/input";

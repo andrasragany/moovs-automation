@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Bissell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Bissell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Fiskars.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Fiskars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Bissell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Object_repo_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Object_repo_Bissell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Object_repo_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Object_repo_Fiskars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Object_repo_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Object_repo_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,26 +106,10 @@
     <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Basic_test_Trainer_Bissell">
+  <component name="RunManager" selected="Application.Basic_test_Student_Fiskars (1)">
     <configuration name="Basic_test_Admin" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="Basic_test_Admin" />
-      <module name="platformtest.main" />
-      <option name="VM_PARAMETERS" value="c:\chromedriver\chromedriver.exe" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Basic_test_Admin_Bissell" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Basic_test_Admin_Bissell" />
-      <module name="platformtest.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Basic_test_Admin_Fiskars" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Basic_test_Admin_Fiskars" />
       <module name="platformtest.main" />
       <option name="VM_PARAMETERS" value="c:\chromedriver\chromedriver.exe" />
       <method v="2">
@@ -125,8 +124,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Basic_test_Student_Bissell" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Basic_test_Student_Bissell" />
+    <configuration name="Basic_test_Admin_Philips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Admin_Philips" />
+      <module name="platformtest.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Basic_test_Student_Fiskars (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Student_Fiskars" />
+      <module name="platformtest.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Basic_test_Student_Philips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Student_Philips" />
       <module name="platformtest.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,29 +152,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Basic_test_Trainer_Fiskars" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Basic_test_Trainer_Fiskars" />
+    <configuration name="Basic_test_Trainer_Philips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Trainer_Philips" />
       <module name="platformtest.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Basic_test_Admin_Fiskars" />
       <item itemvalue="Application.Basic_test_Admin" />
       <item itemvalue="Application.Basic_test_Student_Fiskars" />
-      <item itemvalue="Application.Basic_test_Admin_Fiskars" />
-      <item itemvalue="Application.Basic_test_Student_Bissell" />
-      <item itemvalue="Application.Basic_test_Admin_Bissell" />
-      <item itemvalue="Application.Basic_test_Trainer_Fiskars" />
       <item itemvalue="Application.Basic_test_Trainer_Bissell" />
+      <item itemvalue="Application.Basic_test_Admin_Philips" />
+      <item itemvalue="Application.Basic_test_Trainer_Philips" />
+      <item itemvalue="Application.Basic_test_Student_Philips" />
+      <item itemvalue="Application.Basic_test_Student_Fiskars (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Basic_test_Student_Fiskars (1)" />
+        <item itemvalue="Application.Basic_test_Student_Philips" />
+        <item itemvalue="Application.Basic_test_Trainer_Philips" />
+        <item itemvalue="Application.Basic_test_Admin_Philips" />
         <item itemvalue="Application.Basic_test_Trainer_Bissell" />
-        <item itemvalue="Application.Basic_test_Trainer_Fiskars" />
-        <item itemvalue="Application.Basic_test_Admin_Bissell" />
-        <item itemvalue="Application.Basic_test_Student_Bissell" />
-        <item itemvalue="Application.Basic_test_Admin_Fiskars" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578227891991</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="elso">
+      <created>1578651636675</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578651636675</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,15 +297,19 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400@0.0.2560.1400" timestamp="1576449890367" />
-    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1578227890626">
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1578871644350">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576422398858" />
-    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1578227890626" />
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1578871644350" />
     <state x="898" y="297" key="DetectedRootsChooserDialog" timestamp="1576447992436">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="898" y="297" key="DetectedRootsChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576447992436" />
+    <state x="413" y="47" key="DiffContextDialog" timestamp="1578654266009">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="413" y="47" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578654266009" />
     <state x="832" y="379" key="EnvironmentVariablesDialog" timestamp="1576448989654">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -306,26 +331,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576416800785" />
-    <state width="1136" height="264" key="GridCell.Tab.0.bottom" timestamp="1577557152925">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2221" height="263" key="GridCell.Tab.0.bottom" timestamp="1578871644401">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1136" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577557152925" />
-    <state width="2276" height="489" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="1136" height="264" key="GridCell.Tab.0.center" timestamp="1577557152925">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2221" height="263" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1578871644401" />
+    <state width="2221" height="263" key="GridCell.Tab.0.center" timestamp="1578871644401">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1136" height="264" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577557152925" />
-    <state width="2276" height="489" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="1136" height="264" key="GridCell.Tab.0.left" timestamp="1577557152925">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2221" height="263" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1578871644401" />
+    <state width="2221" height="263" key="GridCell.Tab.0.left" timestamp="1578871644401">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1136" height="264" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577557152925" />
-    <state width="2276" height="489" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="1136" height="264" key="GridCell.Tab.0.right" timestamp="1577557152925">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2221" height="263" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1578871644401" />
+    <state width="2221" height="263" key="GridCell.Tab.0.right" timestamp="1578871644401">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1136" height="264" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577557152925" />
-    <state width="2276" height="489" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
+    <state width="2221" height="263" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1578871644401" />
     <state width="1370" height="344" key="GridCell.Tab.1.bottom" timestamp="1577485205825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -346,58 +371,42 @@
     </state>
     <state width="1370" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577485205824" />
     <state width="2276" height="489" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339107" />
-    <state x="272" y="543" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1576833466198">
-      <screen x="0" y="0" width="3072" height="1688" />
+    <state x="227" y="450" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1578654293401">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="227" y="450" key="MultipleFileMergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578654293401" />
     <state x="272" y="543" width="1069" height="565" key="MultipleFileMergeDialog/0.0.3072.1688@0.0.3072.1688" timestamp="1576833466198" />
+    <state x="1224" y="331" key="RollbackChangesDialog" timestamp="1578654267864">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1224" y="331" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578654267864" />
     <state x="587" y="127" key="SettingsEditor" timestamp="1577007255116">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1576424820038" />
     <state x="587" y="127" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1577007255116" />
-    <state x="736" y="339" key="Vcs.Push.Dialog.v2" timestamp="1578227896686">
+    <state x="736" y="339" key="Vcs.Push.Dialog.v2" timestamp="1578871608441">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576426888241" />
-    <state x="736" y="339" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1578227896686" />
+    <state x="736" y="339" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1578871608441" />
     <state x="805" y="441" key="com.intellij.ide.util.TipDialog" timestamp="1576444597458">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="805" y="441" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576444597458" />
-    <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578653999688">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578654284716">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578653999688" />
-    <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576732102126" />
+    <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1578654284716" />
     <state x="1091" y="643" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3072.1688@0.0.3072.1688" timestamp="1576833449556" />
+    <state x="1134" y="412" key="git4idea.merge.GitPullDialog" timestamp="1578654183878">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1134" y="412" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578654183878" />
     <state x="754" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1576449465122">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="754" y="271" width="670" height="676" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1576449465122" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java</url>
-          <line>20</line>
-          <properties class="Basic_test_Trainer_Bissell" method="faszaklikk">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/platformtest$C__Users_randr_IdeaProjects_platformtest_build_gradle.ic" NAME="$PROJECT_DIR$/build.gradle Coverage Results" MODIFIED="1576447376741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
