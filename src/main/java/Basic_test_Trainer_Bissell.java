@@ -22,7 +22,7 @@ public class Basic_test_Trainer_Bissell{
         boolean bul = true;
         int counter = 0;
 
-        while ((bul) && (counter < 5)) {
+        while ((bul) && (counter < 3)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
@@ -42,6 +42,7 @@ public class Basic_test_Trainer_Bissell{
             return true;
         } else {
             logger.info(webElement + "NOT OK");
+            webDriver.quit();
             return false;
         }
     }
@@ -120,7 +121,7 @@ public class Basic_test_Trainer_Bissell{
 
         webDriver.manage().window().maximize();
         //Open page
-        Basic_test_Admin_Bissell.gotourl(logger,webDriver,wait,"https://test.bissellexpert.com/login");
+        Basic_test_Admin_Bissell.gotourl(logger,webDriver,"https://test.bissellexpert.com/login");
         Thread.sleep(1000);
         //Login
         Basic_test_Admin_Bissell.login(logger, webDriver, wait, "bisselltrainer", "bisselltrainerpassword");
@@ -130,17 +131,17 @@ public class Basic_test_Trainer_Bissell{
         //deletecomm(webDriver,  logger, wait, tempString);
         //todo create trainer group for quince trainer for comm
         //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_users, wait);
-        Basic_test_Admin_Bissell.navigatetousergroups(logger, webDriver, wait);
+        Basic_test_Admin_Bissell.navigatetousergroups(logger, webDriver, wait, "trainer");
         String userGroupName1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
-        Basic_test_Admin_Bissell.navigatetousergroups(logger, webDriver, wait);
+        Basic_test_Admin_Bissell.navigatetousergroups(logger, webDriver, wait, "trainer");
         String userGroupName2 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
-        Basic_test_Admin_Bissell.navigatetocommunication(logger, webDriver, wait);
+        Basic_test_Admin_Bissell.navigatetocommunication(logger, webDriver, wait, "trainer");
         Basic_test_Admin_Bissell.createcommunication(logger, webDriver, wait, userGroupName1);
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
 

@@ -1,6 +1,6 @@
 
 
-public class Object_repo_Fiskars {
+public class Object_repo_Philips {
 
     //input user email
     static String selector_user_email = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/form/div[1]/div/input";
@@ -13,14 +13,13 @@ public class Object_repo_Fiskars {
     //admin menu system
 
     //admin dashboard
-    static String selector_admin_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
-    static String Selector_admin_dashboard_comm_list_first_item ="//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[1]/div/span";
-    static String Selector_admin_dashboard_comm_list_first_item_title ="/html/body/div[2]/div/div/div/div[1]/h1";
+    static String selector_admin_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
+    static String Selector_admin_dashboard_opencomm_modal = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div/span";
     static String Selector_admin_dashboard_closecomm_modal = "/html/body/div[2]/div/div/div/div[1]/button/img";
-    //admin_user_dropdown
-    static String selector_admin_user_dropdown = "//button[@class='Button__button___3oG9T Button__dropdown___3EdAW Button__menuDropdown___2A-kk']";
+    static String Selector_admin_dashboard_comm_list_first_item = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[1]/div/span";
+    static String Selector_admin_dashboard_comm_list_first_item_title = "/html/body/div[2]/div/div/div/div[1]/h1";
     //admin profile
-    static String selector_admin_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[1]";
+    static String selector_admin_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
     //admin profile edit
     static String selector_admin_profile_edit_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[5]/div/a";
     //admin profile preferred device
@@ -34,15 +33,15 @@ public class Object_repo_Fiskars {
     //Preferred deice text
     static String selector_preferred_device = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div[2]";
     //admin logout
-    static String selector_admin_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[2]";
+    static String selector_admin_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
     //admin goals
     static String selector_admin_goals = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
     //admin learning path
     static String selector_admin_learning_path = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]/a";
     //admin training library student view
-    static String selector_admin_training_lib_student = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]/a";
+    static String selector_admin_training_lib_student = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]";
     //admin training library trainer view
-    static String selector_admin_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]/a";
+    static String selector_admin_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]";
     //admin modules
     static String selector_admin_modules = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]/a";
     // admin modules Action dropdown
@@ -56,7 +55,7 @@ public class Object_repo_Fiskars {
     //save translate
     static String selector_admin_translate_changed_save = "//*[@id=\"react-tabs-5\"]/form/div[2]/div[1]/button[1]";
     //admin communication
-    static String selector_admin_communication = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[7]";
+    static String selector_admin_communication = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]";
     //create communication
     static String selector_create_communication_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
     //communication add title and description, news type checkbox, publish now radiobtn, save btn
@@ -77,21 +76,23 @@ public class Object_repo_Fiskars {
     static String selector_comm_action_delete_confirm = "/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]";
     static String selector_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
     //admin users
-    static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[8]/a";
+    static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[7]";
     static String selector_admin_user_groups = "//*[@id=\"react-tabs-2\"]";
     static String selector_create_user_group_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
     static String selector_usergroup_add_name = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div/input";
     static String selector_usergroup_add_description = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[3]/div[2]/div/textarea";
     static String selector_usergroup_add_user_search = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[4]/div[2]/div[2]/div/div/input";
-    static String selector_usergroup_add_user_select_first = "//*[@id=\"react-autowhatever-1--item-0\"]/div";
+    static String selector_usergroup_add_user_select_first = "//*[@id=\"react-autowhatever-1--item-0\"]";
     static String selector_usergroup_add_user = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[4]/div[2]/div[2]/div/button";
     static String selector_usergroup_save = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[5]/div/button[1]";
+    //admin reports
+    static String selector_admin_reports = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[8]";
     //admin glossary
-    static String selector_admin_glossary = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[9]/a";
+    static String selector_admin_glossary = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[9]";
     //admin contact
-    static String selector_admin_contact = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[10]/a";
+    static String selector_admin_contact = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[10]";
     //admin help
-    static String selector_admin_help = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[11]/a";
+    static String selector_admin_help = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[11]";
 
     //manager menu system
 
@@ -124,15 +125,13 @@ public class Object_repo_Fiskars {
 
     //trainer menu system
 
-    static String selector_trainer_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
+    static String selector_trainer_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
     static String selector_trainer_dashboard_tracking_tab = "//*[@id=\"react-tabs-2\"]";
 
-    static String Selector_trainer_dashboard_opencomm_modal = "//*[@id=\"react-tabs-7\"]/div/div[1]/div/div/div[1]/div/span";
+    static String Selector_trainer_dashboard_opencomm_modal = "//*[@id=\"react-tabs-1\"]/div/div[2]/div/div/div[1]/div/span";
     static String Selector_trainer_dashboard_closecomm_modal = "/html/body/div[2]/div/div/div/div[1]/button/img";
-    //trainer_user_dropdown
-    static String selector_trainer_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/button";
     //trainer profile
-    static String selector_trainer_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[1]";
+    static String selector_trainer_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
     //trainer profile edit
     static String selector_trainer_profile_edit_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[5]/div/a";
     //trainer profile preferred device
@@ -146,11 +145,9 @@ public class Object_repo_Fiskars {
     //trainer Preferred deice text
     static String selector_trainer_preferred_device = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div[2]";
     //trainer logout
-    static String selector_trainer_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[2]";
-    //trainer goals
-    static String selector_trainer_goals = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
+    static String selector_trainer_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
     //trainer learning path
-    static String selector_trainer_learning_path = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
+    static String selector_trainer_learning_path = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]";
     //trainer create learning path button
     static String selector_trainer_create_learning_path_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/a";
     //add LP name
@@ -179,11 +176,11 @@ public class Object_repo_Fiskars {
     static String selector_trainer_LP_save_LP_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div/button[1]";
 
     //trainer training library trainer view
-    static String selector_trainer_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]/a";
+    static String selector_trainer_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]";
     //create training button
     static String selector_trainer_create_training_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
     //add name for training
-    static String selector_trainer_training_add_name = "//*[@id=\"react-tabs-1\"]/form/div[1]/div[2]/div/div/input";
+    static String selector_trainer_training_add_name = "//*[@id=\"react-tabs-1\"]/form/div[1]/div[2]/div/div[1]/input";
     //add description for training
     static String selector_trainer_training_add_description = "//*[@id=\"react-tabs-1\"]/form/div[2]/div[2]/div/textarea";
     //create training modules tab
@@ -199,9 +196,9 @@ public class Object_repo_Fiskars {
     //create training Save button
     static String selector_trainer_save_training_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div/button[1]";
     //trainer modules
-    static String selector_trainer_modules = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]/a";
+    static String selector_trainer_modules = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]";
     //trainer communication
-    static String selector_trainer_communication = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]/a";
+    static String selector_trainer_communication = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]";
     //trainer create communication
     static String selector_trainer_create_communication_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
     //communication add title and description, news type checkbox, publish now radiobtn, save btn
@@ -220,7 +217,7 @@ public class Object_repo_Fiskars {
     static String selector_trainer_comm_action_delete_confirm = "/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]";
     static String selector_trainer_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
     //trainer users
-    static String selector_trainer_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]/a";
+    static String selector_trainer_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]";
     static String selector_trainer_user_groups = "//*[@id=\"react-tabs-2\"]";
     static String selector_trainer_user_create_usergroup_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
     static String selector_trainer_usergroup_add_name = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div/input";
@@ -239,11 +236,11 @@ public class Object_repo_Fiskars {
     //student menu system
 
     //student user dropdown
-    static String selector_student_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/button";
+    static String selector_student_user_dashboard= "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
     //student profile
-    static String selector_student_user_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[1]";
+    static String selector_student_user_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
     //student logout
-    static String selector_student_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[2]";
+    static String selector_student_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
     //student edit profile button
     static String selector_student_edit_profile_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[5]/div/a";
     //student profile preferred device
@@ -254,14 +251,12 @@ public class Object_repo_Fiskars {
     static String selector_student_pref_dev_tablettosmart = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[14]/div[2]/div/div/div/div[1]";
     //student edit profile save button
     static String selector_student_edit_profile_save_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[20]/div/button[1]";
-    //student dashboard
-    static String selector_student_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
     //student dashboard training card "continue/start course"
     //static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/a";
     static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/a";
     static  String selector_student_dashboard_card = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]";
     //student training library
-    static String selector_student_training_lib_ = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
+    static String selector_student_training_lib_ = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]";
     static String selector_student_traininglib_completed = "//*[@id=\"react-tabs-4\"]";
     static String selector_student_traininglib_completed_retryexam = "//*[@id=\"react-tabs-5\"]/div/div[1]/div/div[2]/div/a/span";
 

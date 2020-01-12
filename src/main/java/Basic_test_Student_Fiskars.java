@@ -26,22 +26,30 @@ public class Basic_test_Student_Fiskars{
 
     private static boolean faszaklikk(WebDriver webDriver, Logger logger, String webElement, WebDriverWait wait) throws InterruptedException, TimeoutException {
         boolean bul = true;
-        int  counter = 0;
+        int counter = 0;
 
-        while ((bul) && (counter < 5)) {
+        while ((bul) && (counter < 3)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
-                counter++;
-            } catch (Exception e) {
-                logger.info(e.toString());
-                Thread.sleep(1000);
-                counter++;
-                return false;
+            } catch (Exception f) {
+                try {
+                    wait.until(elementToBeClickable(By.id(String.valueOf(webElement)))).click();
+                    bul = false;
+                } catch (Exception e) {
+                    logger.info("Faszaklikk exception NOT OK");
+                    Thread.sleep(1000);
+                    counter++;
+                }
             }
         }
-        logger.info(webElement + "faszaklikkelt lett");
-        return true;
+        if (!bul) {
+            logger.info(webElement + "faszaklikkelt lett");
+            return true;
+        } else {
+            logger.info(webElement + "NOT OK");
+            return false;
+        }
     }
 
     private static void editprofile (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
@@ -68,16 +76,9 @@ public class Basic_test_Student_Fiskars{
     }
 
     private static void opentraining (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
-        //todo check dashboard if there is a card to start/continue training
-        //todo card xpath: "//*[@id="root"]/div/div/div[2]/div[2]/div[1]/div[2]"
-        // todo-> click it if YES -> Player Opens DONE
-        //todo -> click training lib menu if NO
-        //todo -> If there were no card at dashboard, means, that there is no new and in progress training -> go to completed and select one already finished
-        //todo retry exam opens player- DONE
         //Boolean iscardpresent = false;
         Thread.sleep(1000);
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard_training_card_start, wait)) {
-            //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard_training_card_start, wait);
             logger.info("Opened training card from dashboard OK");
             Thread.sleep(1100);
             //switch selenium handle to player tab
@@ -88,8 +89,6 @@ public class Basic_test_Student_Fiskars{
                     webDriver.switchTo().window(handle);
                 }
             }
-
-            //save player tab handle for later use
             String playerWindow = webDriver.getWindowHandle();
 
             logger.info("Opened and switched to Player window OK");
@@ -114,10 +113,8 @@ public class Basic_test_Student_Fiskars{
                     webDriver.switchTo().window(handle);
                 }
             }
-
             //save player tab handle for later use
             String playerWindow = webDriver.getWindowHandle();
-
             logger.info("Opened and switched to Player window OK");
             Thread.sleep(2000);
         }
@@ -133,22 +130,16 @@ public class Basic_test_Student_Fiskars{
                     case "Select":
 
                     case "Fill":
-                        // Select checkboxes
-                        // checkboxes
-                        // Select dropdowns
                         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_check_answer_button, wait);
                         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
                         break;
-
                     case "Is it true":
                         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_false, wait);
                         logger.info("True in exam pressed!");
                         Thread.sleep(500);
                         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_player_exam_next_question, wait);
                         break;
-
                     default:
-
                 }
             }
         }
@@ -173,9 +164,11 @@ public class Basic_test_Student_Fiskars{
                 //First training
                 Thread.sleep(2000);
                 //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait);
-                if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait)) temp = true;
+                if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_Player_training_explore_button, wait)) {
+                    temp = true;
+                    logger.info("Clicked training's Explore button in Player OK");
+                }
                 else temp = false;
-                logger.info("Clicked training's Explore button in Player OK");
                 Thread.sleep(2000);
                 //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
                 Actions actions = new Actions(webDriver);
@@ -209,12 +202,7 @@ public class Basic_test_Student_Fiskars{
         return true;
     }
 
-    public static void main(String[] argv) throws Exception
-    {
-
-        // This block configure the logger with handler and formatter
-
-        //logfile name contains actual date and time of run
+    public static void main(String[] argv) throws Exception {
         String filename = "Mylogfile" + parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c:\\temp\\";
         String abspath = pathname + filename;
@@ -246,14 +234,12 @@ public class Basic_test_Student_Fiskars{
         Thread.sleep(1100);
 
         String mainWindow = webDriver.getWindowHandle();
-
        //editprofile(webDriver, logger, wait);
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
         Thread.sleep(1100);
 
-        //start training from dashboard, if not, start training from training library
         opentraining(webDriver, logger, wait);
 
         player(webDriver, logger, wait);

@@ -14,6 +14,8 @@ public class Object_repo_Bissell {
         static String selector_admin_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[1]/a";
         static String Selector_admin_dashboard_opencomm_modal = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div/span";
         static String Selector_admin_dashboard_closecomm_modal = "/html/body/div[2]/div/div/div/div[1]/button/img";
+        static String Selector_admin_dashboard_comm_list_first_item = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[1]/div/span";
+        static String Selector_admin_dashboard_comm_list_first_item_title = "/html/body/div[2]/div/div/div/div[1]/h1";
         //admin_user_dropdown
         static String selector_admin_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/button";
         //admin profile

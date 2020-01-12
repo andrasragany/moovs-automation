@@ -15,10 +15,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
-public class Basic_test_Admin_Fiskars {
+public class Basic_test_Admin_Philips {
 
     private static String parseDate(LocalDateTime localDate) throws ParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd__HH_mm_ss");
@@ -57,59 +58,57 @@ public class Basic_test_Admin_Fiskars {
         String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_user_email))).sendKeys((String) jo.get(user));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_email))).sendKeys((String) jo.get(user));
         Thread.sleep(100);
-        webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_user_password)).sendKeys((String) jo.get(userpasswd));
+        webDriver.findElement(By.xpath(Object_repo_Philips.selector_user_password)).sendKeys((String) jo.get(userpasswd));
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_login_button, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_login_button, wait);
         Thread.sleep(100);
-        logger.info("Logged in to test.fiskars website OK");
+        logger.info("Logged in to test.Philips website OK");
     }
 
-    static void gotourl(Logger logger, WebDriver webDriver, WebDriverWait wait, String url) throws MalformedURLException, InterruptedException {
+    static void gotourl(Logger logger, WebDriver webDriver, String url) throws MalformedURLException, InterruptedException {
         webDriver.manage().window().maximize();
-        webDriver.navigate().to(new URL("https://test.fiskarsacademy.com/login"));
+        webDriver.navigate().to(new URL(url));
         Thread.sleep(100);
-        logger.info("Opened test.fiskars website OK");
+        logger.info("Opened test.Philips website OK");
     }
 
     private static void navigatetoprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_user_dropdown, wait);
-        Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_profile, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_profile, wait);
         Thread.sleep(100);
         logger.info("Navigated to user profile page OK");
     }
 
-    private static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
+    static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         Thread.sleep(100);
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_users, wait);
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_users, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_users, wait);
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_users, wait);
         }
         Thread.sleep(100);
         webDriver.navigate().refresh();
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_user_groups, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_user_groups, wait);
         Thread.sleep(100);
         logger.info("Navigated to user groups page OK");
     }
 
     static String createstudentusergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_create_user_group_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_create_user_group_btn, wait);
         Thread.sleep(100);
         String sendkey_testgroup = ("Aut QS test group " + parseDate(LocalDateTime.now()));
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_name))).sendKeys(sendkey_testgroup);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_description))).sendKeys(sendkey_testgroup);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_usergroup_add_user_search))).sendKeys(user);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_name))).sendKeys(sendkey_testgroup);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_description))).sendKeys(sendkey_testgroup);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_usergroup_add_user_search))).sendKeys(user);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_usergroup_add_user_select_first, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_usergroup_add_user_select_first, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_usergroup_add_user, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_usergroup_add_user, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_usergroup_save, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_usergroup_save, wait);
         Thread.sleep(100);
         webDriver.navigate().refresh();
         Thread.sleep(100);
@@ -120,32 +119,32 @@ public class Basic_test_Admin_Fiskars {
 
     private static void editprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_profile_edit_button, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_profile_edit_button, wait);
         Thread.sleep(100);
         logger.info("Opened user profile page for editing OK");
     }
 
     private static void changepreferreddevicetotablet(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_preferred_device_dropdown, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_preferred_device_totablet, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_preferred_device_totablet, wait);
         Thread.sleep(100);
         logger.info("Changed user's preferred device to tablet OK");
     }
 
     private static void changepreferreddevicetosmartphone(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_preferred_device_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_preferred_device_dropdown, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_preferred_device_tosmatphone, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_preferred_device_tosmatphone, wait);
         Thread.sleep(100);
         logger.info("Changed user's preferred device to smartphone OK");
     }
 
     private static void saveprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_profile_edit_Save, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_profile_edit_Save, wait);
         Thread.sleep(100);
         logger.info("Saved user profile OK");
     }
@@ -153,8 +152,8 @@ public class Basic_test_Admin_Fiskars {
     static void navigatetocommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         Thread.sleep(100);
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_communication, wait);
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_communication, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_communication, wait);
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication, wait);
         }
         Thread.sleep(100);
         logger.info("Navigated to communication page OK");
@@ -163,13 +162,13 @@ public class Basic_test_Admin_Fiskars {
     private static void deletecommunication(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         navigatetocommunication(logger, webDriver, wait, "admin");
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_input))).sendKeys("Aut QS test group");
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_input))).sendKeys("Aut QS test group");
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_search_input_searchbtn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_search_input_searchbtn, wait);
         Thread.sleep(200);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_search_result_sort_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_search_result_sort_dropdown, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_result_list_sort_descending_date, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_result_list_sort_descending_date, wait);
         Thread.sleep(200);
         for (int j=1; j<6; j++){
             String tempxpath = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[2]/div[" + j + "]/div/div[2]/div/div/button";
@@ -190,26 +189,26 @@ public class Basic_test_Admin_Fiskars {
         logger.info("Deleted communication OK");
     }
 
-    private static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
+    static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_create_communication_button, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_create_communication_button, wait);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_add_title))).sendKeys(groupname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_add_title))).sendKeys(groupname);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_add_description))).sendKeys(groupname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_add_description))).sendKeys(groupname);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_check_news, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_check_news, wait);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_group))).sendKeys(groupname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_group))).sendKeys(groupname);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_select_first_group, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_select_first_group, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_add_group_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_add_group_btn, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_check_now, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_check_now, wait);
         Thread.sleep(100);
         ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_save, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_save, wait);
         //click comm on dashboard
         webDriver.navigate().refresh();
         Thread.sleep(100);
@@ -217,15 +216,15 @@ public class Basic_test_Admin_Fiskars {
     }
 
     private static boolean checkcommunicationispublished(Logger logger, WebDriver webDriver, WebDriverWait wait, String communicationname) throws InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.Selector_admin_dashboard_comm_list_first_item, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.Selector_admin_dashboard_comm_list_first_item, wait);
         Thread.sleep(1000);
-        if (webDriver.findElement((By.xpath(Object_repo_Fiskars.Selector_admin_dashboard_comm_list_first_item_title))).getText().contains(communicationname)) {
-            faszaklikk(webDriver, logger, Object_repo_Fiskars.Selector_admin_dashboard_closecomm_modal, wait);
+        if (webDriver.findElement((By.xpath(Object_repo_Philips.Selector_admin_dashboard_comm_list_first_item_title))).getText().contains(communicationname)) {
+            faszaklikk(webDriver, logger, Object_repo_Philips.Selector_admin_dashboard_closecomm_modal, wait);
             logger.info("Communication was published OK");
             return true;
         }
         else{
-            faszaklikk(webDriver, logger, Object_repo_Fiskars.Selector_admin_dashboard_closecomm_modal, wait);
+            faszaklikk(webDriver, logger, Object_repo_Philips.Selector_admin_dashboard_closecomm_modal, wait);
             logger.info("Communication was not published NOT OK");
             return false;
         }
@@ -233,34 +232,34 @@ public class Basic_test_Admin_Fiskars {
 
     private static void navigatetomodules(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_modules, wait);
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_modules, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_modules, wait);
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_modules, wait);
         }
         Thread.sleep(200);
         logger.info("Navigated to modules page OK");
     }
 
     private static void navigate_to_translate (Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_modules_first_action_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_modules_first_action_dropdown, wait);
         Thread.sleep(200);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_modules_first_dropdown_translate, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_modules_first_dropdown_translate, wait);
         Thread.sleep(200);
         logger.info("Navigated to module translation page OK");
     }
 
     private static void navigatetomoduledetails (Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         webDriver.navigate().refresh();
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_module_translate_module_details, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_module_translate_module_details, wait);
         Thread.sleep(200);
         logger.info("In module translation page, navigated to module details tab OK");
     }
 
     private static void change_first_translation_and_save (Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_admin_translate_moduledetails_first_input ))).sendKeys("Auto_translate_test");
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_admin_translate_moduledetails_first_input ))).sendKeys("Auto_translate_test");
         Thread.sleep(200);
         ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_translate_changed_save, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_translate_changed_save, wait);
         Thread.sleep(200);
         logger.info("Changed first item translation OK");
     }
@@ -268,23 +267,23 @@ public class Basic_test_Admin_Fiskars {
     private static void deletecreatedcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String communicationname, String user) throws  InterruptedException {
         navigatetocommunication(logger, webDriver, wait, user);
         Thread.sleep(100);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_comm_search_input))).sendKeys(communicationname);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Philips.selector_comm_search_input))).sendKeys(communicationname);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_search_input_searchbtn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_search_input_searchbtn, wait);
         Thread.sleep(200);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_comm_found_list_first_action_dropdown, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_comm_found_list_first_action_dropdown, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_found_list_first_action_deletebtn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_found_list_first_action_deletebtn, wait);
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_comm_action_delete_confirm, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_comm_action_delete_confirm, wait);
         logger.info("Deleted created communication OK");
     }
 
     private static void navigatetocontacts(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         Thread.sleep(100);
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_contact, wait);
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_contact, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_contact, wait);
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_contact, wait);
         }
         Thread.sleep(100);
         logger.info("Navigated to contacts OK");
@@ -292,7 +291,7 @@ public class Basic_test_Admin_Fiskars {
 
     private static void navigatetodashboard(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_dashboard, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_dashboard, wait);
         Thread.sleep(100);
         logger.info("Navigated to dashboard OK");
     }
@@ -316,23 +315,26 @@ public class Basic_test_Admin_Fiskars {
         Logger logger = Logger.getLogger(abspath);
         logger.addHandler(fh);
 
+        SimpleFormatter formatter = new SimpleFormatter();
+        fh.setFormatter(formatter);
+
         //Init webdriver
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
 
-        gotourl(logger, webDriver, wait, "");
+        gotourl(logger, webDriver, "https://test.philipsohcacademy.com/login");
         login(logger, webDriver, wait, "admin", "adminpassword");
         navigatetoprofile(logger, webDriver, wait);
 
         //todo create trainer group for quince trainer for comm
         //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_users, wait);
         navigatetousergroups(logger, webDriver, wait, "admin");
-        String userGroupName1 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupName1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
         navigatetousergroups(logger, webDriver, wait, "admin");
-        String userGroupName2 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        String userGroupName2 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
@@ -342,22 +344,22 @@ public class Basic_test_Admin_Fiskars {
 
         //todo create test training for pohc student group
 
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_training_lib_trainer, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_training_lib_trainer, wait);
         webDriver.navigate().refresh();
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_btn, wait);
-        if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_name, wait))
-            webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_training_add_name)).sendKeys(userGroupName2);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_btn, wait);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait))
+            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_name)).sendKeys(userGroupName2);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_description, wait))
-            webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_training_add_description)).sendKeys(userGroupName2);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_description, wait))
+            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_description)).sendKeys(userGroupName2);
 
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_modules_tab, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_add_module_btn, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_mod_checkbox, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_selected_module_btn, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_exam_tab, wait);
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_save_training_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_modules_tab, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_add_module_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_mod_checkbox, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_selected_module_btn, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_save_training_btn, wait);
         webDriver.navigate().refresh();
         Thread.sleep(100);
         //todo create test training for pohc student group
