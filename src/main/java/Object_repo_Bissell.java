@@ -76,7 +76,7 @@ public class Object_repo_Bissell {
         static String selector_comm_action_delete_confirm = "/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]";
         static String selector_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
         //admin users
-        static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[6]/a";
+        static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[8]/a";
         // #root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(8) > a
         static String selector_admin_user_groups = "//*[@id=\"react-tabs-2\"]";
         static String selector_create_user_group_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
@@ -257,12 +257,12 @@ public class Object_repo_Bissell {
         //student edit profile save button
         static String selector_student_edit_profile_save_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[20]/div/button[1]";
         //student dashboard
-        static String selector_student_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
+        static String selector_student_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[1]/a";
         //student dashboard training card "continue/start course"
-        static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[2]/a";
+        static String selector_student_dashboard_training_card_start = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/a";
         //student training library
         static String selector_student_training_lib_ = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[2]/a";
-        static String selector_student_traininglib_completed = "react-tabs-4";
+        static String selector_student_traininglib_completed = "//*[@id=\"react-tabs-4\"]";
         static String selector_student_traininglib_completed_retryexam = "//*[@id=\"react-tabs-5\"]/div/div[1]/div/div[2]/div/a/span";
 
         //student glossary

@@ -49,12 +49,13 @@ public class Basic_test_Admin_Bissell {
             return true;
         } else {
             logger.info(webElement + "NOT OK");
+            webDriver.quit();
             return false;
         }
     }
 
         public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-            String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+            String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
             Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
             JSONObject jo = (JSONObject) obj;
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Bissell.selector_user_email))).sendKeys((String) jo.get(user));
@@ -85,7 +86,9 @@ public class Basic_test_Admin_Bissell {
             Thread.sleep(100);
             switch (user) {
                 case "admin": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_admin_users, wait);
+                break;
                 case "trainer": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_users, wait);
+                break;
             }
             Thread.sleep(100);
             webDriver.navigate().refresh();
@@ -154,7 +157,9 @@ public class Basic_test_Admin_Bissell {
             Thread.sleep(100);
             switch (user) {
                 case "admin": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_admin_communication, wait);
+                break;
                 case "trainer": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_communication, wait);
+                break;
             }
             Thread.sleep(100);
             logger.info("Navigated to communication page OK");
@@ -234,7 +239,9 @@ public class Basic_test_Admin_Bissell {
         private static void navigatetomodules(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
             switch (user) {
                 case "admin": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_admin_modules, wait);
+                break;
                 case "trainer": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_modules, wait);
+                break;
             }
             Thread.sleep(200);
             logger.info("Navigated to modules page OK");
@@ -284,7 +291,9 @@ public class Basic_test_Admin_Bissell {
             Thread.sleep(100);
             switch (user) {
                 case "admin": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_admin_contact, wait);
+                break;
                 case "trainer": faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_contact, wait);
+                break;
             }
             Thread.sleep(100);
             logger.info("Navigated to contacts OK");

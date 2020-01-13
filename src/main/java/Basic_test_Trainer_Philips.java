@@ -3,17 +3,14 @@ import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.io.FileReader;
-import java.net.URL;
 import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class Basic_test_Trainer_Philips{
@@ -42,7 +39,6 @@ public class Basic_test_Trainer_Philips{
             return true;
         } else {
             logger.info(webElement + "NOT OK");
-            webDriver.quit();
             return false;
         }
     }
@@ -94,9 +90,6 @@ public class Basic_test_Trainer_Philips{
     public static void main(String[] argv) throws Exception
     {
         FileHandler fh;
-
-        // This block configure the logger with handler and formatter
-
         //logfile name contains actual date and time of run
         String filename = "Mylogfile" + parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
@@ -115,7 +108,7 @@ public class Basic_test_Trainer_Philips{
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
@@ -126,6 +119,7 @@ public class Basic_test_Trainer_Philips{
         //Login
         Basic_test_Admin_Philips.login(logger, webDriver, wait, "philipstrainer", "philipstrainerpassword");
         Thread.sleep(1000);
+
         //openclose_comm(webDriver, logger, wait);
         //webDriver.navigate().refresh();
         //deletecomm(webDriver,  logger, wait, tempString);

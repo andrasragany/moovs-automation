@@ -55,7 +55,7 @@ public class Basic_test_Admin_Philips {
     }
 
     public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_email))).sendKeys((String) jo.get(user));
@@ -323,18 +323,18 @@ public class Basic_test_Admin_Philips {
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
 
         gotourl(logger, webDriver, "https://test.philipsohcacademy.com/login");
-        login(logger, webDriver, wait, "admin", "adminpassword");
+        login(logger, webDriver, wait, "philipsadmin", "philipsadminpassword");
         navigatetoprofile(logger, webDriver, wait);
 
         //todo create trainer group for quince trainer for comm
         //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_users, wait);
         navigatetousergroups(logger, webDriver, wait, "admin");
-        String userGroupName1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupName1 = createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
         navigatetousergroups(logger, webDriver, wait, "admin");
-        String userGroupName2 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        String userGroupName2 = createstudentusergroup(logger, webDriver, wait, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group

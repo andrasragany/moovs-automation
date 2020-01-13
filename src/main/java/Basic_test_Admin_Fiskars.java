@@ -54,7 +54,7 @@ public class Basic_test_Admin_Fiskars {
     }
 
     public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_user_email))).sendKeys((String) jo.get(user));
@@ -82,11 +82,13 @@ public class Basic_test_Admin_Fiskars {
         logger.info("Navigated to user profile page OK");
     }
 
-    private static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
+    static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         Thread.sleep(100);
         switch (user) {
             case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_users, wait);
+            break;
             case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_users, wait);
+            break;
         }
         Thread.sleep(100);
         webDriver.navigate().refresh();
@@ -154,7 +156,9 @@ public class Basic_test_Admin_Fiskars {
         Thread.sleep(100);
         switch (user) {
             case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_communication, wait);
+            break;
             case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_communication, wait);
+            break;
         }
         Thread.sleep(100);
         logger.info("Navigated to communication page OK");
@@ -190,7 +194,7 @@ public class Basic_test_Admin_Fiskars {
         logger.info("Deleted communication OK");
     }
 
-    private static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
+    static void createcommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String groupname) throws InterruptedException {
         Thread.sleep(100);
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_create_communication_button, wait);
         Thread.sleep(100);
@@ -234,7 +238,9 @@ public class Basic_test_Admin_Fiskars {
     private static void navigatetomodules(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         switch (user) {
             case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_modules, wait);
+            break;
             case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_modules, wait);
+            break;
         }
         Thread.sleep(200);
         logger.info("Navigated to modules page OK");
@@ -284,7 +290,9 @@ public class Basic_test_Admin_Fiskars {
         Thread.sleep(100);
         switch (user) {
             case "admin": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_admin_contact, wait);
+            break;
             case "trainer": faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_contact, wait);
+            break;
         }
         Thread.sleep(100);
         logger.info("Navigated to contacts OK");
@@ -321,7 +329,7 @@ public class Basic_test_Admin_Fiskars {
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
 
         gotourl(logger, webDriver, wait, "");
-        login(logger, webDriver, wait, "admin", "adminpassword");
+        login(logger, webDriver, wait, "fiskarsadmin", "fiskarsadminpassword");
         navigatetoprofile(logger, webDriver, wait);
 
         //todo create trainer group for quince trainer for comm
@@ -361,5 +369,6 @@ public class Basic_test_Admin_Fiskars {
         webDriver.navigate().refresh();
         Thread.sleep(100);
         //todo create test training for pohc student group
+        webDriver.quit();
     }
 }

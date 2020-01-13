@@ -28,7 +28,7 @@ public class Basic_test_Student_Bissell{
         boolean bul = true;
         int counter = 0;
 
-        while ((bul) && (counter < 3)) {
+        while ((bul) && (counter < 1)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
@@ -37,7 +37,7 @@ public class Basic_test_Student_Bissell{
                     wait.until(elementToBeClickable(By.id(String.valueOf(webElement)))).click();
                     bul = false;
                 } catch (Exception e) {
-                    logger.info("Faszaklikk exception NOT OK");
+                    logger.info(webElement + "NOT OK");
                     Thread.sleep(1000);
                     counter++;
                 }
@@ -48,6 +48,8 @@ public class Basic_test_Student_Bissell{
                 return true;
             } else {
                 logger.info(webElement + "NOT OK");
+                //webDriver.quit();
+                //System.exit(0);
                 return false;
             }
         }
@@ -220,7 +222,7 @@ public class Basic_test_Student_Bissell{
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
