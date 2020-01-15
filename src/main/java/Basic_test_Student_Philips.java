@@ -2,6 +2,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
@@ -17,6 +18,11 @@ import java.util.logging.SimpleFormatter;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class Basic_test_Student_Philips{
+    private static void startFfBrowser() {
+        System.setProperty("webdriver.gecko.driver","c:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2019.2.3\\bin\\geckodriver.exe");
+        FirefoxDriver driver = new FirefoxDriver();
+        driver.get("http://www.tutorialspoint.com");
+    }
 
     private static String parseDate(LocalDateTime localDate) throws ParseException
     {
@@ -28,7 +34,7 @@ public class Basic_test_Student_Philips{
         boolean bul = true;
         int counter = 0;
 
-        while ((bul) && (counter < 3)) {
+        while ((bul) && (counter < 1)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
@@ -37,17 +43,18 @@ public class Basic_test_Student_Philips{
                     wait.until(elementToBeClickable(By.id(String.valueOf(webElement)))).click();
                     bul = false;
                 } catch (Exception e) {
-                    logger.info("Faszaklikk exception NOT OK");
+                    logger.info(webElement + "NOT OK");
                     Thread.sleep(1000);
                     counter++;
                 }
             }
         }
         if (!bul) {
-            logger.info(webElement + "faszaklikkelt lett");
+            logger.info("faszaklikkelt lett");
             return true;
         } else {
             logger.info(webElement + "NOT OK");
+            webDriver.quit();
             return false;
         }
     }
@@ -59,7 +66,7 @@ public class Basic_test_Student_Philips{
         actions.sendKeys(Keys.END).perform();
 
         //Edit profile, change preferred device to tablet, Save, Check
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_student_edit_profile_btn, wait);
+        faszaklikk(webDriver,logger, Object_repo_Philips.selector_student_edit_profile_btn, wait);
         Thread.sleep(250);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_student_profile_preferred_device_dropdown, wait);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_student_pref_dev_smarttotablet, wait);
@@ -74,7 +81,7 @@ public class Basic_test_Student_Philips{
         Thread.sleep(250);
     }
 
-    private static void opentraining (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
+    private static void opentraining (WebDriver webDriver, FirefoxDriver ffDriver,Logger logger, WebDriverWait wait) throws InterruptedException {
         //Boolean iscardpresent = false;
         Thread.sleep(1000);
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_student_dashboard_training_card_start, wait)) {
@@ -119,7 +126,7 @@ public class Basic_test_Student_Philips{
         }
     }
 
-    private static boolean exam(WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
+    private static boolean exam(WebDriver webDriver, FirefoxDriver ffDriver,Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
         try {
             while ((webDriver.findElement(By.xpath(Object_repo_Philips.selector_player_exam_counter))).isDisplayed()) {
                 logger.info((webDriver.findElement(By.xpath(Object_repo_Philips.selector_player_exam_type))).getText());
@@ -150,7 +157,7 @@ public class Basic_test_Student_Philips{
         return true;
     }
 
-    public static boolean player (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
+    public static boolean player (WebDriver webDriver, FirefoxDriver ffDriver,Logger logger, WebDriverWait wait) throws InterruptedException {
         faszaklikk(webDriver, logger,Object_repo_Philips.selector_player_open_contents, wait);
         logger.info("Opened Player window contents tab OK");
         //select first training from contents
@@ -218,34 +225,45 @@ public class Basic_test_Student_Philips{
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        FirefoxDriver ffDriver = new FirefoxDriver();
+        WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
+
+        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
         webDriver.manage().window().maximize();
+        ffDriver.manage().window().maximize();
         //Open page
-        Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsexpert.com/login");
+        Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsohcacademy.com/login");
+        Basic_test_Admin_Philips.gotourl(logger,ffDriver,"https://test.philipsohcacademy.com/login");
         //Login
         Basic_test_Admin_Philips.login(logger, webDriver, wait, "philipsstudent", "philipsstudentpassword");
+        Basic_test_Admin_Philips.login(logger, ffDriver, wait_ff, "philipsstudent", "philipsstudentpassword");
 
         Thread.sleep(1100);
 
-        String mainWindow = webDriver.getWindowHandle();
+        //String mainWindow = webDriver.getWindowHandle();
 
-        //editprofile(webDriver, logger, wait);
+        editprofile(webDriver, logger, wait);
+        editprofile(ffDriver, logger, wait);
+
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
-        Thread.sleep(1100);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
+        //Thread.sleep(1100);
 
-        opentraining(webDriver, logger, wait);
+        //opentraining(webDriver, logger, wait);
 
-        player(webDriver, logger, wait);
+        //player(webDriver, logger, wait);
 
-        exam(webDriver, logger, wait);
+        //exam(webDriver, logger, wait);
 
         Thread.sleep(2000);
         logger.info("Test finished OK");
         webDriver.quit();
+        ffDriver.quit();
     }
 }

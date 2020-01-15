@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.FileReader;
@@ -19,6 +20,7 @@ import java.time.format.DateTimeFormatter;
 public class proba {
     WebDriver webDriver = new ChromeDriver();
     WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
+    FirefoxDriver webDriver2 = new FirefoxDriver();
 
     private String parseDate(LocalDateTime localDate) throws ParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd--HH:mm:ss");
@@ -39,6 +41,12 @@ public class proba {
         webDriver.navigate().to(new URL("https://test.fiskarsacademy.com/login"));
     }
 
+    private void startFfBrowser () {
+        System.setProperty("webdriver.gecko.driver","c:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2019.2.3\\bin\\geckodriver.exe");
+        FirefoxDriver driver = new FirefoxDriver();
+        driver.get("http://www.tutorialspoint.com");
+    }
+
     public void main(String[] argv) throws Exception {
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
@@ -48,28 +56,12 @@ public class proba {
 
         //Profil page
         Thread.sleep(2000);
+        startFfBrowser();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_training_lib_))).click();
-        //Thread.sleep(500);
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()[contains(.,'Completed')]]"))).click();
 
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Fiskars.selector_student_traininglib_completed))).click();
-        //List<WebElement> reactTabs = webDriver.findElements(By.xpath("//*[contains(@id, 'react-tabs-')]"));
-        //Thread.sleep(500);
-        //WebElement lastElement = reactTabs.get(reactTabs.size() - 1);
-        //int i = 0;
-        //while (i<reactTabs.size()) {
-            //WebElement lastElement = reactTabs.get(i);
-            //System.out.println("Ezt irja ki: "+ i + reactTabs.get(i));
-            //i++;
-        //}
-        //Thread.sleep(500);
-        //wait.until(ExpectedConditions.elementToBeClickable(lastElement)).click();
-        //lastElement.click();
-        //Actions actions = new Actions(webDriver);
-        //actions.moveToElement(lastElement).click().build().perform();
-        //Thread.sleep(5000);
+
 
 
     }
+
 }

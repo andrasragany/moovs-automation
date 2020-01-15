@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/proba.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/proba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/proba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/proba.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +95,7 @@
     <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Basic_test_Admin_Fiskars">
+  <component name="RunManager" selected="Application.Basic_test_Student_Philips">
     <configuration name="Basic_test_Admin" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="Basic_test_Admin" />
@@ -130,8 +134,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Basic_test_Trainer_Bissell" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Basic_test_Trainer_Bissell" />
+    <configuration name="Basic_test_Student_Philips" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Basic_test_Student_Philips" />
       <module name="platformtest.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,19 +151,19 @@
     <list>
       <item itemvalue="Application.Basic_test_Admin" />
       <item itemvalue="Application.Basic_test_Student_Fiskars" />
-      <item itemvalue="Application.Basic_test_Trainer_Bissell" />
       <item itemvalue="Application.Basic_test_Trainer_Philips" />
       <item itemvalue="Application.Basic_test_Admin_Philips" />
       <item itemvalue="Application.Basic_test_Student_Bissell" />
       <item itemvalue="Application.Basic_test_Admin_Fiskars" />
+      <item itemvalue="Application.Basic_test_Student_Philips" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Basic_test_Student_Philips" />
         <item itemvalue="Application.Basic_test_Admin_Fiskars" />
         <item itemvalue="Application.Basic_test_Student_Bissell" />
         <item itemvalue="Application.Basic_test_Admin_Philips" />
         <item itemvalue="Application.Basic_test_Trainer_Philips" />
-        <item itemvalue="Application.Basic_test_Trainer_Bissell" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579003371060</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="elso">
+      <created>1579079414815</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1579079414815</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,6 +278,10 @@
     </state>
     <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1576424919841" />
     <state x="736" y="240" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1576448010744" />
+    <state x="690" y="276" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579086156794">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="276" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579086156794" />
     <state x="552" y="272" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576449435622">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -295,10 +310,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400@0.0.2560.1400" timestamp="1576449890367" />
-    <state x="565" y="114" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1579003370416">
+    <state x="565" y="114" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1579079414175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579003370416" />
+    <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079414175" />
     <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1578227822090" />
     <state x="898" y="297" key="DetectedRootsChooserDialog" timestamp="1576447992436">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -329,45 +344,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576416800785" />
-    <state width="646" height="315" key="GridCell.Tab.0.bottom" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.0.bottom" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.0.center" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.0.center" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.0.left" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.0.left" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.0.right" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.0.right" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.1.bottom" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.1.bottom" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339107" />
-    <state width="646" height="315" key="GridCell.Tab.1.center" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.1.center" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339107" />
-    <state width="646" height="315" key="GridCell.Tab.1.left" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.1.left" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.1.right" timestamp="1578934137420">
+    <state width="644" height="315" key="GridCell.Tab.1.right" timestamp="1579093417480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="646" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
+    <state width="644" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2276" height="489" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339107" />
     <state x="170" y="335" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1578916471107">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -391,16 +406,16 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="805" y="441" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576444597458" />
-    <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579079393041">
+    <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579079418781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079393041" />
+    <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079418781" />
     <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576732102126" />
     <state x="1091" y="643" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3072.1688@0.0.3072.1688" timestamp="1576833449556" />
-    <state x="653" y="312" key="git4idea.merge.GitPullDialog" timestamp="1579079402887">
+    <state x="653" y="312" key="git4idea.merge.GitPullDialog" timestamp="1579079430926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="653" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579079402887" />
+    <state x="653" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579079430926" />
     <state x="754" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1576449465122">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -474,86 +489,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Bissell.java</url>
           <line>389</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>336</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>341</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>346</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>347</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>342</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>337</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>352</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>355</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>356</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>359</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>362</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>363</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>364</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>365</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>366</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java</url>
-          <line>367</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
