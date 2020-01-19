@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Bissell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Fiskars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Philips.java" afterDir="false" />
-    </list>
+    <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,12 +144,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.Basic_test_Admin" />
-      <item itemvalue="Application.Basic_test_Student_Fiskars" />
-      <item itemvalue="Application.Basic_test_Trainer_Bissell" />
-      <item itemvalue="Application.Basic_test_Trainer_Philips" />
+      <item itemvalue="Application.Basic_test_Admin_Fiskars" />
       <item itemvalue="Application.Basic_test_Admin_Philips" />
       <item itemvalue="Application.Basic_test_Student_Bissell" />
-      <item itemvalue="Application.Basic_test_Admin_Fiskars" />
+      <item itemvalue="Application.Basic_test_Trainer_Bissell" />
+      <item itemvalue="Application.Basic_test_Trainer_Philips" />
+      <item itemvalue="Application.Basic_test_Student_Fiskars" />
     </list>
     <recent_temporary>
       <list>
@@ -230,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578934295344</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="elso">
+      <created>1579006886809</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579006886809</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,11 +293,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400@0.0.2560.1400" timestamp="1576449890367" />
-    <state x="565" y="114" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1578934294632">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1579006886440">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578934294632" />
-    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1578227822090" />
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579006886440" />
     <state x="898" y="297" key="DetectedRootsChooserDialog" timestamp="1576447992436">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -331,26 +327,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576416800785" />
-    <state width="646" height="315" key="GridCell.Tab.0.bottom" timestamp="1578934137420">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2220" height="263" key="GridCell.Tab.0.bottom" timestamp="1579006890613">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="646" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
-    <state width="2276" height="489" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.0.center" timestamp="1578934137420">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2220" height="263" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579006890613" />
+    <state width="2220" height="263" key="GridCell.Tab.0.center" timestamp="1579006890613">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="646" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
-    <state width="2276" height="489" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.0.left" timestamp="1578934137420">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2220" height="263" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579006890613" />
+    <state width="2220" height="263" key="GridCell.Tab.0.left" timestamp="1579006890613">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="646" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
-    <state width="2276" height="489" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="646" height="315" key="GridCell.Tab.0.right" timestamp="1578934137420">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2220" height="263" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579006890613" />
+    <state width="2220" height="263" key="GridCell.Tab.0.right" timestamp="1579006890613">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="646" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578934137420" />
-    <state width="2276" height="489" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
+    <state width="2220" height="263" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579006890613" />
     <state width="646" height="315" key="GridCell.Tab.1.bottom" timestamp="1578934137420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
