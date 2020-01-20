@@ -2,6 +2,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
@@ -221,34 +222,47 @@ public class Basic_test_Student_Fiskars{
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
+        FirefoxDriver ffDriver = new FirefoxDriver();
+        WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
+
         //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
         webDriver.manage().window().maximize();
+        ffDriver.manage().window().maximize();
         //Open page
         Basic_test_Admin_Fiskars.gotourl(logger,webDriver,wait,"https://test.fiskarsacademy.com/login");
+        Basic_test_Admin_Fiskars.gotourl(logger,ffDriver,wait,"https://test.fiskarsacademy.com/login");
         //Login
         Basic_test_Admin_Fiskars.login(logger, webDriver, wait, "fiskarsstudent", "fiskarsstudentpassword");
+        Basic_test_Admin_Fiskars.login(logger, ffDriver, wait, "fiskarsstudent", "fiskarsstudentpassword");
 
         Thread.sleep(1100);
 
-        String mainWindow = webDriver.getWindowHandle();
-       //editprofile(webDriver, logger, wait);
+        //String mainWindow = webDriver.getWindowHandle();
+
+        editprofile(webDriver, logger, wait);
+        editprofile(ffDriver, logger, wait);
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
         Thread.sleep(1100);
 
         opentraining(webDriver, logger, wait);
+        opentraining(ffDriver, logger, wait);
 
         player(webDriver, logger, wait);
+        player(ffDriver, logger, wait);
 
         exam(webDriver, logger, wait);
+        exam(ffDriver, logger, wait);
 
         Thread.sleep(2000);
         logger.info("Test finished OK");
         webDriver.quit();
+        ffDriver.quit();
     }
 }

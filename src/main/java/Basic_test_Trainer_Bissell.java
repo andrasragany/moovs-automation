@@ -2,6 +2,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
@@ -94,10 +95,6 @@ public class Basic_test_Trainer_Bissell{
     public static void main(String[] argv) throws Exception
     {
         FileHandler fh;
-
-        // This block configure the logger with handler and formatter
-
-        //logfile name contains actual date and time of run
         String filename = "Mylogfile" + parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
         String abspath = pathname + filename;
@@ -112,8 +109,12 @@ public class Basic_test_Trainer_Bissell{
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
+
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
+
+        FirefoxDriver ffDriver = new FirefoxDriver();
+        WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
 
         //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
@@ -121,79 +122,147 @@ public class Basic_test_Trainer_Bissell{
         JSONObject jo = (JSONObject) obj;
 
         webDriver.manage().window().maximize();
+        ffDriver.manage().window().maximize();
         //Open page
         Basic_test_Admin_Bissell.gotourl(logger,webDriver,"https://test.bissellexpert.com/login");
+        Basic_test_Admin_Bissell.gotourl(logger,ffDriver,"https://test.bissellexpert.com/login");
         Thread.sleep(1000);
         //Login
         Basic_test_Admin_Bissell.login(logger, webDriver, wait, "bisselltrainer", "bisselltrainerpassword");
+        Basic_test_Admin_Bissell.login(logger, ffDriver, wait, "bisselltrainer", "bisselltrainerpassword");
         Thread.sleep(1000);
+
         //openclose_comm(webDriver, logger, wait);
         //webDriver.navigate().refresh();
         //deletecomm(webDriver,  logger, wait, tempString);
+
         //todo create trainer group for quince trainer for comm
         //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_users, wait);
         Basic_test_Admin_Bissell.navigatetousergroups(logger, webDriver, wait, "trainer");
-        String userGroupName1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        Basic_test_Admin_Bissell.navigatetousergroups(logger, ffDriver, wait, "trainer");
+        String userGroupNameChrome1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupNameFF1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
         Basic_test_Admin_Bissell.navigatetousergroups(logger, webDriver, wait, "trainer");
-        String userGroupName2 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        Basic_test_Admin_Bissell.navigatetousergroups(logger, ffDriver, wait, "trainer");
+        String userGroupNameChrome_2 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        String userGroupNameFF_2 = Basic_test_Admin_Bissell.createstudentusergroup(logger, ffDriver, wait, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
         Basic_test_Admin_Bissell.navigatetocommunication(logger, webDriver, wait, "trainer");
-        Basic_test_Admin_Bissell.createcommunication(logger, webDriver, wait, userGroupName1);
+        Basic_test_Admin_Bissell.navigatetocommunication(logger, ffDriver, wait, "trainer");
+
+        Basic_test_Admin_Bissell.createcommunication(logger, webDriver, wait, userGroupNameChrome1);
+        Basic_test_Admin_Bissell.createcommunication(logger, ffDriver, wait, userGroupNameFF1);
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
 
 
         //todo create test training for pohc student group
 
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_training_lib_trainer, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_training_lib_trainer, wait);
+
         webDriver.navigate().refresh();
+        ffDriver.navigate().refresh();
+
         Thread.sleep(100);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_create_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_create_training_btn, wait);
+
         if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_training_add_name, wait))
-            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_training_add_name)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_training_add_name)).sendKeys(userGroupNameChrome_2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_training_add_name, wait))
+            ffDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_training_add_name)).sendKeys(userGroupNameFF_2);
 
         if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_training_add_description, wait))
-            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_training_add_description)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_training_add_description)).sendKeys(userGroupNameChrome_2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_training_add_description, wait))
+            ffDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_training_add_description)).sendKeys(userGroupNameFF_2);
 
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_create_training_modules_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_create_training_modules_tab, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_create_training_add_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_create_training_add_module_btn, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_create_tr_add_mod_checkbox, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_create_tr_add_mod_checkbox, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_create_tr_add_selected_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_create_tr_add_selected_module_btn, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_create_tr_exam_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_create_tr_exam_tab, wait);
+
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_save_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_save_training_btn, wait);
+
         webDriver.navigate().refresh();
+        ffDriver.navigate().refresh();
+
         Thread.sleep(100);
         //todo create test training for pohc student group
 
         //todo create Learning path for student group
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_learning_path, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_learning_path, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_create_learning_path_button, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_create_learning_path_button, wait);
+
         webDriver.navigate().refresh();
+        ffDriver.navigate().refresh();
+
         Thread.sleep(100);
+
         if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_add_LP_name, wait))
-            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_add_LP_name)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_add_LP_name)).sendKeys(userGroupNameChrome_2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_add_LP_name, wait))
+            ffDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_add_LP_name)).sendKeys(userGroupNameFF_2);
 
         if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_add_LP_description, wait))
-            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_add_LP_description)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_add_LP_description)).sendKeys(userGroupNameChrome_2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_add_LP_description, wait))
+            ffDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_add_LP_description)).sendKeys(userGroupNameFF_2);
 
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_cr_LP_participants_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_cr_LP_participants_tab, wait);
 
         if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_search_group, wait))
-            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_LP_search_group)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_LP_search_group)).sendKeys(userGroupNameChrome_2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_search_group, wait))
+            ffDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_LP_search_group)).sendKeys(userGroupNameFF_2);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_select_group, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_select_group, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_add_first_group, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_add_first_group, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_path_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_path_tab, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_open_path_selector, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_open_path_selector, wait);
 
         if (faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_search_for_path, wait))
-            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_LP_search_for_path)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameChrome_2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_search_for_path, wait))
+            ffDriver.findElement(By.xpath(Object_repo_Bissell.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameFF_2);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_select_path_checkbox, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_select_path_checkbox, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_add_selected_path, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_add_selected_path, wait);
+
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_save_LP_button, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_save_LP_button, wait);
         //todo create Learning path for student group
 
 
@@ -210,6 +279,8 @@ public class Basic_test_Trainer_Bissell{
         //todo check goal? Check student point?
         //todo check that somehow run tests from different files, but in the same browser.
         //todo check how to use test runners, pipeline config, using git to commit testcode
+        logger.info("Trainer Test finished OK");
         webDriver.quit();
+        ffDriver.quit();
     }
 }

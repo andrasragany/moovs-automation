@@ -81,7 +81,7 @@ public class Basic_test_Student_Philips{
         Thread.sleep(250);
     }
 
-    private static void opentraining (WebDriver webDriver, FirefoxDriver ffDriver,Logger logger, WebDriverWait wait) throws InterruptedException {
+    private static void opentraining (WebDriver webDriver,Logger logger, WebDriverWait wait) throws InterruptedException {
         //Boolean iscardpresent = false;
         Thread.sleep(1000);
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_student_dashboard_training_card_start, wait)) {
@@ -126,7 +126,7 @@ public class Basic_test_Student_Philips{
         }
     }
 
-    private static boolean exam(WebDriver webDriver, FirefoxDriver ffDriver,Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
+    private static boolean exam(WebDriver webDriver,Logger logger, WebDriverWait wait) throws InterruptedException, TimeoutException {
         try {
             while ((webDriver.findElement(By.xpath(Object_repo_Philips.selector_player_exam_counter))).isDisplayed()) {
                 logger.info((webDriver.findElement(By.xpath(Object_repo_Philips.selector_player_exam_type))).getText());
@@ -157,7 +157,7 @@ public class Basic_test_Student_Philips{
         return true;
     }
 
-    public static boolean player (WebDriver webDriver, FirefoxDriver ffDriver,Logger logger, WebDriverWait wait) throws InterruptedException {
+    public static boolean player (WebDriver webDriver,Logger logger, WebDriverWait wait) throws InterruptedException {
         faszaklikk(webDriver, logger,Object_repo_Philips.selector_player_open_contents, wait);
         logger.info("Opened Player window contents tab OK");
         //select first training from contents
@@ -253,13 +253,16 @@ public class Basic_test_Student_Philips{
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
         faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
-        //Thread.sleep(1100);
+        Thread.sleep(1100);
 
-        //opentraining(webDriver, logger, wait);
+        opentraining(webDriver, logger, wait);
+        opentraining(ffDriver, logger, wait);
 
-        //player(webDriver, logger, wait);
+        player(webDriver, logger, wait);
+        player(ffDriver, logger, wait);
 
-        //exam(webDriver, logger, wait);
+        exam(webDriver, logger, wait);
+        exam(ffDriver, logger, wait);
 
         Thread.sleep(2000);
         logger.info("Test finished OK");
