@@ -3,6 +3,7 @@ import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.FileReader;
@@ -90,7 +91,6 @@ public class Basic_test_Trainer_Philips{
 
     public static void main(String[] argv) throws Exception
     {
-        FileHandler fh;
         //logfile name contains actual date and time of run
         String filename = "Mylogfile" + parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
@@ -101,13 +101,13 @@ public class Basic_test_Trainer_Philips{
         file.createNewFile();
 
         //Setting up logger, handler etc
-        fh = new FileHandler(abspath);
+        FileHandler fh = new FileHandler(abspath);
         Logger logger = Logger.getLogger(abspath);
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
-        WebDriver webDriver = new ChromeDriver();
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
+        //WebDriver webDriver = new ChromeDriver();
+        //WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
         FirefoxDriver ffDriver = new FirefoxDriver();
         WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
@@ -117,16 +117,18 @@ public class Basic_test_Trainer_Philips{
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
-        webDriver.manage().window().maximize();
+        //webDriver.manage().window().maximize();
         ffDriver.manage().window().maximize();
+
         //Open page
-        Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsohcacademy.com//login");
-        Basic_test_Admin_Philips.gotourl(logger,ffDriver,"https://test.philipsohcacademy.com//login");
+        //Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsohcacademy.com//login");
+        Basic_test_Admin_Philips.gotourl(logger,ffDriver,"https://test.philipsohcacademy.com/login");
         Thread.sleep(1000);
         //Login
-        Basic_test_Admin_Philips.login(logger, webDriver, wait, "philipstrainer", "philipstrainerpassword");
-        Basic_test_Admin_Philips.login(logger, ffDriver, wait, "philipstrainer", "philipstrainerpassword");
-        Thread.sleep(1000);
+        //Basic_test_Admin_Philips.login(logger, webDriver, wait, "philipstrainer", "philipstrainerpassword");
+        Basic_test_Admin_Philips.login(logger, ffDriver, wait_ff, "philipstrainer", "philipstrainerpassword");
+
+        Thread.sleep(1100);
 
         //openclose_comm(webDriver, logger, wait);
         //webDriver.navigate().refresh();
@@ -134,129 +136,129 @@ public class Basic_test_Trainer_Philips{
 
         //todo create trainer group for quince trainer for comm
         //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_users, wait);
-        Basic_test_Admin_Philips.navigatetousergroups(logger, webDriver, wait, "trainer");
-        Basic_test_Admin_Philips.navigatetousergroups(logger, ffDriver, wait, "trainer");
-        String userGroupNameChrome1 = Basic_test_Admin_Philips.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
-        String userGroupNameFF1 = Basic_test_Admin_Philips.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        //Basic_test_Admin_Philips.navigatetousergroups(logger, webDriver, wait, "trainer");
+        Basic_test_Admin_Philips.navigatetousergroups(logger, ffDriver, wait_ff, "trainer");
+        //String userGroupNameChrome1 = Basic_test_Admin_Philips.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupNameFF1 = Basic_test_Admin_Philips.createstudentusergroup(logger, ffDriver, wait_ff, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
-        Basic_test_Admin_Philips.navigatetousergroups(logger, webDriver, wait, "trainer");
-        Basic_test_Admin_Philips.navigatetousergroups(logger, ffDriver, wait, "trainer");
-        String userGroupNameChrome2 = Basic_test_Admin_Philips.createstudentusergroup(logger, webDriver, wait, "Quince Student");
-        String userGroupNameFF2 = Basic_test_Admin_Philips.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        //Basic_test_Admin_Philips.navigatetousergroups(logger, webDriver, wait, "trainer");
+        Basic_test_Admin_Philips.navigatetousergroups(logger, ffDriver, wait_ff, "trainer");
+        //String userGroupNameChrome2 = Basic_test_Admin_Philips.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        String userGroupNameFF2 = Basic_test_Admin_Philips.createstudentusergroup(logger, ffDriver, wait_ff, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
-        Basic_test_Admin_Philips.navigatetocommunication(logger, webDriver, wait, "trainer");
-        Basic_test_Admin_Philips.navigatetocommunication(logger, ffDriver, wait, "trainer");
-        Basic_test_Admin_Philips.createcommunication(logger, webDriver, wait, userGroupNameChrome1);
-        Basic_test_Admin_Philips.createcommunication(logger, ffDriver, wait, userGroupNameFF1);
+        //Basic_test_Admin_Philips.navigatetocommunication(logger, webDriver, wait, "trainer");
+        Basic_test_Admin_Philips.navigatetocommunication(logger, ffDriver, wait_ff, "trainer");
+        //Basic_test_Admin_Philips.createcommunication(logger, webDriver, wait, userGroupNameChrome1);
+        Basic_test_Admin_Philips.createcommunication(logger, ffDriver, wait_ff, userGroupNameFF1);
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
 
 
         //todo create test training for pohc student group
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_lib_trainer, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_lib_trainer, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_lib_trainer, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_lib_trainer, wait_ff);
 
-        webDriver.navigate().refresh();
+        //webDriver.navigate().refresh();
         ffDriver.navigate().refresh();
 
         Thread.sleep(100);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_btn, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_btn, wait_ff);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_name)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait))
+        //if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait))
+        //    webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_name)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_name)).sendKeys(userGroupNameFF2);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_description, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_description)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_add_description, wait))
+        //if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_description, wait))
+        //    webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_description)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_add_description, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_description)).sendKeys(userGroupNameFF2);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_modules_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_modules_tab, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_modules_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_modules_tab, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_add_module_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_add_module_btn, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_add_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_add_module_btn, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_mod_checkbox, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_mod_checkbox, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_mod_checkbox, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_mod_checkbox, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_selected_module_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_selected_module_btn, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_selected_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_selected_module_btn, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_save_training_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_save_training_btn, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_save_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_save_training_btn, wait_ff);
 
-        webDriver.navigate().refresh();
+        //webDriver.navigate().refresh();
         ffDriver.navigate().refresh();
 
         Thread.sleep(100);
         //todo create test training for pohc student group
 
         //todo create Learning path for student group
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_learning_path, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_learning_path, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_learning_path, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_learning_path, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_learning_path_button, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_learning_path_button, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_learning_path_button, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_learning_path_button, wait_ff);
 
-        webDriver.navigate().refresh();
+        //webDriver.navigate().refresh();
         ffDriver.navigate().refresh();
 
         Thread.sleep(100);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_add_LP_name, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_add_LP_name)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_add_LP_name, wait))
+        //if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_add_LP_name, wait))
+        //    webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_add_LP_name)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_add_LP_name, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_add_LP_name)).sendKeys(userGroupNameFF2);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_add_LP_description, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_add_LP_description)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_add_LP_description, wait))
+        //if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_add_LP_description, wait))
+        //    webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_add_LP_description)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_add_LP_description, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_add_LP_description)).sendKeys(userGroupNameFF2);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_cr_LP_participants_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_cr_LP_participants_tab, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_cr_LP_participants_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_cr_LP_participants_tab, wait_ff);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_search_group, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_LP_search_group)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_search_group, wait))
+        //if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_search_group, wait))
+        //    webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_LP_search_group)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_search_group, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_LP_search_group)).sendKeys(userGroupNameFF2);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_select_group, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_select_group, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_select_group, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_select_group, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_add_first_group, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_add_first_group, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_add_first_group, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_add_first_group, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_path_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_path_tab, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_path_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_path_tab, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_open_path_selector, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_open_path_selector, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_open_path_selector, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_open_path_selector, wait_ff);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_search_for_path, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_search_for_path, wait))
+        //if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_search_for_path, wait))
+        //    webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_search_for_path, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameFF2);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_select_path_checkbox, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_select_path_checkbox, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_select_path_checkbox, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_select_path_checkbox, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_add_selected_path, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_add_selected_path, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_add_selected_path, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_add_selected_path, wait_ff);
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_save_LP_button, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_save_LP_button, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_save_LP_button, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_LP_save_LP_button, wait_ff);
         //todo create Learning path for student group
 
 
@@ -273,7 +275,7 @@ public class Basic_test_Trainer_Philips{
         //todo check goal? Check student point?
         //todo check that somehow run tests from different files, but in the same browser.
         //todo check how to use test runners, pipeline config, using git to commit testcode
-        webDriver.quit();
+        //webDriver.quit();
         ffDriver.quit();
     }
 }

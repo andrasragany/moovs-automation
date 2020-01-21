@@ -222,51 +222,51 @@ public class Basic_test_Student_Philips{
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
         //System.setProperty("webdriver.chrome.driver","c:\\chromedriver\\chromedriver.exe");
-        WebDriver webDriver = new ChromeDriver();
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
+        //WebDriver webDriver = new ChromeDriver();
+        //WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
         FirefoxDriver ffDriver = new FirefoxDriver();
         WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
-        webDriver.manage().window().maximize();
+        //webDriver.manage().window().maximize();
         ffDriver.manage().window().maximize();
         //Open page
-        Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsohcacademy.com/login");
+        //Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsohcacademy.com/login");
         Basic_test_Admin_Philips.gotourl(logger,ffDriver,"https://test.philipsohcacademy.com/login");
         //Login
-        Basic_test_Admin_Philips.login(logger, webDriver, wait, "philipsstudent", "philipsstudentpassword");
+        //Basic_test_Admin_Philips.login(logger, webDriver, wait, "philipsstudent", "philipsstudentpassword");
         Basic_test_Admin_Philips.login(logger, ffDriver, wait_ff, "philipsstudent", "philipsstudentpassword");
 
         Thread.sleep(1100);
 
         //String mainWindow = webDriver.getWindowHandle();
 
-        editprofile(webDriver, logger, wait);
-        editprofile(ffDriver, logger, wait);
+        //editprofile(webDriver, logger, wait);
+        editprofile(ffDriver, logger, wait_ff);
 
 
         //go to dashboard
-        faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
+        //faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait_ff);
         Thread.sleep(1100);
 
-        opentraining(webDriver, logger, wait);
-        opentraining(ffDriver, logger, wait);
+        //opentraining(webDriver, logger, wait);
+        opentraining(ffDriver, logger, wait_ff);
 
-        player(webDriver, logger, wait);
-        player(ffDriver, logger, wait);
+        //player(webDriver, logger, wait);
+        player(ffDriver, logger, wait_ff);
 
-        exam(webDriver, logger, wait);
-        exam(ffDriver, logger, wait);
+        //exam(webDriver, logger, wait);
+        exam(ffDriver, logger, wait_ff);
 
         Thread.sleep(2000);
         logger.info("Test finished OK");
-        webDriver.quit();
+        //webDriver.quit();
         ffDriver.quit();
     }
 }
