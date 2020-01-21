@@ -106,8 +106,9 @@ public class Basic_test_Trainer_Philips{
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
-        //WebDriver webDriver = new ChromeDriver();
-        //WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
+
+        WebDriver webDriver = new ChromeDriver();
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
         FirefoxDriver ffDriver = new FirefoxDriver();
         WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
@@ -117,11 +118,11 @@ public class Basic_test_Trainer_Philips{
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
-        //webDriver.manage().window().maximize();
+        webDriver.manage().window().maximize();
         ffDriver.manage().window().maximize();
 
         //Open page
-        //Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsohcacademy.com//login");
+        Basic_test_Admin_Philips.gotourl(logger,webDriver,"https://test.philipsohcacademy.com//login");
         Basic_test_Admin_Philips.gotourl(logger,ffDriver,"https://test.philipsohcacademy.com/login");
         Thread.sleep(1000);
         //Login
