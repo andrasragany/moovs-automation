@@ -141,7 +141,7 @@ public class Basic_test_Trainer_Bissell{
         Basic_test_Admin_Bissell.navigatetousergroups(logger, webDriver, wait, "trainer");
         Basic_test_Admin_Bissell.navigatetousergroups(logger, ffDriver, wait, "trainer");
         String userGroupNameChrome1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
-        String userGroupNameFF1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupNameFF1 = Basic_test_Admin_Bissell.createstudentusergroup(logger, ffDriver, wait, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training

@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Fiskars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Bissell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Bissell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Fiskars.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Admin_Fiskars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Student_Fiskars.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Student_Fiskars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Trainer_Fiskars.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Basic_test_Trainer_Fiskars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Object_repo_Fiskars.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Object_repo_Fiskars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Fiskars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Fiskars.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Object_repo_Fiskars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Object_repo_Fiskars.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +103,7 @@
     <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Basic_test_Student_Philips">
+  <component name="RunManager" selected="Application.Basic_test_Admin_Fiskars">
     <configuration name="Basic_test_Admin" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="Basic_test_Admin" />
@@ -351,45 +357,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576416800785" />
-    <state width="644" height="315" key="GridCell.Tab.0.bottom" timestamp="1579093417480">
+    <state width="1853" height="287" key="GridCell.Tab.0.bottom" timestamp="1579538477251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579538477251" />
     <state width="2276" height="489" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="644" height="315" key="GridCell.Tab.0.center" timestamp="1579093417480">
+    <state width="1853" height="287" key="GridCell.Tab.0.center" timestamp="1579538477250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579538477250" />
     <state width="2276" height="489" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="644" height="315" key="GridCell.Tab.0.left" timestamp="1579093417480">
+    <state width="1853" height="287" key="GridCell.Tab.0.left" timestamp="1579538477250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579538477250" />
     <state width="2276" height="489" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="644" height="315" key="GridCell.Tab.0.right" timestamp="1579093417480">
+    <state width="1853" height="287" key="GridCell.Tab.0.right" timestamp="1579538477251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579538477251" />
     <state width="2276" height="489" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="644" height="315" key="GridCell.Tab.1.bottom" timestamp="1579093417480">
+    <state width="1853" height="315" key="GridCell.Tab.1.bottom" timestamp="1579533422111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579533422111" />
     <state width="2276" height="489" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339107" />
-    <state width="644" height="315" key="GridCell.Tab.1.center" timestamp="1579093417480">
+    <state width="1853" height="315" key="GridCell.Tab.1.center" timestamp="1579533422110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="315" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579533422110" />
     <state width="2276" height="489" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339107" />
-    <state width="644" height="315" key="GridCell.Tab.1.left" timestamp="1579093417480">
+    <state width="1853" height="315" key="GridCell.Tab.1.left" timestamp="1579533422110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="315" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579533422110" />
     <state width="2276" height="489" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339106" />
-    <state width="644" height="315" key="GridCell.Tab.1.right" timestamp="1579093417480">
+    <state width="1853" height="315" key="GridCell.Tab.1.right" timestamp="1579533422110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="644" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
+    <state width="1853" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579533422110" />
     <state width="2276" height="489" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1577033339107" />
     <state x="170" y="335" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1578916471107">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -419,10 +425,10 @@
     <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079418781" />
     <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579471513426" />
     <state x="1091" y="643" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3072.1688@0.0.3072.1688" timestamp="1576833449556" />
-    <state x="871" y="420" key="git4idea.merge.GitPullDialog" timestamp="1579471527133">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="653" y="312" key="git4idea.merge.GitPullDialog" timestamp="1579776616856">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="653" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579079430926" />
+    <state x="653" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579776616856" />
     <state x="871" y="420" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579471527133" />
     <state x="754" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1576449465122">
       <screen x="0" y="0" width="2560" height="1400" />

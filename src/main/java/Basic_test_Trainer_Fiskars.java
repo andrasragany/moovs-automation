@@ -139,14 +139,14 @@ public class Basic_test_Trainer_Fiskars{
         Basic_test_Admin_Fiskars.navigatetousergroups(logger, webDriver, wait, "trainer");
         Basic_test_Admin_Fiskars.navigatetousergroups(logger, ffDriver, wait, "trainer");
         String userGroupNameChrome1 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
-        String userGroupNameFF1 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupNameFF1 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, ffDriver, wait, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
         Basic_test_Admin_Fiskars.navigatetousergroups(logger, webDriver, wait, "trainer");
         Basic_test_Admin_Fiskars.navigatetousergroups(logger, ffDriver, wait, "trainer");
         String userGroupNameChrome2 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Student");
-        String userGroupNameFF2 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        String userGroupNameFF2 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, ffDriver, wait, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
