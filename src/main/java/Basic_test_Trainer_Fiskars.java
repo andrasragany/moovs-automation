@@ -127,7 +127,7 @@ public class Basic_test_Trainer_Fiskars{
         Basic_test_Admin_Fiskars.gotourl(logger,ffDriver,wait,"https://test.fiskarsacademy.com/login");
         //Login
         Basic_test_Admin_Fiskars.login(logger, webDriver, wait, "fiskarstrainer", "fiskarstrainerpassword");
-        Basic_test_Admin_Fiskars.login(logger, ffDriver, wait, "fiskarstrainer", "fiskarstrainerpassword");
+        Basic_test_Admin_Fiskars.login(logger, ffDriver, wait_ff, "fiskarstrainer", "fiskarstrainerpassword");
         Thread.sleep(1000);
 
         //openclose_comm(webDriver, logger, wait);
@@ -137,31 +137,31 @@ public class Basic_test_Trainer_Fiskars{
         //todo create trainer group for quince trainer for comm
         //faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_users, wait);
         Basic_test_Admin_Fiskars.navigatetousergroups(logger, webDriver, wait, "trainer");
-        Basic_test_Admin_Fiskars.navigatetousergroups(logger, ffDriver, wait, "trainer");
+        Basic_test_Admin_Fiskars.navigatetousergroups(logger, ffDriver, wait_ff, "trainer");
         String userGroupNameChrome1 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
-        String userGroupNameFF1 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupNameFF1 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, ffDriver, wait_ff, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
         Basic_test_Admin_Fiskars.navigatetousergroups(logger, webDriver, wait, "trainer");
         Basic_test_Admin_Fiskars.navigatetousergroups(logger, ffDriver, wait, "trainer");
         String userGroupNameChrome2 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Student");
-        String userGroupNameFF2 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        String userGroupNameFF2 = Basic_test_Admin_Fiskars.createstudentusergroup(logger, ffDriver, wait_ff, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
         Basic_test_Admin_Fiskars.navigatetocommunication(logger, webDriver, wait, "trainer");
-        Basic_test_Admin_Fiskars.navigatetocommunication(logger, ffDriver, wait, "trainer");
+        Basic_test_Admin_Fiskars.navigatetocommunication(logger, ffDriver, wait_ff, "trainer");
 
         Basic_test_Admin_Fiskars.createcommunication(logger, webDriver, wait, userGroupNameChrome1);
-        Basic_test_Admin_Fiskars.createcommunication(logger, ffDriver, wait, userGroupNameFF1);
+        Basic_test_Admin_Fiskars.createcommunication(logger, ffDriver, wait_ff, userGroupNameFF1);
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
 
 
         //todo create test training for pohc student group
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_training_lib_trainer, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_training_lib_trainer, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_training_lib_trainer, wait_ff);
 
         webDriver.navigate().refresh();
         ffDriver.navigate().refresh();
@@ -169,36 +169,36 @@ public class Basic_test_Trainer_Fiskars{
         Thread.sleep(100);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_btn, wait_ff);
 
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_name, wait))
             webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_training_add_name)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_name, wait))
+        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_name, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_training_add_name)).sendKeys(userGroupNameFF2);
 
 
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_description, wait))
             webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_training_add_description)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_description, wait))
+        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_training_add_description, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_training_add_description)).sendKeys(userGroupNameFF2);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_modules_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_modules_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_modules_tab, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_add_module_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_add_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_training_add_module_btn, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_mod_checkbox, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_mod_checkbox, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_mod_checkbox, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_selected_module_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_selected_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_add_selected_module_btn, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_exam_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_exam_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_tr_exam_tab, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_save_training_btn, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_save_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_save_training_btn, wait_ff);
 
         webDriver.navigate().refresh();
         ffDriver.navigate().refresh();
@@ -208,10 +208,10 @@ public class Basic_test_Trainer_Fiskars{
 
         //todo create Learning path for student group
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_learning_path, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_learning_path, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_learning_path, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_learning_path_button, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_learning_path_button, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_create_learning_path_button, wait_ff);
 
         webDriver.navigate().refresh();
         ffDriver.navigate().refresh();
@@ -220,47 +220,47 @@ public class Basic_test_Trainer_Fiskars{
 
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_name, wait))
             webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_add_LP_name)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_name, wait))
+        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_name, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_add_LP_name)).sendKeys(userGroupNameFF2);
 
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_description, wait))
             webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_add_LP_description)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_description, wait))
+        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_description, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_add_LP_description)).sendKeys(userGroupNameFF2);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_cr_LP_participants_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_cr_LP_participants_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_cr_LP_participants_tab, wait_ff);
 
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_search_group, wait))
             webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_LP_search_group)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_search_group, wait))
+        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_search_group, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_LP_search_group)).sendKeys(userGroupNameFF2);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_select_group, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_select_group, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_select_group, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_add_first_group, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_add_first_group, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_add_first_group, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_path_tab, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_path_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_path_tab, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_open_path_selector, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_open_path_selector, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_open_path_selector, wait_ff);
 
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_search_for_path, wait))
             webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameChrome2);
-        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_search_for_path, wait))
+        if (faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_search_for_path, wait_ff))
             ffDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameFF2);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_select_path_checkbox, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_select_path_checkbox, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_select_path_checkbox, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_add_selected_path, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_add_selected_path, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_add_selected_path, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_LP_save_LP_button, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_save_LP_button, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_trainer_LP_save_LP_button, wait_ff);
         //todo create Learning path for student group
         //todo Check deletion // admin always sees deleted stuff, maybe it should be checked by trainer
         //todo create aut student group

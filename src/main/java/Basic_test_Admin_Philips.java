@@ -2,6 +2,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
@@ -29,7 +30,7 @@ public class Basic_test_Admin_Philips {
         boolean bul = true;
         int counter = 0;
 
-        while ((bul) && (counter < 3)) {
+        while ((bul) && (counter < 2)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
@@ -49,6 +50,7 @@ public class Basic_test_Admin_Philips {
             return true;
         } else {
             logger.info(webElement + "NOT OK");
+            webDriver.quit();
             return false;
         }
     }
@@ -85,7 +87,9 @@ public class Basic_test_Admin_Philips {
         Thread.sleep(100);
         switch (user) {
             case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_users, wait);
+                break;
             case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_users, wait);
+                break;
         }
         Thread.sleep(100);
         webDriver.navigate().refresh();
@@ -153,7 +157,9 @@ public class Basic_test_Admin_Philips {
         Thread.sleep(100);
         switch (user) {
             case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_communication, wait);
+                break;
             case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication, wait);
+                break;
         }
         Thread.sleep(100);
         logger.info("Navigated to communication page OK");
@@ -298,10 +304,6 @@ public class Basic_test_Admin_Philips {
 
     public static void main(String[] argv) throws Exception {
         FileHandler fh;
-
-        // This block configure the logger with handler and formatter
-
-        //logfile name contains actual date and time of run
         String filename = "Mylogfile" + parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
         String abspath = pathname + filename;
@@ -322,46 +324,86 @@ public class Basic_test_Admin_Philips {
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
 
+        FirefoxDriver ffDriver = new FirefoxDriver();
+        WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
+
         gotourl(logger, webDriver, "https://test.philipsohcacademy.com/login");
+        gotourl(logger, ffDriver, "https://test.philipsohcacademy.com/login");
+
         login(logger, webDriver, wait, "philipsadmin", "philipsadminpassword");
+        login(logger, ffDriver, wait_ff, "philipsadmin", "philipsadminpassword");
+
         navigatetoprofile(logger, webDriver, wait);
+        navigatetoprofile(logger, ffDriver, wait_ff);
 
         //todo create trainer group for quince trainer for comm
         //faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_users, wait);
         navigatetousergroups(logger, webDriver, wait, "admin");
-        String userGroupName1 = createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        navigatetousergroups(logger, ffDriver, wait_ff, "admin");
+        String userGroupNameChrome1 = createstudentusergroup(logger, webDriver, wait, "Quince Trainer");
+        String userGroupNameFF1 = createstudentusergroup(logger, ffDriver, wait_ff, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
         navigatetousergroups(logger, webDriver, wait, "admin");
-        String userGroupName2 = createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        navigatetousergroups(logger, ffDriver, wait_ff, "admin");
+        String userGroupNameChrome2 = createstudentusergroup(logger, webDriver, wait, "Quince Student");
+        String userGroupNameFF2 = createstudentusergroup(logger, ffDriver, wait_ff, "Quince Student");
         //todo create student group for quince student for training
 
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
         navigatetocommunication(logger, webDriver, wait, "admin");
-        createcommunication(logger, webDriver, wait, userGroupName1);
+        navigatetocommunication(logger, ffDriver, wait_ff, "admin");
+        createcommunication(logger, webDriver, wait, userGroupNameChrome1);
+        createcommunication(logger, ffDriver, wait_ff, userGroupNameFF1);
         //todo creating comm for trainer group. userGroupName1 will be the name of the comm for trainer group
 
         //todo create test training for pohc student group
 
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_training_lib_trainer, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_admin_training_lib_trainer, wait_ff);
         webDriver.navigate().refresh();
+        ffDriver.navigate().refresh();
         Thread.sleep(100);
+
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_btn, wait_ff);
+
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_name)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_name)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait_ff))
+            ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_name)).sendKeys(userGroupNameFF2);
 
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_description, wait))
-            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_description)).sendKeys(userGroupName2);
+            webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_description)).sendKeys(userGroupNameChrome2);
+        if (faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_training_add_description, wait_ff))
+            ffDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_training_add_description)).sendKeys(userGroupNameFF2);
 
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_modules_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_modules_tab, wait_ff);
+
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_training_add_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_training_add_module_btn, wait_ff);
+
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_mod_checkbox, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_mod_checkbox, wait_ff);
+
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_selected_module_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_add_selected_module_btn, wait_ff);
+
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait_ff);
+
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_save_training_btn, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_save_training_btn, wait_ff);
+
         webDriver.navigate().refresh();
+        ffDriver.navigate().refresh();
         Thread.sleep(100);
+
+        logger.info("Trainer Test finished OK");
+        webDriver.quit();
+        ffDriver.quit();
         //todo create test training for pohc student group
     }
 }

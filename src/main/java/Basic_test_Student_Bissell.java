@@ -238,28 +238,28 @@ public class Basic_test_Student_Bissell{
         Basic_test_Admin_Bissell.gotourl(logger,ffDriver,"https://test.bissellexpert.com/login");
         //Login
         Basic_test_Admin_Bissell.login(logger, webDriver, wait, "bissellstudent", "bissellstudentpassword");
-        Basic_test_Admin_Bissell.login(logger, ffDriver, wait, "bissellstudent", "bissellstudentpassword");
+        Basic_test_Admin_Bissell.login(logger, ffDriver, wait_ff, "bissellstudent", "bissellstudentpassword");
 
         Thread.sleep(1100);
 
         //String mainWindow = webDriver.getWindowHandle();
 
         editprofile(webDriver, logger, wait);
-        editprofile(ffDriver, logger, wait);
+        editprofile(ffDriver, logger, wait_ff);
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_student_dashboard, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_student_dashboard, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_student_dashboard, wait_ff);
         Thread.sleep(1100);
 
         opentraining(webDriver, logger, wait);
-        opentraining(ffDriver, logger, wait);
+        opentraining(ffDriver, logger, wait_ff);
 
         player(webDriver, logger, wait);
-        player(ffDriver, logger, wait);
+        player(ffDriver, logger, wait_ff);
 
         exam(webDriver, logger, wait);
-        exam(ffDriver, logger, wait);
+        exam(ffDriver, logger, wait_ff);
 
         Thread.sleep(2000);
         logger.info("Test finished OK");

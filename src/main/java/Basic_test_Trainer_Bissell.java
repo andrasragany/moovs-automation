@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.FileReader;
-import java.net.URL;
 import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -264,9 +263,6 @@ public class Basic_test_Trainer_Bissell{
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_trainer_LP_save_LP_button, wait);
         faszaklikk(ffDriver, logger, Object_repo_Bissell.selector_trainer_LP_save_LP_button, wait_ff);
         //todo create Learning path for student group
-
-
-
         //todo Check deletion // admin always sees deleted stuff, maybe it should be checked by trainer
         //todo create aut student group
         //todo create aut training
