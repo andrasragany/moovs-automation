@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Bissell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Admin_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Bissell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Student_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Bissell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_Philips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_fc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/_fc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +101,7 @@
     <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Basic_test_Admin_Bissell">
+  <component name="RunManager" selected="Application.Basic_test_Trainer_Bissell">
     <configuration name="Basic_test_Admin" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="Basic_test_Admin" />
@@ -266,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579742547034</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="elso">
+      <created>1579796102458</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1579796102458</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,11 +351,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400@0.0.2560.1400" timestamp="1576449890367" />
-    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1579742546535">
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1579796101616">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079414175" />
-    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579742546535" />
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579796101616" />
     <state x="898" y="297" key="DetectedRootsChooserDialog" timestamp="1576447992436">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -376,26 +390,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576416800785" />
-    <state width="2216" height="126" key="GridCell.Tab.0.bottom" timestamp="1579742596732">
+    <state width="2215" height="341" key="GridCell.Tab.0.bottom" timestamp="1579814438182">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="644" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
-    <state width="2216" height="126" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579742596732" />
-    <state width="2216" height="126" key="GridCell.Tab.0.center" timestamp="1579742596732">
+    <state width="2215" height="341" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579814438182" />
+    <state width="2215" height="341" key="GridCell.Tab.0.center" timestamp="1579814438182">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="644" height="315" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
-    <state width="2216" height="126" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579742596732" />
-    <state width="2216" height="126" key="GridCell.Tab.0.left" timestamp="1579742596732">
+    <state width="2215" height="341" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579814438182" />
+    <state width="2215" height="341" key="GridCell.Tab.0.left" timestamp="1579814438182">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="644" height="315" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
-    <state width="2216" height="126" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579742596732" />
-    <state width="2216" height="126" key="GridCell.Tab.0.right" timestamp="1579742596732">
+    <state width="2215" height="341" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579814438182" />
+    <state width="2215" height="341" key="GridCell.Tab.0.right" timestamp="1579814438182">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="644" height="315" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
-    <state width="2216" height="126" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579742596732" />
+    <state width="2215" height="341" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579814438182" />
     <state width="2269" height="491" key="GridCell.Tab.1.bottom" timestamp="1579612796746">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -416,10 +430,11 @@
     </state>
     <state width="644" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579093417480" />
     <state width="2269" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579612796746" />
-    <state x="170" y="335" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1578916471107">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="227" y="451" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1579796137109">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="170" y="335" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578916471107" />
+    <state x="227" y="451" key="MultipleFileMergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579796137109" />
     <state x="272" y="543" width="1069" height="565" key="MultipleFileMergeDialog/0.0.3072.1688@0.0.3072.1688" timestamp="1576833466198" />
     <state x="587" y="127" key="SettingsEditor" timestamp="1577007255116">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -445,11 +460,11 @@
     <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079418781" />
     <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579471513426" />
     <state x="1091" y="643" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3072.1688@0.0.3072.1688" timestamp="1576833449556" />
-    <state x="871" y="420" key="git4idea.merge.GitPullDialog" timestamp="1579796089712">
+    <state x="871" y="420" key="git4idea.merge.GitPullDialog" timestamp="1579796122436">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="653" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579079430926" />
-    <state x="871" y="420" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579796089712" />
+    <state x="871" y="420" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579796122436" />
     <state x="937" y="331" key="run.anything.popup" timestamp="1579701074323">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
