@@ -3,12 +3,12 @@
 public class Object_repo_Fiskars {
 
     //input user email
-    static String selector_user_email = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/form/div[1]/div/input";
+    static String selector_user_email = "//input[name='email']";
 
     //input user password
-    static String selector_user_password = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/form/div[2]/div/input";
+    static String selector_user_password = "//input[name='password']";
     //login button
-    static String selector_login_button = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/form/button";
+    static String selector_login_button = "//button[type='Submit']";
 
     //admin menu system
 

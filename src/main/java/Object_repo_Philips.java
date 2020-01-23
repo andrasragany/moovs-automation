@@ -1,5 +1,3 @@
-
-
 public class Object_repo_Philips {
 
     //input user email
@@ -11,15 +9,24 @@ public class Object_repo_Philips {
     static String selector_login_button = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/form/button";
 
     //admin menu system
+    //admin_user_dropdown Bissell, Fiskars
+    static String selector_admin_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/button";
+
+
 
     //admin dashboard
-    static String selector_admin_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
+    static String selector_admin_dashboard_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
+    static String selector_admin_dashboard_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[1]/a";
     static String Selector_admin_dashboard_opencomm_modal = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div/span";
     static String Selector_admin_dashboard_closecomm_modal = "/html/body/div[2]/div/div/div/div[1]/button/img";
     static String Selector_admin_dashboard_comm_list_first_item = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[1]/div/span";
     static String Selector_admin_dashboard_comm_list_first_item_title = "/html/body/div[2]/div/div/div/div[1]/h1";
+    //admin_user_dropdown
+    static String selector_admin_user_dropdown_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/button";
     //admin profile
-    static String selector_admin_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
+    static String selector_admin_profile_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/div/a[1]";
+    //admin profile edit
+    static String selector_admin_profile_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
     //admin profile edit
     static String selector_admin_profile_edit_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[5]/div/a";
     //admin profile preferred device
@@ -33,17 +40,23 @@ public class Object_repo_Philips {
     //Preferred deice text
     static String selector_preferred_device = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div[2]";
     //admin logout
-    static String selector_admin_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
+    static String selector_admin_logout_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
+    static String selector_admin_logout_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[2]";
     //admin goals
     static String selector_admin_goals = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]/a";
     //admin learning path
     static String selector_admin_learning_path = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]/a";
     //admin training library student view
-    static String selector_admin_training_lib_student = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]";
+    static String selector_admin_training_lib_student_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]";
+    static String selector_admin_training_lib_student_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]/a";
+
     //admin training library trainer view
-    static String selector_admin_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]";
+    static String selector_admin_training_lib_trainer_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]";
+    static String selector_admin_training_lib_trainer_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]/a";
     //admin modules
-    static String selector_admin_modules = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]/a";
+    static String selector_admin_modules_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]/a";
+    static String selector_admin_modules_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[6]/a";
+
     // admin modules Action dropdown
     static String selector_admin_modules_first_action_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[2]/div[1]/div/div[2]/div/div/button";
     //admin modules action dropdown Translate button
@@ -55,7 +68,9 @@ public class Object_repo_Philips {
     //save translate
     static String selector_admin_translate_changed_save = "//*[@id=\"react-tabs-5\"]/form/div[2]/div[1]/button[1]";
     //admin communication
-    static String selector_admin_communication = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]";
+    static String selector_admin_communication_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[6]";
+    static String selector_admin_communication_Bissell = "//*[text()='Communication']";
+
     //create communication
     static String selector_create_communication_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
     //communication add title and description, news type checkbox, publish now radiobtn, save btn
@@ -76,7 +91,10 @@ public class Object_repo_Philips {
     static String selector_comm_action_delete_confirm = "/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]";
     static String selector_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
     //admin users
-    static String selector_admin_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[7]";
+    static String selector_admin_users_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[7]";
+    static String selector_admin_users_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[8]/a";
+    // #root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(8) > a
+
     static String selector_admin_user_groups = "//*[@id=\"react-tabs-2\"]";
     static String selector_create_user_group_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
     static String selector_usergroup_add_name = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div/input";
@@ -88,11 +106,15 @@ public class Object_repo_Philips {
     //admin reports
     static String selector_admin_reports = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[8]";
     //admin glossary
-    static String selector_admin_glossary = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[9]";
+    static String selector_admin_glossary_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[9]";
+    static String selector_admin_glossary_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[9]/a";
+
     //admin contact
-    static String selector_admin_contact = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[10]";
+    static String selector_admin_contact_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[10]";
+    static String selector_admin_contact_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[10]/a";
     //admin help
-    static String selector_admin_help = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[11]";
+    static String selector_admin_help_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[11]";
+    static String selector_admin_help_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[11]/a";
 
     //manager menu system
 
@@ -124,15 +146,23 @@ public class Object_repo_Philips {
     String selector_manager_help = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(10) > a";
 
     //trainer menu system
-
-    static String selector_trainer_dashboard = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
+    static String selector_trainer_dashboard_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
+    static String selector_trainer_dashboard_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
     static String selector_trainer_dashboard_tracking_tab = "//*[@id=\"react-tabs-2\"]";
 
-    static String Selector_trainer_dashboard_opencomm_modal = "//*[@id=\"react-tabs-1\"]/div/div[2]/div/div/div[1]/div/span";
-    static String Selector_trainer_dashboard_closecomm_modal = "/html/body/div[2]/div/div/div/div[1]/button/img";
+
+
+    static String Selector_trainer_dashboard_opencomm_modal_Philips = "//*[@id=\"react-tabs-1\"]/div/div[2]/div/div/div[1]/div/span";
+    static String Selector_trainer_dashboard_closecomm_modal_Philips = "/html/body/div[2]/div/div/div/div[1]/button/img";
+    static String Selector_trainer_dashboard_opencomm_modal_Bissell = "//*[@id=\"react-tabs-7\"]/div/div[1]/div/div/div[1]/div/span";
+    static String Selector_trainer_dashboard_closecomm_modal_Bissell = "/html/body/div[2]/div/div/div/div[1]/button/img";
+
     //trainer profile
-    static String selector_trainer_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
+    static String selector_trainer_user_dropdown_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/button";
+    static String selector_trainer_profile_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
+    static String selector_trainer_profile_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[1]";
     //trainer profile edit
+
     static String selector_trainer_profile_edit_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[5]/div/a";
     //trainer profile preferred device
     static String selector_trainer_preferred_device_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[14]/div[2]/div/div/button";
@@ -145,9 +175,12 @@ public class Object_repo_Philips {
     //trainer Preferred deice text
     static String selector_trainer_preferred_device = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div[2]";
     //trainer logout
-    static String selector_trainer_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
+    static String selector_trainer_logout_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
+    static String selector_trainer_logout_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[2]";
     //trainer learning path
-    static String selector_trainer_learning_path = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]";
+    static String selector_trainer_learning_path_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]";
+    //static String selector_trainer_learning_path_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[2]/a";
+    static String selector_trainer_learning_path_Bissell = "//*[text()='Learning paths']";
     //trainer create learning path button
     static String selector_trainer_create_learning_path_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/a";
     //add LP name
@@ -196,9 +229,11 @@ public class Object_repo_Philips {
     //create training Save button
     static String selector_trainer_save_training_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div/button[1]";
     //trainer modules
-    static String selector_trainer_modules = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]";
+    static String selector_trainer_modules_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[3]";
+    static String selector_trainer_modules_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]/a";
     //trainer communication
-    static String selector_trainer_communication = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]";
+    static String selector_trainer_communication_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]";
+    static String selector_trainer_communication_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]/a";
     //trainer create communication
     static String selector_trainer_create_communication_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
     //communication add title and description, news type checkbox, publish now radiobtn, save btn
@@ -217,8 +252,10 @@ public class Object_repo_Philips {
     static String selector_trainer_comm_action_delete_confirm = "/html/body/div[2]/div/div/div/div[2]/div[2]/button[1]";
     static String selector_trainer_comm_action_delete_cancel= "/html/body/div[2]/div/div/div/div[2]/div[2]/button[2]";
     //trainer users
-    static String selector_trainer_users = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]";
-    static String selector_trainer_user_groups = "//*[@id=\"react-tabs-2\"]";
+    static String selector_trainer_users_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]";
+    static String selector_trainer_users_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[6]/a";
+    static String selector_trainer_user_groups_Philips = "//*[@id=\"react-tabs-2\"]";
+    static String selector_trainer_user_groups_Bissell = "//*[text()='User groups']";
     static String selector_trainer_user_create_usergroup_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
     static String selector_trainer_usergroup_add_name = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div/input";
     static String selector_trainer_usergroup_add_description = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[3]/div[2]/div/textarea";
@@ -227,20 +264,28 @@ public class Object_repo_Philips {
     static String selector_trainer_usergroup_add_user = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[4]/div[2]/div[2]/div/button";
     static String selector_trainer_usergroup_save = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[5]/div/button[1]";
     //trainer glossary
-    static String selector_trainer_glossary = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[7]/a";
+    static String selector_trainer_glossary_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[7]/a";
+    static String selector_trainer_glossary_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[9]/a";
+
     //admin contact
     static String selector_trainer_contact = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[8]/a";
     //admin help
     static String selector_trainer_help = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[9]/a";
 
     //student menu system
+    static  String selector_student_dashboard_card_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]";
+    static String selector_student_dashboard_training_card_start_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/a";
 
     //student user dropdown
-    static String selector_student_user_dashboard= "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
+    static String selector_student_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/button";
+    static String selector_student_user_dashboard_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
+    static String selector_student_dashboard_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[1]/a";
     //student profile
-    static String selector_student_user_profile = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
+    static String selector_student_user_profile_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
+    static String selector_student_user_profile_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/div/a[1]";
     //student logout
-    static String selector_student_logout = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
+    static String selector_student_logout_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[3]";
+    static String selector_student_logout_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[2]";
     //student edit profile button
     static String selector_student_edit_profile_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[5]/div/a";
     //student profile preferred device

@@ -136,13 +136,13 @@ public class _fc {
         logger.info("Navigated to user groups page OK");
     }
 
-    static String createstudentusergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
+    static String create_usergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
         Thread.sleep(100);
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_create_user_group_btn, wait, "selector_create_user_group_btn");
         Thread.sleep(100);
-        String sendkey_testgroup = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_name))).sendKeys(sendkey_testgroup);
-        wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_description))).sendKeys(sendkey_testgroup);
+        String testgroup_name_to_be_used_later = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_name))).sendKeys(testgroup_name_to_be_used_later);
+        wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_description))).sendKeys(testgroup_name_to_be_used_later);
         wait.until(elementToBeClickable(By.xpath(Object_repo_Bissell.selector_usergroup_add_user_search))).sendKeys(user);
         Thread.sleep(200);
         faszaklikk(webDriver, logger, Object_repo_Bissell.selector_usergroup_add_user_select_first, wait, "selector_usergroup_add_user_select_first");
@@ -154,7 +154,7 @@ public class _fc {
         webDriver.navigate().refresh();
         Thread.sleep(100);
         logger.info("Created student user group page OK");
-        return sendkey_testgroup;
+        return testgroup_name_to_be_used_later;
     }
 
     static void navigatetocommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
@@ -363,7 +363,10 @@ public class _fc {
         webDriver.navigate().refresh();
     }
 
-    private static void create_LP ( WebDriver webDriver, WebDriverWait wait, Logger logger, String Object_repo) throws InterruptedException {
+    private static void create_LP ( WebDriver webDriver, WebDriverWait wait, Logger logger, String repoIndentifier) throws InterruptedException {
+
+
+
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_learning_path, wait, "");
 
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_create_learning_path_button, wait, "");
@@ -372,7 +375,8 @@ public class _fc {
 
         Thread.sleep(100);
 
-        if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_name, wait, ""))
+
+        if (faszaklikk(webDriver, logger, Object_repo.selector_trainer_add_LP_name, wait, ""))
             webDriver.findElement(By.xpath(Object_repo_Fiskars.selector_trainer_add_LP_name)).sendKeys(userGroupNameChrome2);
 
         if (faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_trainer_add_LP_description, wait, ""))
