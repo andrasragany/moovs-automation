@@ -234,31 +234,31 @@ public class Basic_test_Student_Fiskars{
         ffDriver.manage().window().maximize();
         //Open page
         Basic_test_Admin_Fiskars.gotourl(logger,webDriver,wait,"https://test.fiskarsacademy.com/login");
-        Basic_test_Admin_Fiskars.gotourl(logger,ffDriver,wait,"https://test.fiskarsacademy.com/login");
+        Basic_test_Admin_Fiskars.gotourl(logger,ffDriver,wait_ff,"https://test.fiskarsacademy.com/login");
         //Login
         Basic_test_Admin_Fiskars.login(logger, webDriver, wait, "fiskarsstudent", "fiskarsstudentpassword");
-        Basic_test_Admin_Fiskars.login(logger, ffDriver, wait, "fiskarsstudent", "fiskarsstudentpassword");
+        Basic_test_Admin_Fiskars.login(logger, ffDriver, wait_ff, "fiskarsstudent", "fiskarsstudentpassword");
 
         Thread.sleep(1100);
 
         //String mainWindow = webDriver.getWindowHandle();
 
         editprofile(webDriver, logger, wait);
-        editprofile(ffDriver, logger, wait);
+        editprofile(ffDriver, logger, wait_ff);
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait_ff);
         Thread.sleep(1100);
 
         opentraining(webDriver, logger, wait);
-        opentraining(ffDriver, logger, wait);
+        opentraining(ffDriver, logger, wait_ff);
 
         player(webDriver, logger, wait);
-        player(ffDriver, logger, wait);
+        player(ffDriver, logger, wait_ff);
 
         exam(webDriver, logger, wait);
-        exam(ffDriver, logger, wait);
+        exam(ffDriver, logger, wait_ff);
 
         Thread.sleep(2000);
         logger.info("Test finished OK");

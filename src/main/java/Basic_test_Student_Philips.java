@@ -228,8 +228,8 @@ public class Basic_test_Student_Philips{
         FirefoxDriver ffDriver = new FirefoxDriver();
         WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
@@ -247,22 +247,22 @@ public class Basic_test_Student_Philips{
         //String mainWindow = webDriver.getWindowHandle();
 
         editprofile(webDriver, logger, wait);
-        editprofile(ffDriver, logger, wait);
+        editprofile(ffDriver, logger, wait_ff);
 
 
         //go to dashboard
         faszaklikk(webDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Fiskars.selector_student_dashboard, wait_ff);
         Thread.sleep(1100);
 
         opentraining(webDriver, logger, wait);
-        opentraining(ffDriver, logger, wait);
+        opentraining(ffDriver, logger, wait_ff);
 
         player(webDriver, logger, wait);
-        player(ffDriver, logger, wait);
+        player(ffDriver, logger, wait_ff);
 
         exam(webDriver, logger, wait);
-        exam(ffDriver, logger, wait);
+        exam(ffDriver, logger, wait_ff);
 
         Thread.sleep(2000);
         logger.info("Test finished OK");
