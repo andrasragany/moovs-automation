@@ -138,6 +138,7 @@ public class _fc {
 
     static String create_usergroup(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
         Thread.sleep(100);
+        webDriver.navigate().refresh();
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_create_user_group_btn, wait, "selector_create_user_group_btn");
         Thread.sleep(100);
         String testgroup_name_to_be_used_later = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
@@ -162,7 +163,7 @@ public class _fc {
         switch (user) {
             case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_communication_Bissell, wait, "selector_admin_communication");
                 break;
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication_Bissell, wait, "selector_trainer_communication");
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication, wait, "selector_trainer_communication");
                 break;
         }
         Thread.sleep(100);

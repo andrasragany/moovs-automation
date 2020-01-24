@@ -61,14 +61,18 @@ public class Basic_test_Trainer_Bissell{
 
         //todo create trainer group for quince trainer for comm
         //_fc.._fc.faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_users, wait);
+        webDriver.navigate().refresh();
         _fc.navigatetousergroups(logger, webDriver, wait, "trainer");
+        ffDriver.navigate().refresh();
         _fc.navigatetousergroups(logger, ffDriver, wait_ff, "trainer");
         String userGroupNameChrome1 = _fc.create_usergroup(logger, webDriver, wait, "Quince Trainer");
         String userGroupNameFF1 = _fc.create_usergroup(logger, webDriver, wait_ff, "Quince Trainer");
         //todo create trainer group for quince trainer for comm
 
         //todo create student group for quince student for training
+        webDriver.navigate().refresh();
         _fc.navigatetousergroups(logger, webDriver, wait, "trainer");
+        ffDriver.navigate().refresh();
         _fc.navigatetousergroups(logger, ffDriver, wait, "trainer");
         String userGroupNameChrome_2 = _fc.create_usergroup(logger, webDriver, wait, "Quince Student");
         String userGroupNameFF_2 = _fc.create_usergroup(logger, ffDriver, wait_ff, "Quince Student");
