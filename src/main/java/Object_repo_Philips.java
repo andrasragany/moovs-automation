@@ -95,7 +95,8 @@ public class Object_repo_Philips {
     static String selector_admin_users_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[8]/a";
     // #root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(8) > a
 
-    static String selector_admin_user_groups = "//*[@id=\"react-tabs-2\"]";
+    static String selector_admin_user_groups_Philips = "//*[@id=\"react-tabs-2\"]";
+    static String selector_admin_user_groups = "//*[text()='User groups']";
     static String selector_create_user_group_btn = "//*[@id=\"react-tabs-3\"]/div/div[2]/div[2]/a";
     static String selector_usergroup_add_name = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[1]/div[2]/div/div/input";
     static String selector_usergroup_add_description = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div/div/form/div[3]/div[2]/div/textarea";
@@ -209,7 +210,7 @@ public class Object_repo_Philips {
     static String selector_trainer_LP_save_LP_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div/button[1]";
 
     //trainer training library trainer view
-    static String selector_trainer_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[2]";
+    static String selector_trainer_training_lib_trainer = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[3]/ul/li[3]/a";
     //create training button
     static String selector_trainer_create_training_btn = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
     //add name for training
@@ -233,7 +234,8 @@ public class Object_repo_Philips {
     static String selector_trainer_modules_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]/a";
     //trainer communication
     static String selector_trainer_communication_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[4]";
-    static String selector_trainer_communication_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]/a";
+    static String selector_trainer_communication_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[5]";
+    static String selector_trainer_communication = "//*[text()='Communication']";
     //trainer create communication
     static String selector_trainer_create_communication_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[4]/div[1]/div[2]/a";
     //communication add title and description, news type checkbox, publish now radiobtn, save btn

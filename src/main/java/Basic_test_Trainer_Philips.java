@@ -53,7 +53,7 @@ public class Basic_test_Trainer_Philips{
     }
 
     private static String create_comm(WebDriver webDriver, Logger logger, WebDriverWait wait, String string) throws ParseException, InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication_Philips, wait);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_communication_button, wait);
         String sendkey_communicationname = ("Communication autotest " +parseDate(LocalDateTime.now()));
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_comm_add_title, wait))
@@ -71,15 +71,15 @@ public class Basic_test_Trainer_Philips{
         return sendkey_communicationname;
     }
     private static void openclose_comm(WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_dashboard, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_dashboard_Philips, wait);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_dashboard_tracking_tab, wait);
-        faszaklikk(webDriver, logger, Object_repo_Philips.Selector_trainer_dashboard_opencomm_modal, wait);
-        faszaklikk(webDriver, logger, Object_repo_Philips.Selector_trainer_dashboard_closecomm_modal, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.Selector_trainer_dashboard_opencomm_modal_Philips, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.Selector_trainer_dashboard_closecomm_modal_Philips, wait);
     }
 
     private static void deletecomm(WebDriver webDriver, Logger logger, WebDriverWait wait, String sendkey_communicationname) throws InterruptedException {
         Thread.sleep(200);
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication_Philips, wait);
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_comm_search_input, wait))
             webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_comm_search_input)).sendKeys(sendkey_communicationname);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_comm_search_input_searchbtn, wait);
@@ -203,8 +203,8 @@ public class Basic_test_Trainer_Philips{
         //todo create test training for pohc student group
 
         //todo create Learning path for student group
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_learning_path, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_learning_path, wait_ff);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_learning_path_Philips, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_learning_path_Philips, wait_ff);
 
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_learning_path_button, wait);
         faszaklikk(ffDriver, logger, Object_repo_Philips.selector_trainer_create_learning_path_button, wait_ff);

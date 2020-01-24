@@ -78,7 +78,7 @@ public class Basic_test_Admin_Philips {
 
     private static void navigatetoprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_profile, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_profile_Philips, wait);
         Thread.sleep(100);
         logger.info("Navigated to user profile page OK");
     }
@@ -86,9 +86,9 @@ public class Basic_test_Admin_Philips {
     static void navigatetousergroups(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         Thread.sleep(100);
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_users, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_users_Philips, wait);
                 break;
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_users, wait);
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_users_Philips, wait);
                 break;
         }
         Thread.sleep(100);
@@ -156,9 +156,9 @@ public class Basic_test_Admin_Philips {
     static void navigatetocommunication(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         Thread.sleep(100);
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_communication, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_communication_Philips, wait);
                 break;
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication, wait);
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_communication_Philips, wait);
                 break;
         }
         Thread.sleep(100);
@@ -238,8 +238,8 @@ public class Basic_test_Admin_Philips {
 
     private static void navigatetomodules(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_modules, wait);
-            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_modules, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_modules_Philips, wait);
+            case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_modules_Philips, wait);
         }
         Thread.sleep(200);
         logger.info("Navigated to modules page OK");
@@ -288,7 +288,7 @@ public class Basic_test_Admin_Philips {
     private static void navigatetocontacts(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException {
         Thread.sleep(100);
         switch (user) {
-            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_contact, wait);
+            case "admin": faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_contact_Philips, wait);
             case "trainer": faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_contact, wait);
         }
         Thread.sleep(100);
@@ -297,7 +297,7 @@ public class Basic_test_Admin_Philips {
 
     private static void navigatetodashboard(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_dashboard, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_dashboard_Philips, wait);
         Thread.sleep(100);
         logger.info("Navigated to dashboard OK");
     }
@@ -360,8 +360,8 @@ public class Basic_test_Admin_Philips {
 
         //todo create test training for pohc student group
 
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_training_lib_trainer, wait);
-        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_admin_training_lib_trainer, wait_ff);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_training_lib_trainer_Philips, wait);
+        faszaklikk(ffDriver, logger, Object_repo_Philips.selector_admin_training_lib_trainer_Philips, wait_ff);
         webDriver.navigate().refresh();
         ffDriver.navigate().refresh();
         Thread.sleep(100);

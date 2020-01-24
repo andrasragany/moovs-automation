@@ -61,7 +61,7 @@ public class Basic_test_Student_Philips{
 
 
     private static void editprofile (WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_student_user_profile, wait);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_student_user_profile_Philips, wait);
         Actions actions = new Actions(webDriver);
         actions.sendKeys(Keys.END).perform();
 
