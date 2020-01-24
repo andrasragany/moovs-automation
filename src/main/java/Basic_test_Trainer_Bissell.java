@@ -1,11 +1,8 @@
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.io.FileReader;
 import java.time.LocalDateTime;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -36,10 +33,10 @@ public class Basic_test_Trainer_Bissell{
         FirefoxDriver ffDriver = new FirefoxDriver();
         WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
-        JSONObject jo = (JSONObject) obj;
+        //Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
+        //JSONObject jo = (JSONObject) obj;
 
         //webDriver.manage().window().maximize();
         ffDriver.manage().window().maximize();

@@ -101,34 +101,6 @@ public class Object_repo_Philips {
     static String selector_contact = "//*[text()='Contact']";
 
     static String selector_help= "//*[text()='Help']";
-
-    //manager menu system
-
-    //manager user dropdown
-    String selector_user_dropdown = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(2) > div > div > button";
-    //manager dashboard
-    String selector_manager_dashboard = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(1) > a";
-    //manager profile
-    String selector_manager_profile = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(2) > div > div > div > a:nth-child(1)";
-    //manager logout
-    String selector_manager_logout = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(2) > div > div > div > a:nth-child(2)";
-    //manager goals
-    String selector_manager_goals = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(2) > a";
-    //manager training library
-    String selector_manager_training_library = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(4) > a";
-    //manager modules
-    String selector_manager_modules = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(5) > a";
-    //manager communications
-    String selector_manager_communications = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(6) > a";
-    //manager users
-    String selector_manager_users = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(7) > a";
-    //manager glossary
-    String selector_manager_glossary = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(8) > a";
-    //manager contact
-    String selector_manager_contact = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(9) > a";
-    //manager help
-    String selector_manager_help = "#root > div > div > div.Page__contentWrapper___2q8ya.row > div.Sidebar__sideBar___1xZie > ul:nth-child(3) > li:nth-child(10) > a";
-
     //trainer menu system
     static String selector_trainer_dashboard_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[1]";
     static String selector_trainer_dashboard_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[2]/li[1]/a";
@@ -140,12 +112,6 @@ public class Object_repo_Philips {
     static String Selector_trainer_dashboard_closecomm_modal_Philips = "/html/body/div[2]/div/div/div/div[1]/button/img";
     static String Selector_trainer_dashboard_opencomm_modal_Bissell = "//*[@id=\"react-tabs-7\"]/div/div[1]/div/div/div[1]/div/span";
     static String Selector_trainer_dashboard_closecomm_modal_Bissell = "/html/body/div[2]/div/div/div/div[1]/button/img";
-
-    //trainer profile
-    static String selector_trainer_user_dropdown_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/button";
-    static String selector_trainer_profile_Philips = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/li[2]";
-    static String selector_trainer_profile_Bissell = "//*[@id=\"root\"]/div/div/div[2]/div[1]/ul[1]/div/div/div/a[1]";
-    //trainer profile edit
 
     static String selector_trainer_profile_edit_button = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div[5]/div/a";
     //trainer profile preferred device
@@ -180,8 +146,9 @@ public class Object_repo_Philips {
     static String selector_trainer_LP_open_path_selector = "//*[@id=\"react-tabs-5\"]/form/div/div/div";
     //create LP search for path
     static String selector_trainer_LP_search_for_path = "/html/body/div[2]/div/div/div/div[2]/form/input";
+    static String selector_LP_search_for_path_button = "/html/body/div[2]/div/div/div/div[2]/form/button/img";
     //create LP select path
-    static String selector_trainer_LP_select_path_checkbox = "/html/body/div[2]/div/div/div/div[3]/ul[1]/li[1]/label/div";
+    static String selector_trainer_LP_select_path_checkbox = "/html/body/div[2]/div/div/div/div[3]/ul/li[1]/label/div";
     //create LP add selected path
     static String selector_trainer_LP_add_selected_path = "/html/body/div[2]/div/div/div/div[4]/button";
     //create LP save LP button
@@ -195,7 +162,7 @@ public class Object_repo_Philips {
     //add description for training
     static String selector_trainer_training_add_description = "//*[@id=\"react-tabs-1\"]/form/div[2]/div[2]/div/textarea";
     //create training modules tab
-    static String selector_create_training_modules_tab = "//*[text()='Modules']";
+    static String selector_create_training_modules_tab = "//*[@id=\"react-tabs-2\"]";
     //create training add module btn
     static String selector_trainer_create_training_add_module_btn = "//*[@id=\"react-tabs-3\"]/form/div/div/div";
     //create training add module select module checkbox

@@ -61,8 +61,8 @@ public class _fc {
     }
 
     public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_email))).sendKeys((String) jo.get(user));
@@ -315,9 +315,9 @@ public class _fc {
     }
 
     static void create_training (WebDriver webDriver, WebDriverWait wait, Logger logger, String userGroupNameChrome2) throws InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_training_lib, wait, "selector_trainer_training_lib");
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_training_lib, wait, "selector_training_lib");
         Thread.sleep(1000);
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_create_training_button, wait, "selector_trainer_create_training_button");
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_create_training_button, wait, "selector_create_training_button");
         webDriver.navigate().refresh();
         Thread.sleep(1000);
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_training_add_name, wait, "selector_trainer_training_add_name"))
@@ -361,6 +361,8 @@ public class _fc {
 
         if (faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_search_for_path, wait, "selector_trainer_LP_search_for_path"))
             webDriver.findElement(By.xpath(Object_repo_Philips.selector_trainer_LP_search_for_path)).sendKeys(userGroupNameChrome2);
+
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_LP_search_for_path_button, wait, "selector_LP_search_for_path_button");
         Thread.sleep(1000);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_LP_select_path_checkbox, wait, "selector_trainer_LP_select_path_checkbox");
 
