@@ -8,8 +8,7 @@ public class Object_repo_Philips {
     //login button
     static String selector_login_button = "//*[text()='Login']";
 
-    //admin menu system
-    //admin_user_dropdown Bissell, Fiskars
+
     static String selector_admin_user_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div/div[2]/ul/div/div/button";
 
 

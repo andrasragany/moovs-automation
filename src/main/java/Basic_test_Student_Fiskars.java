@@ -37,8 +37,8 @@ public class Basic_test_Student_Fiskars{
         FirefoxDriver ffDriver = new FirefoxDriver();
         WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
 
@@ -54,6 +54,9 @@ public class Basic_test_Student_Fiskars{
         Thread.sleep(1100);
 
         //String mainWindow = webDriver.getWindowHandle();
+
+        _fc.navigatetoprofile(logger, webDriver, "https://test.fiskarsacademy.com/profile");
+        _fc.navigatetoprofile(logger, ffDriver, "https://test.fiskarsacademy.com/profile");
 
         _fc.editprofile(logger, webDriver, wait);
         _fc.editprofile(logger, ffDriver, wait_ff);

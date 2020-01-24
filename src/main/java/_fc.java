@@ -57,7 +57,7 @@ public class _fc {
         webDriver.manage().window().maximize();
         webDriver.navigate().to(new URL(url));
         Thread.sleep(1000);
-        logger.info("Opened test.bissell website OK");
+        logger.info("Opened website OK");
     }
 
     public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
@@ -70,7 +70,7 @@ public class _fc {
         Thread.sleep(1000);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_login_button, wait,"selector_login_button");
         Thread.sleep(2000);
-        logger.info("Logged in to test.bissell website OK");
+        logger.info("Logged in to website OK");
     }
 
     static void navigatetodashboard(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
@@ -80,17 +80,14 @@ public class _fc {
         logger.info("Navigated to dashboard OK");
     }
 
-    static void navigatetoprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_user_dropdown, wait, "selector_admin_user_dropdown");
-        Thread.sleep(1000);
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_profile_Bissell, wait, "selector_admin_profile");
-        Thread.sleep(1000);
-        logger.info("Navigated to user profile page OK");
+    static void navigatetoprofile(Logger logger, WebDriver webDriver, String url) throws InterruptedException, MalformedURLException {
+        gotourl(logger, webDriver,url);
     }
 
     static void editprofile(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        //((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        faszaklikk(webDriver, logger, Object_repo_Philips.selector_profile_edit_button, wait, "selector_admin_profile_edit_button");
+        Actions actions = new Actions(webDriver);
+        actions.sendKeys(Keys.END).perform();
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_profile_edit_button, wait, "selector_profile_edit_button");
         Thread.sleep(1000);
         logger.info("Opened user profile page for editing OK");
     }

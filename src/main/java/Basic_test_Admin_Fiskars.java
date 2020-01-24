@@ -43,8 +43,8 @@ public class Basic_test_Admin_Fiskars {
         _fc.login(logger, webDriver, wait, "fiskarsadmin", "fiskarsadminpassword");
         _fc.login(logger, ffDriver, wait_ff, "fiskarsadmin", "fiskarsadminpassword");
 
-        _fc.navigatetoprofile(logger, webDriver, wait);
-        _fc.navigatetoprofile(logger, ffDriver, wait_ff);
+        _fc.navigatetoprofile(logger, webDriver, "https://test.fiskarsacademy.com/profile");
+        _fc.navigatetoprofile(logger, ffDriver, "https://test.fiskarsacademy.com/profile");
 
         ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
         ((JavascriptExecutor) ffDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");

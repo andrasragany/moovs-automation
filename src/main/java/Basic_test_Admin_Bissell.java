@@ -42,8 +42,8 @@ public class Basic_test_Admin_Bissell {
             _fc.login(logger, webDriver, wait, "bisselladmin", "bisselladminpassword");
             _fc.login(logger, ffDriver, wait_ff, "bisselladmin", "bisselladminpassword");
 
-            _fc.navigatetoprofile(logger, webDriver, wait);
-            _fc.navigatetoprofile(logger, ffDriver, wait_ff);
+            _fc.navigatetoprofile(logger, webDriver, "https://test.bissellexpert.com/profile");
+            _fc.navigatetoprofile(logger, ffDriver, "https://test.bissellexpert.com/profile");
 
             ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
             ((JavascriptExecutor) ffDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
