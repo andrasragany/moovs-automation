@@ -15,22 +15,17 @@ import java.util.logging.SimpleFormatter;
 public class Basic_test_Admin_Fiskars {
 
     public static void main(String[] argv) throws Exception {
-        FileHandler fh;
         String filename = "Mylogfile" + _fc.parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
         String abspath = pathname + filename;
         File file = new File(pathname, filename);
         file.createNewFile();
-
-        //Setting up logger, handler etc
-        fh = new FileHandler(abspath);
+        FileHandler fh = new FileHandler(abspath);
         Logger logger = Logger.getLogger(abspath);
         logger.addHandler(fh);
-
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
 
-        //Init webdriver
         WebDriver webDriver = new ChromeDriver();
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
 
@@ -113,14 +108,14 @@ public class Basic_test_Admin_Fiskars {
         _fc.navigatetomodules(logger, webDriver, wait, "admin");
         _fc.navigatetomodules(logger, ffDriver, wait_ff, "admin");
 
-        _fc.navigate_to_translate(logger, webDriver, wait);
-        _fc.navigate_to_translate(logger, ffDriver, wait_ff);
+        //_fc.navigate_to_translate(logger, webDriver, wait);
+        //_fc.navigate_to_translate(logger, ffDriver, wait_ff);
 
-        _fc.navigatetomoduledetails(logger, webDriver, wait);
-        _fc.navigatetomoduledetails(logger, ffDriver, wait_ff);
+        //_fc.navigatetomoduledetails(logger, webDriver, wait);
+        //_fc.navigatetomoduledetails(logger, ffDriver, wait_ff);
 
-        _fc.change_first_translation_and_save(logger, webDriver, wait);
-        _fc.change_first_translation_and_save(logger, ffDriver, wait_ff);
+        //_fc.change_first_translation_and_save(logger, webDriver, wait);
+        //_fc.change_first_translation_and_save(logger, ffDriver, wait_ff);
 
         _fc.navigatetocontacts(logger, webDriver, wait);
         _fc.navigatetocontacts(logger, ffDriver, wait_ff);

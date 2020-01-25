@@ -12,17 +12,12 @@ import java.util.logging.SimpleFormatter;
 
 public class Basic_test_Trainer_Bissell{
     
-    public static void main(String[] argv) throws Exception
-    {
+    public static void main(String[] argv) throws Exception {
         String filename = "Mylogfile" + _fc.parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
         String abspath = pathname + filename;
-
-        //Creating actual file
         File file = new File(pathname, filename);
         file.createNewFile();
-
-        //Setting up logger, handler etc
         FileHandler fh = new FileHandler(abspath);
         Logger logger = Logger.getLogger(abspath);
         logger.addHandler(fh);

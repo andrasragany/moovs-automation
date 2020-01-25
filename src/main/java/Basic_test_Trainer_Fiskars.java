@@ -12,14 +12,12 @@ import java.util.logging.SimpleFormatter;
 
 public class Basic_test_Trainer_Fiskars{
 
-    public static void main(String[] argv) throws Exception
-    {
+    public static void main(String[] argv) throws Exception {
         String filename = "Mylogfile" + _fc.parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
         String abspath = pathname + filename;
         File file = new File(pathname, filename);
         file.createNewFile();
-
         FileHandler fh = new FileHandler(abspath);
         Logger logger = Logger.getLogger(abspath);
         logger.addHandler(fh);
