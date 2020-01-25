@@ -66,7 +66,7 @@ public class _fc {
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_email))).sendKeys((String) jo.get(user));
-        webDriver.findElement(By.xpath(Object_repo_Philips.selector_user_password)).sendKeys((String) jo.get(userpasswd));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_password))).sendKeys((String) jo.get(userpasswd));
         Thread.sleep(1000);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_login_button, wait,"selector_login_button");
         Thread.sleep(2000);
