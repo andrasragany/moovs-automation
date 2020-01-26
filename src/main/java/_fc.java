@@ -98,6 +98,14 @@ public class _fc {
         logger.info("Changed user's preferred device to tablet OK");
     }
 
+    static void changepreferreddevicetotablet_EMEA(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_EMEA_preferred_device_dropdown, wait, "selector_preferred_device_dropdown");
+        Thread.sleep(100);
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_EMEA_pref_dev_totablet, wait, "selector_preferred_device_totablet");
+        Thread.sleep(100);
+        logger.info("Changed user's preferred device to tablet OK");
+    }
+
     static void changepreferreddevicetosmartphone(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_preferred_device_dropdown, wait, "selector_preferred_device_dropdown");
         Thread.sleep(100);
@@ -497,5 +505,18 @@ public class _fc {
             }
         }
         return true;
+    }
+    static void opentraining_EMEA(WebDriver webDriver, Logger logger, WebDriverWait wait) throws InterruptedException, MalformedURLException {
+        gotourl(logger, webDriver, "https://test.emeacampus-whirlpoolcorp.com/browse/page/1");
+        faszaklikk(webDriver, logger, Object_repo_Philips.selector_EMEA_first_training, wait, "selector_EMEA_first_training");
+        //switch selenium handle to player tab
+        Set<String> handles = webDriver.getWindowHandles();
+        String currentWindowHandle = webDriver.getWindowHandle();
+        for (String handle : handles) {
+            if (!currentWindowHandle.equals(handle)) {
+                webDriver.switchTo().window(handle);
+            }
+        }
+
     }
 }

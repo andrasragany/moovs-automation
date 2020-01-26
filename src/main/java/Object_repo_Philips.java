@@ -29,8 +29,10 @@ public class Object_repo_Philips {
     static String selector_profile_edit_button = "//*[text()='Edit']";
     //admin profile preferred device
     static String selector_preferred_device_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[14]/div[2]/div/div/button";
+    static String selector_EMEA_preferred_device_dropdown = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[7]/div[2]/div/div/button";
     //Preferred device tablet
     static String selector_preferred_device_totablet = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[14]/div[2]/div/div/div/div[2]";
+    static  String selector_EMEA_pref_dev_totablet = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[7]/div[2]/div/div/div/div[2]";
     //Preferred device smartphone
     static String selector_preferred_device_tosmatphone = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/form/div[14]/div[2]/div/div/div/div[1]";
     //profile edited Save button
@@ -271,5 +273,6 @@ public class Object_repo_Philips {
     static String selector_player_exam_counter = "//*[@id=\"app\"]/div/div/div/div[1]/h4/span";
     static String selector_player_exam_type = "//*[@id=\"app\"]/div/div/div/div[1]/h3/span/strong";
     static String selector_player_exam_check_answer_button = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[2]/button";
+    static String selector_EMEA_first_training = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[5]/div[2]/div[1]/div[2]/div/div/div[1]/h3";
 
 }
