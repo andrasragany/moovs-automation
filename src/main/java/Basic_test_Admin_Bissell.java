@@ -1,7 +1,7 @@
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
@@ -13,153 +13,109 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class Basic_test_Admin_Bissell {
+public class Basic_test_Admin_Bissell extends Thread{
+    private WebDriver driver;
+    private WebDriverWait waiter;
+    private String browsertype;
 
-        public static void main(String[] argv) throws Exception {
-            String filename = "Mylogfile" + _fc.parseDate(LocalDateTime.now()) + ".log";
-            String pathname = "c://temp//";
-            String abspath = pathname + filename;
-            File file = new File(pathname, filename);
-            file.createNewFile();
-            FileHandler fh = new FileHandler(abspath);
-            Logger logger = Logger.getLogger(abspath);
-            logger.addHandler(fh);
-            SimpleFormatter formatter = new SimpleFormatter();
-            fh.setFormatter(formatter);
+    public Basic_test_Admin_Bissell(String name, String browsertype) {
+        super(name);
+        this.browsertype = browsertype;
+    }
 
-            WebDriver webDriver = new ChromeDriver();
-            WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 10).ignoring(StaleElementReferenceException.class);
+    @Override
+    public void run() {
+        System.out.println("Thread- Started" + Thread.currentThread().getName());
+        try {
+            Thread.sleep(1000);
+            setUp(this.browsertype);
+            student();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            tearDown();
+        }
+        System.out.println("Thread- END " + Thread.currentThread().getName());
+    }
+    public void setUp(String browsertype) throws Exception {
 
-            FirefoxDriver ffDriver = new FirefoxDriver();
-            WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 10).ignoring(StaleElementReferenceException.class);
-
+        if (browsertype.contains("Chrome")) {
+            driver = new ChromeDriver();
+            waiter = new WebDriverWait(driver, 5);
+        } else if (browsertype.contains("Firefox")) {
+            driver = new FirefoxDriver();
+            waiter = new WebDriverWait(driver, 5);
+        } else if (browsertype.contains("Opera")) {
             OperaOptions options = new OperaOptions();
             options.setBinary(new File("c:\\Users\\randr\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
+            driver = new OperaDriver(options);
+            waiter = new WebDriverWait(driver, 5);
+        } else if (browsertype.contains("Edge")) {
+            driver = new EdgeDriver();
+            waiter = new WebDriverWait(driver, 5);
+        }
+        driver.manage().window().maximize();
+    }
+    public void tearDown() {
+        driver.quit();
+    }
 
-            OperaDriver opDriver = new OperaDriver(options);
-            WebDriverWait wait_op = (WebDriverWait) new WebDriverWait(opDriver, 10).ignoring(StaleElementReferenceException.class);
+    public void student() throws Exception {
+        String filename = "Mylogfile" + _fc.parseDate(LocalDateTime.now()) + ".log";
+        String pathname = "c://temp//";
+        String abspath = pathname + filename;
+        File file = new File(pathname, filename);
+        file.createNewFile();
+        FileHandler fh = new FileHandler(abspath);
+        Logger logger = Logger.getLogger(abspath);
+        logger.addHandler(fh);
+        SimpleFormatter formatter = new SimpleFormatter();
+        fh.setFormatter(formatter);
 
-            webDriver.manage().window().maximize();
-            ffDriver.manage().window().maximize();
-            opDriver.manage().window().maximize();
-
-            _fc.gotourl(logger, webDriver, "https://test.bissellexpert.com/login");
-            _fc.gotourl(logger, ffDriver, "https://test.bissellexpert.com/login");
-            _fc.gotourl(logger, opDriver, "https://test.bissellexpert.com/login");
-
-            _fc.login(logger, webDriver, wait, "bisselladmin", "bisselladminpassword");
-            _fc.login(logger, ffDriver, wait_ff, "bisselladmin", "bisselladminpassword");
-            _fc.login(logger, opDriver, wait_op, "bisselladmin", "bisselladminpassword");
-
-            _fc.navigatetoprofile(logger, webDriver, "https://test.bissellexpert.com/profile");
-            _fc.navigatetoprofile(logger, ffDriver, "https://test.bissellexpert.com/profile");
-            _fc.navigatetoprofile(logger, opDriver, "https://test.bissellexpert.com/profile");
-
-            ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            ((JavascriptExecutor) ffDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            ((JavascriptExecutor) opDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            Thread.sleep(100);
-
-
-            _fc.editprofile(logger, webDriver, wait);
-            _fc.editprofile(logger, ffDriver, wait_ff);
-            _fc.editprofile(logger, opDriver, wait_op);
-            Thread.sleep(200);
-
-            _fc.changepreferreddevicetotablet(logger, webDriver, wait);
-            _fc.changepreferreddevicetotablet(logger, ffDriver, wait_ff);
-            _fc.changepreferreddevicetotablet(logger, opDriver, wait_op);
-            Thread.sleep(200);
-
-            _fc.saveprofile(logger, webDriver, wait);
-            _fc.saveprofile(logger, ffDriver, wait_ff);
-            _fc.saveprofile(logger, opDriver, wait_op);
-            Thread.sleep(200);
-
-            ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            ((JavascriptExecutor) ffDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            ((JavascriptExecutor) opDriver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            Thread.sleep(100);
-
-            _fc.editprofile(logger, webDriver, wait);
-            _fc.editprofile(logger, ffDriver, wait_ff);
-            _fc.editprofile(logger, opDriver, wait_op);
-            Thread.sleep(200);
+        _fc.gotourl(logger,driver,"https://test.bissellexpert.com/login");
+        _fc.login(logger, driver, waiter, "bisselladmin", "bisselladminpassword");
+        _fc.navigatetoprofile(logger, driver, "https://test.bissellexpert.com/profile");
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        _fc.editprofile(logger, driver, waiter);
+        _fc.changepreferreddevicetotablet(logger, driver, waiter);
+        _fc.saveprofile(logger, driver, waiter);
+        _fc.navigatetousergroups(logger, driver, waiter, "admin");
 
 
-            _fc.changepreferreddevicetosmartphone(logger, webDriver, wait);
-            _fc.changepreferreddevicetosmartphone(logger, ffDriver, wait_ff);
-            _fc.changepreferreddevicetosmartphone(logger, opDriver, wait_op);
-            Thread.sleep(200);
+        String userGroupName_1 = _fc.create_usergroup(logger, driver, waiter, "Quince Student");
+        _fc.navigatetousergroups(logger, driver, waiter, "admin");
+        _fc.navigatetocommunication(logger, driver, waiter, "admin");
+        _fc.createcommunication(logger, driver, waiter, userGroupName_1);
+        _fc.navigatetodashboard(logger, driver, waiter);
+        _fc.checkcommunicationispublished(logger, driver, waiter, userGroupName_1);
+        _fc.deletecreatedcommunication(logger, driver,waiter, userGroupName_1, "admin");
+        _fc.navigatetomodules(logger, driver, waiter, "admin");
+        _fc.navigate_to_translate(logger, driver, waiter);
+        //_fc.navigatetomoduledetails(logger, driver, waiter);
+        //_fc.change_first_translation_and_save(logger, driver, waiter);
+        _fc.navigatetocontacts(logger, driver, waiter);
+    }
 
-            _fc.saveprofile(logger, webDriver, wait);
-            _fc.saveprofile(logger, ffDriver, wait_ff);
-            _fc.saveprofile(logger, opDriver, wait_op);
-            Thread.sleep(200);
+        public static void main(String[] argv) throws Exception {
+            Thread ChromeThread = new Basic_test_Admin_Bissell("Thread Chrome", "Chrome");
+            Thread FireFoxThread = new Basic_test_Admin_Bissell("Thread FireFox", "Firefox");
+            Thread OperaThread = new Basic_test_Admin_Bissell("Thread Opera", "Opera");
+            Thread EdgeThread = new Basic_test_Admin_Bissell("Thread Opera", "Edge");
 
-            _fc.navigatetousergroups(logger, webDriver, wait, "admin");
-            _fc.navigatetousergroups(logger, ffDriver, wait_ff, "admin");
-            _fc.navigatetousergroups(logger, opDriver, wait_op, "admin");
-            Thread.sleep(200);
-
-            String userGroupNameChrome1 = _fc.create_usergroup(logger, webDriver, wait, "Quince Student");
-            String userGroupNameFF1 = _fc.create_usergroup(logger, ffDriver, wait_ff, "Quince Student");
-            String userGroupNameOP1 = _fc.create_usergroup(logger, opDriver, wait_op, "Quince Student");
-
-            _fc.navigatetousergroups(logger, webDriver, wait, "admin");
-            _fc.navigatetousergroups(logger, ffDriver, wait_ff, "admin");
-            _fc.navigatetousergroups(logger, opDriver, wait_op, "admin");
-            String userGroupNameChrome2 = _fc.create_usergroup(logger, webDriver, wait, "Quince Student");
-            String userGroupNameFF2 = _fc.create_usergroup(logger, ffDriver, wait_ff, "Quince Student");
-            String userGroupNameOP2 = _fc.create_usergroup(logger, opDriver, wait_op, "Quince Student");
-
-            _fc.navigatetocommunication(logger, webDriver, wait, "admin");
-            _fc.navigatetocommunication(logger, ffDriver, wait_ff, "admin");
-            _fc.navigatetocommunication(logger, opDriver, wait_op, "admin");
-            _fc.createcommunication(logger, webDriver, wait, userGroupNameChrome1);
-            _fc.createcommunication(logger, ffDriver, wait_ff, userGroupNameFF1);
-            _fc.createcommunication(logger, opDriver, wait_op, userGroupNameOP1);
-
-            _fc.navigatetodashboard(logger, webDriver, wait);
-            _fc.navigatetodashboard(logger, ffDriver, wait_ff);
-            _fc.navigatetodashboard(logger, opDriver, wait_op);
-            Thread.sleep(200);
-
-            _fc.checkcommunicationispublished(logger, webDriver, wait, userGroupNameChrome1);
-            _fc.checkcommunicationispublished(logger, ffDriver, wait_ff, userGroupNameFF1);
-            _fc.checkcommunicationispublished(logger, opDriver, wait_op, userGroupNameOP1);
-            Thread.sleep(200);
-
-            //deletecommunication(logger, webDriver, wait);
-            _fc.deletecreatedcommunication(logger, webDriver,wait, userGroupNameChrome1, "admin");
-            _fc.deletecreatedcommunication(logger, ffDriver, wait_ff, userGroupNameFF1, "admin");
-            _fc.deletecreatedcommunication(logger, opDriver, wait_op, userGroupNameOP1, "admin");
-            Thread.sleep(200);
-
-            _fc.navigatetomodules(logger, webDriver, wait, "admin");
-            _fc.navigatetomodules(logger, ffDriver, wait_ff, "admin");
-            _fc.navigatetomodules(logger, opDriver, wait_op, "admin");
-
-            _fc.navigate_to_translate(logger, webDriver, wait);
-            _fc.navigate_to_translate(logger, ffDriver, wait_ff);
-            _fc.navigate_to_translate(logger, opDriver, wait_op);
-
-            //_fc.navigatetomoduledetails(logger, webDriver, wait);
-            //_fc.navigatetomoduledetails(logger, ffDriver, wait_ff);
-
-            //_fc.change_first_translation_and_save(logger, webDriver, wait);
-            //_fc.change_first_translation_and_save(logger, ffDriver, wait_ff);
-
-            _fc.navigatetocontacts(logger, webDriver, wait);
-            _fc.navigatetocontacts(logger, ffDriver, wait_ff);
-            _fc.navigatetocontacts(logger, opDriver, wait_op);
-
-            Thread.sleep(100);
-
-            webDriver.quit();
-            ffDriver.quit();
-            opDriver.quit();
+            System.out.println("Starting MyThreads");
+            ChromeThread.start();
+            ChromeThread.sleep(1000);
+            FireFoxThread.start();
+            FireFoxThread.sleep(1000);
+            OperaThread.start();
+            OperaThread.sleep(1000);
+            EdgeThread.start();
+            EdgeThread.sleep(1000);
+            System.out.println("Threads has been started");
         }
 }

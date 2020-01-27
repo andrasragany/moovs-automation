@@ -64,6 +64,7 @@ public class Basic_test_Student_Philips extends Thread{
     public void tearDown() {
         driver.quit();
     }
+
     public void student() throws Exception {
         String filename = "Mylogfile" + _fc.parseDate(LocalDateTime.now()) + ".log";
         String pathname = "c://temp//";
@@ -102,6 +103,7 @@ public class Basic_test_Student_Philips extends Thread{
         Thread ChromeThread = new Basic_test_Student_Philips("Thread Chrome", "Chrome");
         Thread FireFoxThread = new Basic_test_Student_Philips("Thread FireFox", "Firefox");
         Thread OperaThread = new Basic_test_Student_Philips("Thread Opera", "Opera");
+        Thread EdgeThread = new Basic_test_Student_Philips("Thread Opera", "Edge");
 
         System.out.println("Starting MyThreads");
         ChromeThread.start();
@@ -110,6 +112,8 @@ public class Basic_test_Student_Philips extends Thread{
         FireFoxThread.sleep(1000);
         OperaThread.start();
         OperaThread.sleep(1000);
+        EdgeThread.start();
+        EdgeThread.sleep(1000);
         System.out.println("Threads has been started");
     }
 }
