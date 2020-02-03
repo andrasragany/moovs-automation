@@ -50,12 +50,15 @@ public class Basic_test_Admin_Bissell extends Thread{
             waiter = new WebDriverWait(driver, 5);
         } else if (browsertype.contains("Opera")) {
             OperaOptions options = new OperaOptions();
-            options.setBinary(new File("c:\\Users\\randr\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
+            //options.setBinary(new File("c:\\Users\\randr\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
+            options.setBinary(new File("c:\\Users\\Rendszergazda\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             driver = new OperaDriver(options);
             waiter = new WebDriverWait(driver, 5);
         } else if (browsertype.contains("Edge")) {
+            //System.setProperty("webdriver.edge.driver", "c:\\chromedriver\\msedgedriver.exe");
+            System.setProperty("webdriver.edge.driver", "c:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2019.2.3\\bin\\msedgedriver.exe");
             driver = new EdgeDriver();
             waiter = new WebDriverWait(driver, 5);
         }
