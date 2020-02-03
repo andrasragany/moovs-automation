@@ -1,81 +1,119 @@
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.io.FileReader;
 import java.time.LocalDateTime;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class Basic_test_Student_Philips{
+public class Basic_test_Student_Philips extends Thread{
+    private WebDriver driver;
+    private WebDriverWait waiter;
+    private String browsertype;
 
-    public static void main(String[] argv) throws Exception {
+    public Basic_test_Student_Philips(String name, String browsertype) {
+        super(name);
+        this.browsertype = browsertype;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Thread- Started" + Thread.currentThread().getName());
+        try {
+            Thread.sleep(1000);
+            setUp(this.browsertype);
+            student();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            tearDown();
+        }
+        System.out.println("Thread- END " + Thread.currentThread().getName());
+    }
+    public void setUp(String browsertype) throws Exception {
+
+        if (browsertype.contains("Chrome")) {
+            driver = new ChromeDriver();
+            waiter = new WebDriverWait(driver, 5);
+        } else if (browsertype.contains("Firefox")) {
+            driver = new FirefoxDriver();
+            waiter = new WebDriverWait(driver, 5);
+        } else if (browsertype.contains("Opera")) {
+            OperaOptions options = new OperaOptions();
+            options.setBinary(new File("c:\\Users\\randr\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            driver = new OperaDriver(options);
+            waiter = new WebDriverWait(driver, 5);
+        } else if (browsertype.contains("Edge")) {
+            driver = new EdgeDriver();
+            waiter = new WebDriverWait(driver, 5);
+        }
+        driver.manage().window().maximize();
+    }
+    public void tearDown() {
+        driver.quit();
+    }
+
+    public void student() throws Exception {
         String filename = "Mylogfile" + _fc.parseDate(LocalDateTime.now()) + ".log";
-        String pathname = "c:\\temp\\";
+        String pathname = "c://temp//";
         String abspath = pathname + filename;
-
-        //Creating actual file
         File file = new File(pathname, filename);
-        file. createNewFile();
-
-        //Setting up logger, handler etc
+        file.createNewFile();
         FileHandler fh = new FileHandler(abspath);
         Logger logger = Logger.getLogger(abspath);
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
-        //System.setProperty("webdriver.chrome.driver","c:\\chromedriver\\chromedriver.exe");
-        WebDriver webDriver = new ChromeDriver();
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(webDriver, 5).ignoring(StaleElementReferenceException.class);
 
-        FirefoxDriver ffDriver = new FirefoxDriver();
-        WebDriverWait wait_ff = (WebDriverWait) new WebDriverWait(ffDriver, 5).ignoring(StaleElementReferenceException.class);
+        _fc.gotourl(logger,driver,"https://test.philipsohcacademy.com/login");
+        _fc.login(logger, driver, waiter, "philipsstudent", "philipsstudentpassword");
+        _fc.navigatetoprofile(logger, driver, "https://test.philipsohcacademy.com/profile");
 
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
-        JSONObject jo = (JSONObject) obj;
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-        webDriver.manage().window().maximize();
-        ffDriver.manage().window().maximize();
-        //Open page
-        _fc.gotourl(logger,webDriver,"https://test.philipsohcacademy.com/login");
-        _fc.gotourl(logger,ffDriver,"https://test.philipsohcacademy.com/login");
-        //Login
-        _fc.login(logger, webDriver, wait, "philipsstudent", "philipsstudentpassword");
-        _fc.login(logger, ffDriver, wait_ff, "philipsstudent", "philipsstudentpassword");
+        _fc.editprofile(logger, driver, waiter);
 
-        Thread.sleep(1100);
+        _fc.changepreferreddevicetotablet(logger, driver, waiter);
 
-        //String mainWindow = webDriver.getWindowHandle();
+        _fc.saveprofile(logger, driver, waiter);
 
-        _fc.editprofile(logger, webDriver, wait);
-        _fc.editprofile(logger, ffDriver, wait_ff);
+        _fc.navigatetodashboard(logger, driver, waiter);
 
+        _fc.opentraining(driver, logger, waiter);
 
-        //go to dashboard
-        _fc.faszaklikk(webDriver, logger, Object_repo_Philips.selector_dashboard, wait, "selector_dashboard");
-        _fc.faszaklikk(ffDriver, logger, Object_repo_Philips.selector_dashboard, wait_ff, "selector_dashboard");
-        Thread.sleep(1100);
+        _fc.player(driver, logger, waiter);
 
-        _fc.opentraining(webDriver, logger, wait);
-        _fc.opentraining(ffDriver, logger, wait_ff);
+        _fc.exam(driver, logger, waiter);
+    }
 
-        _fc.player(webDriver, logger, wait);
-        _fc.player(ffDriver, logger, wait_ff);
+    public static void main(String[] argv) throws Exception {
 
-        _fc.exam(webDriver, logger, wait);
-        _fc.exam(ffDriver, logger, wait_ff);
+        Thread ChromeThread = new Basic_test_Student_Philips("Thread Chrome", "Chrome");
+        Thread FireFoxThread = new Basic_test_Student_Philips("Thread FireFox", "Firefox");
+        Thread OperaThread = new Basic_test_Student_Philips("Thread Opera", "Opera");
+        Thread EdgeThread = new Basic_test_Student_Philips("Thread Opera", "Edge");
 
-        Thread.sleep(2000);
-        logger.info("Test finished OK");
-        webDriver.quit();
-        ffDriver.quit();
+        System.out.println("Starting MyThreads");
+        ChromeThread.start();
+        ChromeThread.sleep(1000);
+        FireFoxThread.start();
+        FireFoxThread.sleep(1000);
+        OperaThread.start();
+        OperaThread.sleep(1000);
+        EdgeThread.start();
+        EdgeThread.sleep(1000);
+        System.out.println("Threads has been started");
     }
 }

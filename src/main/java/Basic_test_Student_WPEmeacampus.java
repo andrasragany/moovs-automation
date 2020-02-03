@@ -13,12 +13,12 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class Basic_test_Trainer_Bissell extends Thread{
+public class Basic_test_Student_WPEmeacampus extends Thread{
     private WebDriver driver;
     private WebDriverWait waiter;
     private String browsertype;
 
-    public Basic_test_Trainer_Bissell(String name, String browsertype) {
+    public Basic_test_Student_WPEmeacampus(String name, String browsertype) {
         super(name);
         this.browsertype = browsertype;
     }
@@ -77,29 +77,31 @@ public class Basic_test_Trainer_Bissell extends Thread{
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
 
-        _fc.gotourl(logger,driver,"https://test.bissellexpert.com/login");
-        _fc.login(logger, driver, waiter, "bisselltrainer", "bisselltrainerpassword");
-        _fc.navigatetoprofile(logger, driver, "https://test.bissellexpert.com/profile");
+        _fc.gotourl(logger,driver,"https://test.emeacampus-whirlpoolcorp.com/login");
+        _fc.login(logger, driver, waiter, "wpemeastudent", "wpemeastudentpassword");
+        _fc.navigatetoprofile(logger, driver, "https://test.emeacampus-whirlpoolcorp.com/profile");
+
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
         _fc.editprofile(logger, driver, waiter);
+
         _fc.changepreferreddevicetotablet(logger, driver, waiter);
+
         _fc.saveprofile(logger, driver, waiter);
-        _fc.navigatetousergroups(logger, driver, waiter, "trainer");
-        String userGroupName_1 = _fc.create_usergroup(logger, driver, waiter, "Trainer");
-        String userGroupName_2 = _fc.create_usergroup(logger, driver, waiter, "Student");
-        _fc.navigatetocommunication(logger, driver, waiter, "trainer");
-        _fc.createcommunication(logger, driver, waiter, userGroupName_1);
-        _fc.create_training(driver, waiter, logger, userGroupName_2);
-        _fc.create_LP(driver, waiter, logger,userGroupName_2);
 
+        _fc.navigatetodashboard(logger, driver, waiter);
 
+        _fc.opentraining(driver, logger, waiter);
+
+        _fc.player(driver, logger, waiter);
+
+        _fc.exam(driver, logger, waiter);
     }
-    
     public static void main(String[] argv) throws Exception {
-        Thread ChromeThread = new Basic_test_Trainer_Bissell("Thread Chrome", "Chrome");
-        Thread FireFoxThread = new Basic_test_Trainer_Bissell("Thread FireFox", "Firefox");
-        Thread OperaThread = new Basic_test_Trainer_Bissell("Thread Opera", "Opera");
-        Thread EdgeThread = new Basic_test_Trainer_Bissell("Thread Opera", "Edge");
+        Thread ChromeThread = new Basic_test_Student_WPEmeacampus("Thread Chrome", "Chrome");
+        Thread FireFoxThread = new Basic_test_Student_WPEmeacampus("Thread FireFox", "Firefox");
+        Thread OperaThread = new Basic_test_Student_WPEmeacampus("Thread Opera", "Opera");
+        Thread EdgeThread = new Basic_test_Student_WPEmeacampus("Thread Opera", "Edge");
 
         System.out.println("Starting MyThreads");
         ChromeThread.start();
@@ -111,7 +113,5 @@ public class Basic_test_Trainer_Bissell extends Thread{
         EdgeThread.start();
         EdgeThread.sleep(1000);
         System.out.println("Threads has been started");
-
-
     }
 }
