@@ -29,5 +29,13 @@
     "wpmexstudent" : "pohc-student@quince.hu",
     "wpmexstudentpassword" : "LarStuHU19!",
     "wpemeastudent": "pohc-student@quince.hu",
-    "wpemeastudentpassword" : "nNSMAM282fXf#P*_"
+    "wpemeastudentpassword" : "nNSMAM282fXf#P*_",
+    "wlearnstudent" : "pohc-student@quince.hu",
+    "wlearnstudentpassword": "nNSMAM282fXf#P*_",
+    "wlearntrainer" : "pohc-trainer@quince.hu",
+    "wlearntrainerpassword" : "6LCKXr8&%ps-7B&V",
+    "wlearnmanager": "pohc-manager@quince.hu",
+    "wlearnmanagerpassword" : "wV9DyeRKP*PNq^c#",
+    "wlearnadmin" : "pohc-admin@quince.hu",
+    "wlearnadminpassword" : "3-4pNV-9zJfhGmSs"
 }

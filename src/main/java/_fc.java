@@ -71,6 +71,19 @@ public class _fc {
         logger.info("Logged in to website OK");
     }
 
+    public static void login_WL(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
+        JSONObject jo = (JSONObject) obj;
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.WLearn_selector_login_email))).sendKeys((String) jo.get(user));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.WLearn_selector_login_password))).sendKeys((String) jo.get(userpasswd));
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_login_button, wait,"WLearn_selector_login_button");
+        Thread.sleep(2000);
+        logger.info("Logged in to website OK");
+    }
+
     static void navigatetodashboard(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         Thread.sleep(100);
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_dashboard, wait, "selector_admin_dashboard");
@@ -339,6 +352,54 @@ public class _fc {
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_trainer_create_tr_exam_tab, wait, "selector_trainer_create_tr_exam_tab");
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_save_training_button, wait, "");
         Thread.sleep(1000);
+    }
+
+    static void create_course_WL (WebDriver webDriver, WebDriverWait wait, Logger logger, String user) throws InterruptedException, ParseException {
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Courses, wait, "WLearn_selector_Courses");
+        webDriver.navigate().refresh();
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Create_Course, wait, "WLearn_selector_Create_Course");
+        webDriver.navigate().refresh();
+        Thread.sleep(1000);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input, wait, "WLearn_selector_CC_Gen_Name_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input)).sendKeys("EN_US");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_selectlang, wait, "WLearn_selector_CC_Gen_Lang_selectlang");
+        Thread.sleep(1000);
+        String name_to_be_used_later = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Name_input, wait, "WLearn_selector_CC_Gen_Name_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Name_input)).sendKeys(name_to_be_used_later);
+        Thread.sleep(1000);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Description_input, wait, "WLearn_selector_CC_Gen_Description_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Description_input)).sendKeys(name_to_be_used_later);
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearnd_selector_CC_Gen_Next_btn, wait, "WLearnd_selector_CC_Gen_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Modules_Add_btn, wait, "WLearn_selector_CC_Modules_Add_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Modules_Select_first_module, wait, "WLearn_selector_CC_Modules_Select_first_module");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Modules_Save_added_modules, wait, "WLearn_selector_CC_Modules_Save_added_modules");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Mod_Next_btn, wait, "WLearn_selector_CC_Mod_Next_btn");
+        Thread.sleep(1000);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Exam_Skillpoints_input, wait, "WLearn_selector_CC_Exam_Skillpoints_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Exam_Skillpoints_input)).sendKeys("1111");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Exam_Next_btn, wait, "WLearn_selector_CC_Exam_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Save_created_course, wait, "WLearn_selector_CC_Save_created_course");
+        Thread.sleep(10000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Courses, wait, "WLearn_selector_Courses");
+        webDriver.navigate().refresh();
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Courses_Search_input, wait, "WLearn_selector_CC_Exam_Skillpoints_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_Courses_Search_input)).sendKeys(name_to_be_used_later);
+        Thread.sleep(10000);
+
+
+
+
+
     }
 
     static void create_LP ( WebDriver webDriver, WebDriverWait wait, Logger logger, String userGroupNameChrome2) throws InterruptedException {
