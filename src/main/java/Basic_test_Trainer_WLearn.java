@@ -1,5 +1,3 @@
-
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,12 +12,12 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class Basic_test_Admin_Fiskars extends Thread{
+public class Basic_test_Trainer_WLearn extends Thread{
     private WebDriver driver;
     private WebDriverWait waiter;
     private String browsertype;
 
-    public Basic_test_Admin_Fiskars(String name, String browsertype) {
+    public Basic_test_Trainer_WLearn(String name, String browsertype) {
         super(name);
         this.browsertype = browsertype;
     }
@@ -81,35 +79,20 @@ public class Basic_test_Admin_Fiskars extends Thread{
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);
 
-        _fc.gotourl(logger,driver,"https://test.fiskarsacademy.com/login");
-        _fc.login(logger, driver, waiter, "fiskarsadmin", "fiskarsadminpassword");
-        _fc.navigatetoprofile(logger, driver, "https://test.fiskarsacademy.com/profile");
-        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        _fc.editprofile(logger, driver, waiter);
-        _fc.changepreferreddevicetotablet(logger, driver, waiter);
-        _fc.saveprofile(logger, driver, waiter);
-        _fc.navigatetousergroups(logger, driver, waiter, "admin");
+        _fc.gotourl(logger,driver,"http://ec2-3-125-142-193.eu-central-1.compute.amazonaws.com:90/");
+        _fc.login_WL(logger, driver, waiter, "wlearntrainer", "wlearntrainerpassword");
+        _fc.create_course_WL(driver, waiter, logger, "trainer");
+        //_fc.create_training(driver, waiter, logger, userGroupName_2);
+        //_fc.create_LP(driver, waiter, logger,userGroupName_2);
 
 
-        String userGroupName_1 = _fc.create_usergroup(logger, driver, waiter, "Quince Student");
-        _fc.navigatetousergroups(logger, driver, waiter, "admin");
-        _fc.navigatetocommunication(logger, driver, waiter, "admin");
-        _fc.createcommunication(logger, driver, waiter, userGroupName_1);
-        _fc.navigatetodashboard(logger, driver, waiter);
-        _fc.checkcommunicationispublished(logger, driver, waiter, userGroupName_1);
-        _fc.deletecreatedcommunication(logger, driver,waiter, userGroupName_1, "admin");
-        _fc.navigatetomodules(logger, driver, waiter, "admin");
-        _fc.navigate_to_translate(logger, driver, waiter);
-        //_fc.navigatetomoduledetails(logger, driver, waiter);
-        //_fc.change_first_translation_and_save(logger, driver, waiter);
-        _fc.navigatetocontacts(logger, driver, waiter);
     }
 
     public static void main(String[] argv) throws Exception {
-        Thread ChromeThread = new Basic_test_Admin_Fiskars("Thread Chrome", "Chrome");
-        Thread FireFoxThread = new Basic_test_Admin_Fiskars("Thread FireFox", "Firefox");
-        Thread OperaThread = new Basic_test_Admin_Fiskars("Thread Opera", "Opera");
-        Thread EdgeThread = new Basic_test_Admin_Fiskars("Thread Opera", "Edge");
+        Thread ChromeThread = new Basic_test_Trainer_WLearn("Thread Chrome", "Chrome");
+        Thread FireFoxThread = new Basic_test_Trainer_WLearn("Thread FireFox", "Firefox");
+        Thread OperaThread = new Basic_test_Trainer_WLearn("Thread Opera", "Opera");
+        Thread EdgeThread = new Basic_test_Trainer_WLearn("Thread Opera", "Edge");
 
         System.out.println("Starting MyThreads");
         ChromeThread.start();

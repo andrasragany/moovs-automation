@@ -275,4 +275,25 @@ public class Object_repo_Philips {
     static String selector_player_exam_check_answer_button = "//*[@id=\"app\"]/div/div/div/div[2]/div/div/div[2]/button";
     static String selector_EMEA_first_training = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[5]/div[2]/div[1]/div[2]/div/div/div[1]/h3";
 
+    //WLearn selectors
+    static String WLearn_selector_login_email = "//*[@id=\"root\"]/div/div/div/div/div[1]/div/form/div/div[1]/div[1]/div/input";
+    static String WLearn_selector_login_password = "//*[@id=\"root\"]/div/div/div/div/div[1]/div/form/div/div[2]/div[1]/div/input";
+    static String WLearn_selector_login_button = "//*[@id=\"root\"]/div/div/div/div/div[1]/div/form/div/div[4]/button";
+    static String WLearn_selector_Courses = "//*[text()='Courses']";
+    static String WLearn_selector_Courses_Search_input = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/input";
+    static String WLearn_selector_Create_Course = "//*[text()='Create new course']";
+    static String WLearn_selector_CC_Gen_Lang_dropdown_input = "//*[@id=\"language\"]";
+    static String WLearn_selector_CC_Gen_Lang_selectlang = "//*[@id=\"language-option-0\"]";
+    static String WLearn_selector_CC_Gen_Name_input = "//*[@id=\"name\"]";
+    static String WLearn_selector_CC_Gen_Description_input = "//*[@id=\"description\"]";
+    static String WLearnd_selector_CC_Gen_Next_btn = "//*[@id=\"root\"]/div/div/div/div[2]/form/div[2]/div/div/button/span";
+    static String WLearn_selector_CC_Mod_Next_btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button/span";
+    static String WLearn_selector_CC_Exam_Next_btn = "//*[@id=\"root\"]/div/div/div/div[2]/form/div[2]/div/div/button/span";
+    static String WLearn_selector_CC_Save_created_course = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button/span";
+    static String WLearn_selector_CC_Modules_Add_btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[2]/ul/div[2]/li/div";
+    static String WLearn_selector_CC_Modules_Select_first_module = "/html/body/div[2]/div[3]/div/div[2]/li[1]/div[2]/div[1]/div/h4";
+    static String WLearn_selector_CC_Modules_Save_added_modules = "/html/body/div[2]/div[3]/div/div[3]/div/div/button/span";
+    static String WLearn_selector_CC_Exam_Skillpoints_input = "//*[@id=\"skillPoints\"]";
+    static String WLearn_selector_Modules = "//*[@id=\"root\"]/div/nav/div/div/ul/li[1]/ul/a[4]/div[2]/span";
+
 }
