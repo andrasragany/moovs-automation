@@ -294,5 +294,6 @@ public class Object_repo_Philips {
     static String WLearn_selector_CC_Modules_Select_first_module = "/html/body/div[2]/div[3]/div/div[2]/li[1]/div[2]/div[1]/div/h4";
     static String WLearn_selector_CC_Modules_Save_added_modules = "/html/body/div[2]/div[3]/div/div[3]/div/div/button/span";
     static String WLearn_selector_CC_Exam_Skillpoints_input = "//*[@id=\"skillPoints\"]";
+    static String WLearn_selector_Modules = "//*[@id=\"root\"]/div/nav/div/div/ul/li[1]/ul/a[4]/div[2]/span";
 
 }
