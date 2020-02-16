@@ -49,15 +49,15 @@ public class Basic_test_Trainer_WLearn extends Thread{
             waiter = new WebDriverWait(driver, 5);
         } else if (browsertype.contains("Opera")) {
             OperaOptions options = new OperaOptions();
-            //options.setBinary(new File("c:\\Users\\randr\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
-            options.setBinary(new File("c:\\Users\\Rendszergazda\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
+            options.setBinary(new File("c:\\Users\\randr\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
+            //options.setBinary(new File("c:\\Users\\Rendszergazda\\AppData\\Local\\Programs\\Opera\\66.0.3515.44\\opera.exe"));
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             driver = new OperaDriver(options);
             waiter = new WebDriverWait(driver, 5);
         } else if (browsertype.contains("Edge")) {
-            //System.setProperty("webdriver.edge.driver", "c:\\chromedriver\\msedgedriver.exe");
-            System.setProperty("webdriver.edge.driver", "c:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2019.2.3\\bin\\msedgedriver.exe");
+            System.setProperty("webdriver.edge.driver", "c:\\chromedriver\\msedgedriver.exe");
+            //System.setProperty("webdriver.edge.driver", "c:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2019.2.3\\bin\\msedgedriver.exe");
             driver = new EdgeDriver();
             waiter = new WebDriverWait(driver, 5);
         }
@@ -81,9 +81,9 @@ public class Basic_test_Trainer_WLearn extends Thread{
 
         _fc.gotourl(logger,driver,"http://ec2-3-125-142-193.eu-central-1.compute.amazonaws.com:90/");
         _fc.login_WL(logger, driver, waiter, "wlearntrainer", "wlearntrainerpassword");
-        _fc.create_course_WL(driver, waiter, logger, "trainer");
-        //_fc.create_training(driver, waiter, logger, userGroupName_2);
-        //_fc.create_LP(driver, waiter, logger,userGroupName_2);
+        //_fc.create_course_WL(driver, waiter, logger, "trainer");
+        //_fc.navigatetomodules_and_switchto_listview_WL(logger, driver, waiter);
+        _fc.create_Program_WL(driver, waiter, logger, "trainer");
 
 
     }

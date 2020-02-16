@@ -59,8 +59,8 @@ public class _fc {
     }
 
     public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_email))).sendKeys((String) jo.get(user));
@@ -72,8 +72,8 @@ public class _fc {
     }
 
     public static void login_WL(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.WLearn_selector_login_email))).sendKeys((String) jo.get(user));
@@ -308,6 +308,23 @@ public class _fc {
         logger.info("Navigated to modules page OK");
     }
 
+    static void navigatetomodules_and_switchto_listview_WL(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Modules, wait, "WLearn_selector_Modules");
+        Thread.sleep(200);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Modules_listview, wait, "WLearn_selector_Modules_listview");
+        Thread.sleep(200);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Modules_list_openfirst, wait, "WLearn_selector_Modules_list_openfirst");
+        Thread.sleep(200);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Modules_details_Loc_tab, wait, "WLearn_selector_Modules_details_Loc_tab");
+        Thread.sleep(200);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Modules_details_Loc_Translatebtn, wait, "WLearn_selector_Modules_details_Loc_Translatebtn");
+        Thread.sleep(200);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Modules_details_loc_Trans_Content_Dropdown, wait, "WLearn_selector_Modules_details_loc_Trans_Content_Dropdown");
+        Thread.sleep(200);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Mod_Trans_dropdwn_select_mod_details, wait, "WLearn_selector_Mod_Trans_dropdwn_select_mod_details");
+        Thread.sleep(200);
+        logger.info("Navigated to modules page OK");
+    }
     static void navigatetomoduledetails (Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         webDriver.navigate().refresh();
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_admin_module_translate_module_details, wait, "selector_admin_module_translate_module_details");
@@ -395,11 +412,47 @@ public class _fc {
         if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Courses_Search_input, wait, "WLearn_selector_CC_Exam_Skillpoints_input"))
             webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_Courses_Search_input)).sendKeys(name_to_be_used_later);
         Thread.sleep(10000);
+    }
 
-
-
-
-
+    static void create_Program_WL ( WebDriver webDriver, WebDriverWait wait, Logger logger, String user) throws InterruptedException, ParseException {
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs, wait, "WLearn_selector_Programs");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.Wlearn_selector_Programs_CreateProgBtn, wait, "Wlearn_selector_Programs_CreateProgBtn");
+        Thread.sleep(1000);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input, wait, "WLearn_selector_CC_Gen_Name_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input)).sendKeys("EN_US");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_selectlang, wait, "WLearn_selector_CC_Gen_Lang_selectlang");
+        Thread.sleep(1000);
+        String name_to_be_used_later = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Name_input, wait, "WLearn_selector_CC_Gen_Name_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Name_input)).sendKeys(name_to_be_used_later);
+        Thread.sleep(1000);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Description_input, wait, "WLearn_selector_CC_Gen_Description_input"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Description_input)).sendKeys(name_to_be_used_later);
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearnd_selector_CC_Gen_Next_btn, wait, "WLearnd_selector_CC_Gen_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Cr_Pr_User_tab_Add_UserGroupBtn, wait, "WLearnd_selector_CC_Gen_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Cr_Pr_select_first_suggested_group, wait, "WLearnd_selector_CC_Gen_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Cr_Pr_add_selected_suggested_group, wait, "WLearnd_selector_CC_Gen_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Cr_Pr_user_Next_Btn, wait, "WLearnd_selector_CC_Gen_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Modules_Add_btn, wait, "WLearn_selector_CC_Modules_Add_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Modules_Select_first_module, wait, "WLearn_selector_CC_Modules_Select_first_module");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Modules_Save_added_modules, wait, "WLearn_selector_CC_Modules_Save_added_modules");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Cr_Pr_courses_Next_Btn, wait, "WLearn_selector_CC_Mod_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Cr_Pr_fin_exam_Next_Btn, wait, "WLearn_selector_CC_Mod_Next_btn");
+        Thread.sleep(1000);
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Save_created_course, wait, "WLearn_selector_CC_Save_created_course");
+        Thread.sleep(10000);
     }
 
     static void create_LP ( WebDriver webDriver, WebDriverWait wait, Logger logger, String userGroupNameChrome2) throws InterruptedException {

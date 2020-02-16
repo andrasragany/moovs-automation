@@ -295,5 +295,18 @@ public class Object_repo_Philips {
     static String WLearn_selector_CC_Modules_Save_added_modules = "/html/body/div[2]/div[3]/div/div[3]/div/div/button/span";
     static String WLearn_selector_CC_Exam_Skillpoints_input = "//*[@id=\"skillPoints\"]";
     static String WLearn_selector_Modules = "//*[@id=\"root\"]/div/nav/div/div/ul/li[1]/ul/a[4]/div[2]/span";
-
+    static String WLearn_selector_Modules_listview = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[2]/div[2]/button[2]/span";
+    static String WLearn_selector_Modules_list_openfirst = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[1]";
+    static String WLearn_selector_Modules_details_Loc_tab = "//*[@id=\"root\"]/div/div/div/div[1]/div[2]/div/div/button[2]/span";
+    static String WLearn_selector_Modules_details_Loc_Translatebtn = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div/a/span";
+    static String WLearn_selector_Modules_details_loc_Trans_Content_Dropdown = "//*[@id=\"root\"]/div/div/div/div[2]/div/div[1]/div/div/div/div";
+    static String WLearn_selector_Mod_Trans_dropdwn_select_mod_details = "//*[text()='Module details']";
+    static String WLearn_selector_Programs = "//*[@id=\"root\"]/div/nav/div/div/ul/li[1]/ul/a[2]/div[2]/span";
+    static String Wlearn_selector_Programs_CreateProgBtn = "//*[@id=\"root\"]/div/div/div/div[1]/div/div/a/span";
+    static String WLearn_selector_Cr_Pr_User_tab_Add_UserGroupBtn = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/button/span";
+    static String WLearn_selector_Cr_Pr_select_first_suggested_group = "/html/body/div[2]/div[3]/div/div[2]/div/div[1]/div[2]/div/div/div/div/div/li[1]";
+    static String WLearn_selector_Cr_Pr_add_selected_suggested_group = "/html/body/div[2]/div[3]/div/div[3]/div/div/button/span";
+    static String WLearn_selector_Cr_Pr_user_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button/span";
+    static String WLearn_selector_Cr_Pr_courses_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button";
+    static String WLearn_selector_Cr_Pr_fin_exam_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/form/div[2]/div/div/button/span";
 }
