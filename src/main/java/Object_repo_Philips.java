@@ -297,8 +297,8 @@ public class Object_repo_Philips {
     static String WLearn_selector_Modules = "//*[@id=\"root\"]/div/nav/div/div/ul/li[1]/ul/a[4]/div[2]/span";
     static String WLearn_selector_Modules_listview = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[2]/div[2]/button[2]/span";
     static String WLearn_selector_Modules_list_openfirst = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[1]";
-    static String WLearn_selector_Modules_details_Loc_tab = "//*[@id=\"root\"]/div/div/div/div[1]/div[2]/div/div/button[2]/span";
-    static String WLearn_selector_Modules_details_Loc_Translatebtn = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div/a/span";
+    static String WLearn_selector_Modules_details_Loc_tab = "//*[text()='Localization']";
+    static String WLearn_selector_Modules_details_Loc_Translatebtn = "//*[text()='Translate']";
     static String WLearn_selector_Modules_details_loc_Trans_Content_Dropdown = "//*[@id=\"root\"]/div/div/div/div[2]/div/div[1]/div/div/div/div";
     static String WLearn_selector_Mod_Trans_dropdwn_select_mod_details = "//*[text()='Module details']";
     static String WLearn_selector_Programs = "//*[@id=\"root\"]/div/nav/div/div/ul/li[1]/ul/a[2]/div[2]/span";
