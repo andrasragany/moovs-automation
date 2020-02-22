@@ -455,6 +455,23 @@ public class _fc {
         Thread.sleep(10000);
     }
 
+    public static void navigatetousers_WL(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_Users, wait, "WLearn_selector_Users");
+    }
+    public static void navigatetousergroups_WL(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_Usergroups, wait, "WLearn_selector_Usergroups");
+    }
+    public static void Create_Usergroup_WL(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateGroup_btn, wait, "WLearn_selector_CreateGroup_btn");
+        String name_to_be_used_later = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CreateGroup_Title, wait, "WLearn_selector_CreateGroup_Title"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CreateGroup_Title)).sendKeys(name_to_be_used_later);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CreateGroup_Description, wait, "WLearn_selector_CreateGroup_Description"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CreateGroup_Description)).sendKeys(name_to_be_used_later);
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_SaveGroup_btn, wait, "WLearn_selector_SaveGroup_btn");
+        Thread.sleep(1000);
+    }
+
     static void create_LP ( WebDriver webDriver, WebDriverWait wait, Logger logger, String userGroupNameChrome2) throws InterruptedException {
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_learning_paths, wait, "selector_trainer_learning_path");
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_create_LP_btn, wait, "selector_trainer_create_learning_path_button");

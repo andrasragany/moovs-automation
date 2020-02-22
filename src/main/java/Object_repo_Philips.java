@@ -309,4 +309,10 @@ public class Object_repo_Philips {
     static String WLearn_selector_Cr_Pr_user_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button/span";
     static String WLearn_selector_Cr_Pr_courses_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button";
     static String WLearn_selector_Cr_Pr_fin_exam_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/form/div[2]/div/div/button/span";
+    static String WLearn_selector_Users = "//*[text()='Users']";
+    static String WLearn_selector_Usergroups = "//*[text()='Groups']";
+    static String WLearn_selector_CreateGroup_btn = "//*[text()='Create group']";
+    static String WLearn_selector_CreateGroup_Title = "//*[@id=\"title\"]";
+    static String WLearn_selector_CreateGroup_Description = "//*[@id=\"description\"]";
+    static String WLearn_selector_SaveGroup_btn = "//*[text()='Save group']";
 }
