@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1520150c-7da5-4b15-a819-2ae44543d476" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_WLearn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Basic_test_Trainer_WLearn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Object_repo_Philips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Object_repo_Philips.java" afterDir="false" />
@@ -376,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582302705067</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="elso">
+      <created>1582410305087</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1582410305087</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,11 +458,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400@0.0.2560.1400" timestamp="1576449890367" />
-    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1582302704487">
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1582410304625">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079414175" />
-    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1582302704487" />
+    <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1582410304625" />
     <state x="898" y="297" key="DetectedRootsChooserDialog" timestamp="1576447992436">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -546,11 +552,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="237" key="VCS.ChangeListViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578916298063" />
-    <state x="736" y="339" key="Vcs.Push.Dialog.v2" timestamp="1582302718306">
+    <state x="736" y="339" key="Vcs.Push.Dialog.v2" timestamp="1582410316540">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579003385241" />
-    <state x="736" y="339" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1582302718306" />
+    <state x="736" y="339" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1582410316540" />
     <state x="805" y="441" key="com.intellij.ide.util.TipDialog" timestamp="1576444597458">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

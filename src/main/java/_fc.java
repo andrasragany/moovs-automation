@@ -472,6 +472,21 @@ public class _fc {
         Thread.sleep(1000);
     }
 
+    public static void Create_News_WL(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_News, wait, "WLearn_selector_News");
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateNews_btn, wait, "WLearn_selector_CreateNews_btn");
+        String name_to_be_used_later = ("Aut " + user+ " " + parseDate(LocalDateTime.now()));
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CreateNews_Title, wait, "WLearn_selector_CreateNews_Title"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CreateNews_Title)).sendKeys(name_to_be_used_later);
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CreateNews_Body, wait, "WLearn_selector_CreateNews_Body"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CreateNews_Body)).sendKeys(name_to_be_used_later);
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateNews_AddTargetGroup, wait, "WLearn_selector_CreateNews_AddTargetGroup");
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateNews_AddGroup_Select_first, wait, "WLearn_selector_CreateNews_AddGroup_Select_first");
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateNews_Add_btn, wait, "WLearn_selector_CreateNews_Add_btn");
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateNews_Save_news_btn, wait, "WLearn_selector_CreateNews_Save_news_btn");
+        Thread.sleep(1000);
+    }
+
     static void create_LP ( WebDriver webDriver, WebDriverWait wait, Logger logger, String userGroupNameChrome2) throws InterruptedException {
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_learning_paths, wait, "selector_trainer_learning_path");
         faszaklikk(webDriver, logger, Object_repo_Philips.selector_create_LP_btn, wait, "selector_trainer_create_learning_path_button");

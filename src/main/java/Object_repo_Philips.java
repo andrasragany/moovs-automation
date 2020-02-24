@@ -315,4 +315,13 @@ public class Object_repo_Philips {
     static String WLearn_selector_CreateGroup_Title = "//*[@id=\"title\"]";
     static String WLearn_selector_CreateGroup_Description = "//*[@id=\"description\"]";
     static String WLearn_selector_SaveGroup_btn = "//*[text()='Save group']";
+    static String WLearn_selector_News = "//*[text()='News']";
+    static String WLearn_selector_CreateNews_btn = "//*[text()='Create news']";
+    static String WLearn_selector_CreateNews_Title = "//*[@id=\"title\"]";
+    static String WLearn_selector_CreateNews_Body = "//*[@id=\"description\"]";
+    static String WLearn_selector_CreateNews_AddTargetGroup = "//*[text()='Add target group']";
+    static String WLearn_selector_CreateNews_AddGroup_Select_first = "/html/body/div[2]/div[3]/div/div[2]/li[1]";
+    static String WLearn_selector_CreateNews_Add_btn = "//*[text()='Add']";
+    static String WLearn_selector_CreateNews_Save_news_btn = "//*[text()='Save']";
+
 }

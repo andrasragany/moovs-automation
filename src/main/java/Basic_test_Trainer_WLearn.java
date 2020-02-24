@@ -87,7 +87,7 @@ public class Basic_test_Trainer_WLearn extends Thread{
         _fc.navigatetousers_WL(logger, driver, waiter);
         _fc.navigatetousergroups_WL(logger, driver, waiter);
         _fc.Create_Usergroup_WL(logger, driver, waiter, "Trainer");
-
+        _fc.Create_News_WL(logger, driver, waiter, "Trainer");
 
 
     }
