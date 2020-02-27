@@ -337,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581700239319</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="elso">
+      <created>1582630099844</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1582630099844</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -408,10 +415,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="845" y="470" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400@0.0.2560.1400" timestamp="1576449890367" />
-    <state x="565" y="7" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1581700238497">
+    <state x="565" y="7" width="1320" height="1033" key="CommitChangelistDialog2" timestamp="1582630098352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="565" y="7" key="CommitChangelistDialog2/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1581700238497" />
+    <state x="565" y="7" key="CommitChangelistDialog2/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1582630098352" />
     <state x="565" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580744490118" />
     <state x="753" y="153" width="1320" height="1033" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1579821024384" />
     <state x="898" y="297" key="DetectedRootsChooserDialog" timestamp="1576447992436">
@@ -492,9 +499,10 @@
     </state>
     <state width="1853" height="315" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579876281820" />
     <state width="2269" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579612796746" />
-    <state x="170" y="335" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1580730243209">
+    <state x="170" y="335" width="1069" height="565" key="MultipleFileMergeDialog" timestamp="1582630115959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="170" y="335" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1582630115959" />
     <state x="170" y="335" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580730243209" />
     <state x="227" y="451" key="MultipleFileMergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579796137109" />
     <state x="272" y="543" width="1069" height="565" key="MultipleFileMergeDialog/0.0.3072.1688@0.0.3072.1688" timestamp="1576833466198" />
@@ -523,9 +531,10 @@
     <state x="682" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579079418781" />
     <state x="909" y="533" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1579471513426" />
     <state x="1091" y="643" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3072.1688@0.0.3072.1688" timestamp="1576833449556" />
-    <state x="653" y="312" key="git4idea.merge.GitPullDialog" timestamp="1580730234347">
+    <state x="653" y="312" key="git4idea.merge.GitPullDialog" timestamp="1582630107807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="653" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1582630107807" />
     <state x="653" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580730234347" />
     <state x="871" y="420" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579796122436" />
     <state x="668" y="160" key="refactoring.ChangeSignatureDialog" timestamp="1579872534473">
