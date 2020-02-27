@@ -28,7 +28,7 @@ public class _fc {
         boolean bul = true;
         int counter = 0;
 
-        while ((bul) && (counter < 2)) {
+        while ((bul) && (counter < 1)) {
             try {
                 wait.until(elementToBeClickable(By.xpath(String.valueOf(webElement)))).click();
                 bul = false;
@@ -59,8 +59,8 @@ public class _fc {
     }
 
     public static void login(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.selector_user_email))).sendKeys((String) jo.get(user));
@@ -72,8 +72,8 @@ public class _fc {
     }
 
     public static void login_WL(Logger logger, WebDriver webDriver, WebDriverWait wait, String user, String userpasswd) throws IOException, org.json.simple.parser.ParseException, InterruptedException {
-        //String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
-        String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        String UserJsonPath = "c:\\Users\\Rendszergazda\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
+        //String UserJsonPath = "c:\\Users\\randr\\IdeaProjects\\platformtest\\src\\main\\java\\user.json";
         Object obj = new JSONParser().parse(new FileReader(UserJsonPath));
         JSONObject jo = (JSONObject) obj;
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Object_repo_Philips.WLearn_selector_login_email))).sendKeys((String) jo.get(user));
@@ -378,8 +378,7 @@ public class _fc {
         faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Create_Course, wait, "WLearn_selector_Create_Course");
         webDriver.navigate().refresh();
         Thread.sleep(1000);
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input, wait, "WLearn_selector_CC_Gen_Name_input"))
-            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input)).sendKeys("EN_US");
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input, wait, "WLearn_selector_CC_Gen_Name_input");
         Thread.sleep(1000);
         faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_selectlang, wait, "WLearn_selector_CC_Gen_Lang_selectlang");
         Thread.sleep(1000);
@@ -419,8 +418,8 @@ public class _fc {
         Thread.sleep(1000);
         faszaklikk(webDriver, logger, Object_repo_Philips.Wlearn_selector_Programs_CreateProgBtn, wait, "Wlearn_selector_Programs_CreateProgBtn");
         Thread.sleep(1000);
-        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input, wait, "WLearn_selector_CC_Gen_Name_input"))
-            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input)).sendKeys("EN_US");
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_dropdown_input, wait, "WLearn_selector_CC_Gen_Name_input");
+
         Thread.sleep(1000);
         faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_CC_Gen_Lang_selectlang, wait, "WLearn_selector_CC_Gen_Lang_selectlang");
         Thread.sleep(1000);
@@ -455,9 +454,6 @@ public class _fc {
         Thread.sleep(10000);
     }
 
-    public static void navigatetousers_WL(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
-        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_Users, wait, "WLearn_selector_Users");
-    }
     public static void navigatetousergroups_WL(Logger logger, WebDriver webDriver, WebDriverWait wait) throws InterruptedException {
         faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_Usergroups, wait, "WLearn_selector_Usergroups");
     }
@@ -470,6 +466,35 @@ public class _fc {
             webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_CreateGroup_Description)).sendKeys(name_to_be_used_later);
         faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_SaveGroup_btn, wait, "WLearn_selector_SaveGroup_btn");
         Thread.sleep(1000);
+    }
+
+    public static void Delete_Usergroup_WL(Logger logger, WebDriver webDriver, WebDriverWait wait, String name) throws InterruptedException, ParseException {
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_Users, wait, "WLearn_selector_Users");
+        faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_Usergroups, wait, "WLearn_selector_Usergroups");
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Usergroup_finder, wait, "WLearn_selector_Usergroup_finder"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_Usergroup_finder)).sendKeys(name);
+        Thread.sleep(200);
+        Actions actions = new Actions(webDriver);
+        actions.sendKeys(Keys.ENTER).perform();
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs_sorter_dropdown, wait, "WLearn_selector_Programs_sorter_dropdown");
+        faszaklikk(webDriver, logger, Object_repo_Philips.Wlearn_selector_Programs_sorter_select_Oldest, wait, "Wlearn_selector_Programs_sorter_select_Oldest");
+        Thread.sleep(200);
+        boolean empty = true;
+        while (empty){
+            if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_usergroups_filtered_list_first_element_moremenu, wait, "WLearn_selector_usergroups_filtered_list_first_element_moremenu")) {
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_usergroups_filtered_list_first_element_moremenu_delete, wait, "WLearn_selector_usergroups_filtered_list_first_element_moremenu_delete");
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_usergroups_filtered_list_first_element_moremenu_delete_confirm, wait, "WLearn_selector_usergroups_filtered_list_first_element_moremenu_delete_confirm");
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Notification_close, wait, "WLearn_selector_Notification_close");
+            } else {
+                empty = false;
+            }
+        }
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Users, wait, "WLearn_selector_News");
+
+
     }
 
     public static void Create_News_WL(Logger logger, WebDriver webDriver, WebDriverWait wait, String user) throws InterruptedException, ParseException {
@@ -485,6 +510,81 @@ public class _fc {
         faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateNews_Add_btn, wait, "WLearn_selector_CreateNews_Add_btn");
         faszaklikk(webDriver, logger,Object_repo_Philips.WLearn_selector_CreateNews_Save_news_btn, wait, "WLearn_selector_CreateNews_Save_news_btn");
         Thread.sleep(1000);
+    }
+
+    static void delete_Program_WL ( WebDriver webDriver, WebDriverWait wait, Logger logger, String name) throws InterruptedException {
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs, wait, "WLearn_selector_Programs");
+        boolean empty = true;
+        while (empty){
+            if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Pr_Search_autofilter_field, wait, "WLearn_selector_Pr_Search_autofilter_field"))
+                webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_Pr_Search_autofilter_field)).sendKeys(name);
+            Thread.sleep(1000);
+            Actions actions = new Actions(webDriver);
+            actions.sendKeys(Keys.ENTER).perform();
+            faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs_sorter_dropdown, wait, "WLearn_selector_Programs_sorter_dropdown");
+            faszaklikk(webDriver, logger, Object_repo_Philips.Wlearn_selector_Programs_sorter_select_Oldest, wait, "Wlearn_selector_Programs_sorter_select_Oldest");
+            Thread.sleep(1000);
+             if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs_filtered_list_element, wait, "WLearn_selector_Programs_filtered_list_element")) {
+                 faszaklikk(webDriver, logger, Object_repo_Philips.Wlearn_selector_Programs_delete_program_btn, wait, "Wlearn_selector_Programs_delete_program_btn");
+                 faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs_delete_OK, wait, "WLearn_selector_Programs_delete_OK");
+                 Thread.sleep(1000);
+             } else {
+                 empty = false;
+             }
+        }
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs, wait, "WLearn_selector_Programs");
+    }
+
+    static void delete_Course_WL ( WebDriver webDriver, WebDriverWait wait, Logger logger, String name) throws InterruptedException {
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Courses, wait, "WLearn_selector_Courses");
+        boolean empty = true;
+        while (empty){
+            if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Pr_Search_autofilter_field, wait, "WLearn_selector_Pr_Search_autofilter_field"))
+                webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_Pr_Search_autofilter_field)).sendKeys(name);
+            Thread.sleep(1000);
+            Actions actions = new Actions(webDriver);
+            actions.sendKeys(Keys.ENTER).perform();
+            faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs_sorter_dropdown, wait, "WLearn_selector_Programs_sorter_dropdown");
+            faszaklikk(webDriver, logger, Object_repo_Philips.Wlearn_selector_Programs_sorter_select_Oldest, wait, "Wlearn_selector_Programs_sorter_select_Oldest");
+            Thread.sleep(1000);
+            if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs_filtered_list_element, wait, "WLearn_selector_Programs_filtered_list_element")) {
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Course_more_menu, wait, "WLearn_selector_Course_more_menu");
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Course_more_menu_delete, wait, "WLearn_selector_Course_more_menu");
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Course_delete_delete, wait, "WLearn_selector_Course_delete_delete");
+                Thread.sleep(200);
+            } else {
+                empty = false;
+            }
+        }
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Courses, wait, "WLearn_selector_Courses");
+    }
+
+    static void delete_News_WL ( WebDriver webDriver, WebDriverWait wait, Logger logger, String name) throws InterruptedException {
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_News, wait, "WLearn_selector_News");
+        if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_News_finder, wait, "WLearn_selector_News_finder"))
+            webDriver.findElement(By.xpath(Object_repo_Philips.WLearn_selector_News_finder)).sendKeys(name);
+        Thread.sleep(200);
+        Actions actions = new Actions(webDriver);
+        actions.sendKeys(Keys.ENTER).perform();
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_Programs_sorter_dropdown, wait, "WLearn_selector_Programs_sorter_dropdown");
+        faszaklikk(webDriver, logger, Object_repo_Philips.Wlearn_selector_Programs_sorter_select_Oldest, wait, "Wlearn_selector_Programs_sorter_select_Oldest");
+        Thread.sleep(200);
+        boolean empty = true;
+        while (empty){
+            if (faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_News_moremenu, wait, "WLearn_selector_News_moremenu")) {
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_News_moremenu_delete, wait, "WLearn_selector_News_moremenu_delete");
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_News_moremenu_delete_confirm, wait, "WLearn_selector_News_moremenu_delete_confirm");
+                Thread.sleep(200);
+                faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_News_deleted_notif_close, wait, "WLearn_selector_News_deleted_notif_close");
+            } else {
+                empty = false;
+            }
+        }
+        faszaklikk(webDriver, logger, Object_repo_Philips.WLearn_selector_News, wait, "WLearn_selector_News");
     }
 
     static void create_LP ( WebDriver webDriver, WebDriverWait wait, Logger logger, String userGroupNameChrome2) throws InterruptedException {

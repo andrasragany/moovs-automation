@@ -81,15 +81,16 @@ public class Basic_test_Trainer_WLearn extends Thread{
 
         _fc.gotourl(logger,driver,"http://ec2-3-125-142-193.eu-central-1.compute.amazonaws.com:90/");
         _fc.login_WL(logger, driver, waiter, "wlearntrainer", "wlearntrainerpassword");
+        //_fc.delete_Course_WL(driver, waiter, logger, "Aut");
         //_fc.create_course_WL(driver, waiter, logger, "trainer");
         //_fc.navigatetomodules_and_switchto_listview_WL(logger, driver, waiter);
+        //_fc.delete_Program_WL(driver, waiter, logger, "Aut");
         //_fc.create_Program_WL(driver, waiter, logger, "trainer");
-        _fc.navigatetousers_WL(logger, driver, waiter);
-        _fc.navigatetousergroups_WL(logger, driver, waiter);
-        _fc.Create_Usergroup_WL(logger, driver, waiter, "Trainer");
-        _fc.Create_News_WL(logger, driver, waiter, "Trainer");
-
-
+        //_fc.Delete_Usergroup_WL(logger, driver, waiter,"Aut");
+        //_fc.navigatetousergroups_WL(logger, driver, waiter);
+        //_fc.Create_Usergroup_WL(logger, driver, waiter, "Trainer");
+        _fc.delete_News_WL(driver, waiter, logger, "Aut");
+        //_fc.Create_News_WL(logger, driver, waiter, "Trainer");
     }
 
     public static void main(String[] argv) throws Exception {
@@ -101,11 +102,11 @@ public class Basic_test_Trainer_WLearn extends Thread{
         System.out.println("Starting MyThreads");
         ChromeThread.start();
         //ChromeThread.sleep(1000);
-        FireFoxThread.start();
+        //FireFoxThread.start();
         //FireFoxThread.sleep(1000);
-        OperaThread.start();
+        //OperaThread.start();
         //OperaThread.sleep(1000);
-        EdgeThread.start();
+        //EdgeThread.start();
         //EdgeThread.sleep(1000);
     }
 }

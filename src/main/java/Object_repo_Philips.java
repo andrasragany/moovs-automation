@@ -282,8 +282,8 @@ public class Object_repo_Philips {
     static String WLearn_selector_Courses = "//*[text()='Courses']";
     static String WLearn_selector_Courses_Search_input = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/input";
     static String WLearn_selector_Create_Course = "//*[text()='Create new course']";
-    static String WLearn_selector_CC_Gen_Lang_dropdown_input = "//*[@id=\"language\"]";
-    static String WLearn_selector_CC_Gen_Lang_selectlang = "//*[@id=\"language-option-0\"]";
+    static String WLearn_selector_CC_Gen_Lang_dropdown_input = "//*[@id=\"root\"]/div/div/div/div[2]/form/div[1]/div/div[2]/div/div[1]/div/div[1]";
+    static String WLearn_selector_CC_Gen_Lang_selectlang = "//*[text()='English']";
     static String WLearn_selector_CC_Gen_Name_input = "//*[@id=\"name\"]";
     static String WLearn_selector_CC_Gen_Description_input = "//*[@id=\"description\"]";
     static String WLearnd_selector_CC_Gen_Next_btn = "//*[@id=\"root\"]/div/div/div/div[2]/form/div[2]/div/div/button/span";
@@ -294,6 +294,9 @@ public class Object_repo_Philips {
     static String WLearn_selector_CC_Modules_Select_first_module = "/html/body/div[2]/div[3]/div/div[2]/li[1]/div[2]/div[1]/div/h4";
     static String WLearn_selector_CC_Modules_Save_added_modules = "/html/body/div[2]/div[3]/div/div[3]/div/div/button/span";
     static String WLearn_selector_CC_Exam_Skillpoints_input = "//*[@id=\"skillPoints\"]";
+    static String WLearn_selector_Course_more_menu = "//*[@id=\"root\"]/div/div/div/div[1]/div[1]/div[2]";
+    static String WLearn_selector_Course_more_menu_delete = "//*[text()='Delete']";
+    static String WLearn_selector_Course_delete_delete = "/html/body/div[2]/div[3]/div/div[3]/div/div/button/span";
     static String WLearn_selector_Modules = "//*[@id=\"root\"]/div/nav/div/div/ul/li[1]/ul/a[4]/div[2]/span";
     static String WLearn_selector_Modules_listview = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[2]/div[2]/button[2]/span";
     static String WLearn_selector_Modules_list_openfirst = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[1]";
@@ -309,8 +312,20 @@ public class Object_repo_Philips {
     static String WLearn_selector_Cr_Pr_user_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button/span";
     static String WLearn_selector_Cr_Pr_courses_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div/div/button";
     static String WLearn_selector_Cr_Pr_fin_exam_Next_Btn = "//*[@id=\"root\"]/div/div/div/div[2]/form/div[2]/div/div/button/span";
+    static String WLearn_selector_Pr_Search_autofilter_field = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/input";
+    static String WLearn_selector_Programs_filtered_list_element = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[1]/div/div[2]";
+    static String WLearn_selector_Programs_sorter_dropdown = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div";
+    static String Wlearn_selector_Programs_sorter_select_Oldest = "//*[text()='Oldest']";
+    static String Wlearn_selector_Programs_delete_program_btn = "//*[text()='Delete program']";
+    static String WLearn_selector_Programs_delete_OK = "//*[text()='OK']";
+
     static String WLearn_selector_Users = "//*[text()='Users']";
     static String WLearn_selector_Usergroups = "//*[text()='Groups']";
+    static String WLearn_selector_Usergroup_finder = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/input";
+    static String WLearn_selector_usergroups_filtered_list_first_element_moremenu = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[1]/li/div/div[2]/div[2]";
+    static String WLearn_selector_usergroups_filtered_list_first_element_moremenu_delete = "//*[text()='Delete']";
+    static String WLearn_selector_usergroups_filtered_list_first_element_moremenu_delete_confirm = "//*[text()='Delete']";
+    static String WLearn_selector_Notification_close = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div/div[2]/button";
     static String WLearn_selector_CreateGroup_btn = "//*[text()='Create group']";
     static String WLearn_selector_CreateGroup_Title = "//*[@id=\"title\"]";
     static String WLearn_selector_CreateGroup_Description = "//*[@id=\"description\"]";
@@ -323,5 +338,10 @@ public class Object_repo_Philips {
     static String WLearn_selector_CreateNews_AddGroup_Select_first = "/html/body/div[2]/div[3]/div/div[2]/li[1]";
     static String WLearn_selector_CreateNews_Add_btn = "//*[text()='Add']";
     static String WLearn_selector_CreateNews_Save_news_btn = "//*[text()='Save']";
+    static String WLearn_selector_News_finder = "//*[@id=\"root\"]/div/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/input";
+    static String WLearn_selector_News_moremenu = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[1]/div/div[1]/div[2]/span";
+    static String WLearn_selector_News_moremenu_delete = "//*[text()='Delete']";
+    static String WLearn_selector_News_moremenu_delete_confirm = "//*[text()='Delete']";
+    static String WLearn_selector_News_deleted_notif_close = "//*[@id=\"root\"]/div/div/div/div[1]/div/div[2]/button/span[1]";
 
 }
